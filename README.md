@@ -19,7 +19,7 @@ As pastas do repositório são organizadas em relação ao assunto do log e conf
 >
 > Repositório e commits relacionados (obrigatório):
 >
-> --
+> ---
 >
 > Descrição da(s) tarefa(s):
 >
