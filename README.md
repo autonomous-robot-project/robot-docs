@@ -18,7 +18,9 @@ As pastas do repositório são organizadas em relação ao assunto do log e conf
 > Finalizada? (Sim/Não):
 >
 > Repositório e commits relacionados (obrigatório):
+>
 > --
+>
 > Descrição da(s) tarefa(s):
 >
 > Justificativa (Por que escolher este método/componente/estrutura e não outro(a)?):
