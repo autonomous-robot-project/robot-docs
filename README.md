@@ -12,10 +12,13 @@ As pastas do repositório são organizadas em relação ao assunto do log e conf
 ## Template de Log
 >  # {Nome da(s) Tarefa(s) Realizada(s)}
 > Data: dd/mm/yyyy hh:mm
-> Autor:
-> Finalizada? (Sim/Não):
-> Repositório e commits relacionados (obrigatório):
 >
+> Autor:
+>
+> Finalizada? (Sim/Não):
+>
+> Repositório e commits relacionados (obrigatório):
+> --
 > Descrição da(s) tarefa(s):
 >
 > Justificativa (Por que escolher este método/componente/estrutura e não outro(a)?):
