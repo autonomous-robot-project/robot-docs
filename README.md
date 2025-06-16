@@ -1,4 +1,4 @@
-# logbook
+# AMR Project - Logbook
 Diário do desenvolvimento do projeto, contendo informações pertinentes a testes, código e montagem do protótipo.
 
 ## Como documentar tarefas do protótipo?
@@ -9,8 +9,8 @@ Utilizar arquivo de template de log quando for realizar qualquer tarefa relacion
 
 As pastas do repositório são organizadas em relação ao assunto do log e conforme necessidade.
 
-## Template de Log
->  # {Nome da(s) Tarefa(s) Realizada(s)}
+## Log Template
+>  # {YYYY-MM-DD_titulo-curto.md}
 > Data: dd/mm/yyyy hh:mm
 >
 > Autor:
