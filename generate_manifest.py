@@ -34,7 +34,9 @@ def generate_manifest(folder_path):
     # Última modificação geral (pode ser o último commit dos arquivos)
     all_files = list(folder.rglob("*.md"))
     last_mods = [
-        get_git_last_modification(f) for f in all_files if get_git_last_modification(f)
+        get_git_last_modification(f)
+        for f in all_files
+        if get_git_last_modification(f) is not None
     ]
     last_mod = max(last_mods) if last_mods else None
     manifest += f"## Last modification: {last_mod or 'Unknown'}\n\n"
