@@ -1,6 +1,23 @@
 # AMR Project - Logbook
 Diário do desenvolvimento do projeto, contendo informações pertinentes a testes, código e montagem do protótipo.
 
+## Estrutura de pastas
+A estrutura de pastas deve ser orientada à metodologia Agile Stage-Gate do projeto. Deve-se criar pastas de Gates com pastas de Stages contendo anotações:
+
+```text
+amr-docs/
+├── README.md               # O "Índice Mestre" (Table of Contents)
+├── G1_Digital_Twin/
+│   ├── S1_URDF/
+│   │   ├── 2026-01-25_log_config_frames.md
+│   │   └── 2026-01-26_teste_colisao_gazebo.md
+│   └── S2_SLAM_Sim/
+├── G2_HIL_Performance/
+│   └── S3_MicroROS_Bridge/
+│       └── 2026-02-05_analise_latencia_serial.md
+└── ... (G3, G4, G5, G6, G7, ...)
+```
+
 ## Como documentar tarefas do protótipo?
 Utilizar arquivo de template de log quando for realizar qualquer tarefa relacionada ao projeto.
 
