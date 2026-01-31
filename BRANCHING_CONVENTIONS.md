@@ -4,13 +4,13 @@ Este repositório utiliza um fluxo baseado em branches temporárias com squash m
 
 ## Tipos de Branches Temporárias
 
-- `task/NOME-DA-TAREFA`  
+- `task/NOME_DA_TAREFA`  
   Para execução de tarefas práticas, testes e logs de progresso relacionados a uma atividade específica.
   
-- `doc/NOME-DO-SISTEMA`  
+- `doc/NOME_DO_SISTEMA`  
   Para criação ou revisão de documentação técnica sobre um sistema específico do robô.
 
-- `dev-log/TEMA-DA-REFLEXAO`  
+- `dev-log/TEMA_DA_REFLEXAO`  
   Para anotações reflexivas ou registros que não estão vinculados diretamente a uma tarefa ou sistema.
 
 ## Convenções Gerais
