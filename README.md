@@ -1,4 +1,4 @@
-# AMR Project - Logbook
+# robot-docs - Logbook
 Diário do desenvolvimento do projeto, contendo informações pertinentes a testes, código e montagem do protótipo.
 
 ## Estrutura de pastas
