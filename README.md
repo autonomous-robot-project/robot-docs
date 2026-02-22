@@ -5,7 +5,7 @@ Diário do desenvolvimento do projeto, contendo informações pertinentes a test
 A estrutura de pastas deve ser orientada à metodologia Agile Stage-Gate do projeto. Deve-se criar pastas de Gates com pastas de Stages contendo anotações:
 
 ```text
-amr-docs/
+robot-docs/
 ├── README.md               # O "Índice Mestre" (Table of Contents)
 ├── G1_Digital_Twin/
 │   ├── S1_URDF/

@@ -30,4 +30,3 @@ git commit -m "reflect: impacto da kd na estabilidade"
 # merge com squash:
 git checkout main
 git merge --squash task/controle-pid-v1
-git commit -m "task: controle pid v1 — ajustes e observações"
