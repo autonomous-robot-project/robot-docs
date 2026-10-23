@@ -1,56 +1,27 @@
-# robot-docs - Logbook
-Diário do desenvolvimento do projeto, contendo informações pertinentes a testes, código e montagem do protótipo.
+# robot-docs
 
-## Estrutura de pastas
-A estrutura de pastas deve ser orientada à metodologia Agile Stage-Gate do projeto. Deve-se criar pastas de Gates com pastas de Stages contendo anotações:
+Documentação viva do TCC: plataforma robótica móvel com arquitetura em três camadas (Gat, 1998),
+com o controlador num ESP32-S3 e o sequenciador e o deliberador num RPi 5 (ROS 2).
 
-```text
-amr-docs/
-├── README.md               # O "Índice Mestre" (Table of Contents)
-├── G1_Digital_Twin/
-│   ├── S1_URDF/
-│   │   ├── 2026-01-25_log_config_frames.md
-│   │   └── 2026-01-26_teste_colisao_gazebo.md
-│   └── S2_SLAM_Sim/
-├── G2_HIL_Performance/
-│   └── S3_MicroROS_Bridge/
-│       └── 2026-02-05_analise_latencia_serial.md
-└── ... (G3, G4, G5, G6, G7, ...)
-```
+## Mapa
 
-## Como documentar tarefas do protótipo?
-Utilizar arquivo de template de log quando for realizar qualquer tarefa relacionada ao projeto.
+| Caminho | Responde |
+| :---: | :---: |
+| `arquitetura.md` | Como o sistema é hoje (cita as ADRs, não as repete) |
+| `adr/` | Por que ele é assim |
+| `requisitos.md`, `objetivos.md` | O que o sistema precisa cumprir |
+| `verificacoes/` | Como se prova que cumpre |
+| `notas/` | O que aconteceu na bancada (anotações cruas) |
+| `hardware/` | Cabeamento e ligações |
+| `referencias/` | Material de apoio |
+| Issues do GitHub | O que está em aberto agora (labels `medicao`, `decisao`, `adr`; a issue fixada é o próximo passo) |
 
-> [!IMPORTANT]
-> Quando parar a tarefa no meio para continuar depois, realizar anotações do que foi feito e realizar um commit. Depois, quando continuar a tarefa, retomar o log e finalizá-lo.
+## Fluxo de cada passo
 
-As pastas do repositório são organizadas em relação ao assunto do log e conforme necessidade.
+1. Decidir só o que o passo exige. Decisão que iria para a monografia vira ADR (`provisório`).
+2. Claude Code propõe o plano; você aprova.
+3. Diffs pequenos, lidos antes de rodar.
+4. Checagem de bancada do passo.
+5. Anotação crua em `notas/`. A ADR vira `definitivo` quando a evidência existe.
 
-## Log Template
->  # {YYYY-MM-DD_titulo-curto.md}
-> Data: dd/mm/yyyy hh:mm
->
-> Autor:
->
-> Finalizada? (Sim/Não):
->
-> Repositório e commits relacionados (obrigatório):
->
-> ---
->
-> Descrição da(s) tarefa(s):
->
-> Justificativa (Por que escolher este método/componente/estrutura e não outro(a)?):
->
-> Performance e métricas esperadas (O que se espera conseguir com esta tarefa? Citar fonte de performance e métricas esperadas):
->
-> Performance e métricas resultantes (O que se obteve com esta tarefa? Incluir imagens, prints, vídeos, gifs):
->
-> Literatura relacionada (citar pelo menos 1 fonte, pode ser site):
->
-> Testes realizados (realizar pelo menos 1 teste):
->
-> Testes relacionados:
->
-> Dúvidas e sugestões de tarefas futuras (obrigatório):
-> 
+Commits citam a ADR ou a verificação correspondente, quando houver, e fecham a issue com `Closes #N`.
