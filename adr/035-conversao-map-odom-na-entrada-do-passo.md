@@ -37,4 +37,4 @@ Os vértices do plano chegam em `map` (ADR 034), e os alvos do TURN_TO e do GO_T
 - As missões de ensaio usam alvos em `odom`, sem TF (RF-05).
 - Missão por plano sem map → odom disponível é falha da missão, tratada pela tabela de reações (ADR 032).
 - Com as rodas suspensas (V-04), o launch publica um map → odom estático e identidade.
-- Confirmar que o TransformListener do rclpy pode ser criado sem thread própria (`spin_thread`).
+- Confirmado no Jazzy (issue #23, nota 0004): o TransformListener do rclpy não cria thread por padrão, e a consulta custa < 0,2 ms. A consulta usa timeout zero: com timeout > 0, a espera bloquearia o executor, que é quem processa o `/tf`.
