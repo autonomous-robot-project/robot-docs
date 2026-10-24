@@ -1,6 +1,6 @@
-# Destacar: IR_PARA é comportamento emergente
+# Destacar: GO_TO é comportamento emergente
 
-O IR_PARA não tem lógica de código: nenhum `if`, nenhum estado de "girando" ou "andando".
+O GO_TO não tem lógica de código: nenhum `if`, nenhum estado de "girando" ou "andando".
 É uma única lei de realimentação, avaliada a cada 10 ms sobre a pose atual:
   v ∝ d · max(0, cos e),   ω ∝ e · (peso -> 0 quando d -> 0)
 O comportamento observado (girar no lugar, fazer um arco, andar reto e desacelerar no alvo)

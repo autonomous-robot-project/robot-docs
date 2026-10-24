@@ -48,7 +48,7 @@ Critério para dados novos:
 - O comando já tolera perdas pelo vencimento: T_CMD cobre quatro republicações a F_CMD (RNF-02).
 - O Estado a 1/T_C é a maior taxa útil. Mantém a V-05 como ensaio de pior caso e dá a maior folga ao RNF-03.
 - A Odometria a 20 Hz fica no dobro da taxa do LiDAR, o suficiente para o TF interpolar a pose de cada varredura. Ocupação total ≈ 20 %.
-- O eco do comando permite conferir, no lado do RPi, que o controlador aplica o comportamento e os parâmetros enviados (RF-01). É o comando em vigor no ciclo: o recebido ou, depois do vencimento, VELOCIDADE(0, 0) (RNF-02). Os reflexos não alteram o eco e aparecem nas máscaras. Acrescenta dois valores de ponto flutuante e não altera a ocupação de forma significativa.
+- O eco do comando permite conferir, no lado do RPi, que o controlador aplica o comportamento e os parâmetros enviados (RF-01). É o comando em vigor no ciclo: o recebido ou, depois do vencimento, TWIST(0, 0) (RNF-02). Os reflexos não alteram o eco e aparecem nas máscaras. Acrescenta dois valores de ponto flutuante e não altera a ocupação de forma significativa.
 - Tipos padrão saem prontos do ESP32 sempre que cabem no orçamento, sem tradutor no RPi (ADR 009 mantida).
 
 ## Nota

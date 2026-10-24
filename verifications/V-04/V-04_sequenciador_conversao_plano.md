@@ -8,11 +8,11 @@ $$\theta_{alvo} = \operatorname{atan2}(y_v - y,\ x_v - x)$$
 
 $$d = \sqrt{(x_v - x)^2 + (y_v - y)^2}$$
 
-Em seguida, ativa GIRAR(θ_alvo) e depois IR_PARA(x_v, y_v). Após o último vértice, ativa VELOCIDADE(0, 0).
+Em seguida, ativa TURN_TO(θ_alvo) e depois GO_TO(x_v, y_v). Após o último vértice, ativa TWIST(0, 0).
 
 ## Por que partir da pose atual
 
-O IR_PARA vai ao próprio vértice, então o erro de posição não se acumula em nenhum dos casos. Partir da pose atual faz o GIRAR apontar para o vértice, e não para a direção do trecho no plano, e deixa ao IR_PARA só o resíduo do GIRAR.
+O GO_TO vai ao próprio vértice, então o erro de posição não se acumula em nenhum dos casos. Partir da pose atual faz o TURN_TO apontar para o vértice, e não para a direção do trecho no plano, e deixa ao GO_TO só o resíduo do TURN_TO.
 
 ## Conformidade com a arquitetura
 

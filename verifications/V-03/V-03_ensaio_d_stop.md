@@ -34,7 +34,7 @@ v_max é um resultado do ensaio, não um dado: o projeto não troca garantia por
 
 1. Configure d_stop = d_sensor.
 2. Inicie a gravação com `ros2 bag` da distância do VL53L0X, da velocidade medida e do estado do reflexo.
-3. Posicione o robô a 2 m ou mais de uma parede lisa e fosca, alinhado a ela, e comande VELOCIDADE(v, 0).
+3. Posicione o robô a 2 m ou mais de uma parede lisa e fosca, alinhado a ela, e comande TWIST(v, 0).
 4. Aguarde o reflexo parar o robô.
 5. Execute os passos 3 e 4 cinco vezes por velocidade, aumentando v a cada série.
 
