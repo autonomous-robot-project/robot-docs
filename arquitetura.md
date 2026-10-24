@@ -195,7 +195,7 @@ As missões de ensaio (V-01, V-07, V-08) são escolhidas pelo parâmetro `missao
 | --- | --- |
 | `planner_server` (Theta*) | Responde `ComputePathToPose` (ADRs 014 e 034) |
 | `slam_toolbox` | Mapeamento contínuo; publica `/map` e map → odom (ADR 040) |
-| `ldlidar_stl_ros2` | LDROBOT D500; publica `/scan` a 10 Hz |
+| `ldlidar_stl_ros2` | LDROBOT LD19 (kit D300); publica `/scan` a 10 Hz |
 | `static_transform_publisher` | base_link → laser |
 | `lifecycle_manager` | Ativa os nós gerenciados |
 
