@@ -183,7 +183,7 @@ O notebook publica `/heartbeat` (`std_msgs/Empty`, best effort) a 10 Hz com `ros
 
 1. O objetivo chega por `/goal_pose` (RViz). Um objetivo novo preempta a missão atual.
 2. O sequenciador envia `ComputePathToPose` ao `planner_server`, de forma assíncrona. Resposta de meta antiga é descartada (ADR 034).
-3. Os vértices são os pontos onde a direção do `Path` muda. Cada trecho vira um par TURN_TO(rumo) → GO_TO(vértice).
+3. Os vértices são os pontos onde a direção do `Path` muda, com as pontas e os trechos curtos tratados como na ADR 034. Cada trecho vira um par TURN_TO(rumo) → GO_TO(vértice).
 4. Diante de obstáculo frontal no GO_TO: espera T_WAIT, depois `replan()` da pose atual, no máximo N_REPLAN vezes por missão, e por fim aborta (ADR 038).
 5. Erro do planner, deliberador ausente, TF ausente, roda travada, bateria baixa ou crítica, heartbeat perdido e enlace perdido abortam a missão.
 
@@ -204,7 +204,7 @@ Não há `bt_navigator` nem `controller_server`: seguir caminho é papel do cont
 #### Costmap global (ADRs 041 e 042)
 
 - Três camadas: estática (mapa do SLAM), obstáculo (`/scan`, marca e limpa a cada varredura) e inflação. Resolução de 0,05 m.
-- Zona proibida = raio do robô + margem m. O custo de travessia tem peso mínimo, então o caminho é o mais curto fora da zona proibida.
+- Zona proibida = raio do robô + margem m + uma célula. O custo de travessia tem peso mínimo, então o caminho é o mais curto fora da zona proibida.
 - O planner pode atravessar espaço desconhecido.
 - O VL53L0X fica fora do costmap. Um obstáculo visto só por ele leva a escada ao aborto.
 

@@ -15,7 +15,7 @@ Cada trecho do plano é executado em linha reta, sem seguimento de caminho (ADR 
 
 ## Decisão
 
-- O planner proíbe as células a menos de raio do robô + margem m de um obstáculo.
+- O planner proíbe as células a menos de raio do robô + margem m + uma célula (res) de um obstáculo. A célula extra cobre a discretização da linha de visada do Theta* e o desvio da passada da ADR 034, e garante folga ≥ r + m.
 - O custo de travessia tem peso mínimo, e o Theta* faz o caminho mais curto fora da zona proibida.
 
 ## Alternativa descartada
@@ -30,5 +30,6 @@ Cada trecho do plano é executado em linha reta, sem seguimento de caminho (ADR 
 
 ## Nota
 
+- Na última célula antes do objetivo, a remoção do vértice vizinho do objetivo (ADR 034) pode desviar até uma célula diagonal, e a folga ali cai para r + m + res − res·√2 (≈ 0,21 m com r = 0,131 m). O robô chega ao objetivo desacelerando pelo perfil do GO_TO.
 - Ponto de partida: m = 0,10 m. O valor depende do desvio lateral no chão e não entra em nenhuma verificação, que é feita em bancada.
 - O planner pode atravessar espaço desconhecido: com o mapeamento contínuo (ADR 040), o objetivo pode estar em área ainda não mapeada, e o `replan()` corrige quando a área é observada.
