@@ -17,7 +17,7 @@ O controlador publica dados com consumidores e taxas diferentes por um enlace UA
 
 | Tópico | Tipo | Conteúdo | Taxa | Consumidor |
 | --- | --- | --- | --- | --- |
-| Estado | Próprio | Falhas ativas e reflexos ativos (máscaras de 64 bits com códigos do `robot-interfaces`), eco do comando (comportamento ativo e parâmetros em vigor) | 100 Hz (= 1/T_c) | Sequenciador |
+| Estado | Próprio | Falhas ativas e reflexos ativos (máscaras de 32 bits com códigos do `robot-interfaces`), eco do comando (comportamento ativo e parâmetros em vigor) | 100 Hz (= 1/T_c) | Sequenciador |
 | Odometria | Odometry | Pose e velocidade | 20 Hz | Sequenciador, TF/SLAM |
 | Bateria | BatteryState | Tensão filtrada | ~1 Hz | Sequenciador |
 | Instrumentação | Próprio | C_max, R_max, prazos perdidos; Δ e índice do evento (V-07) | 10 Hz | Verificação |
@@ -48,7 +48,7 @@ Critério para dados novos:
 - O comando já tolera perdas pelo vencimento: T_cmd cobre quatro republicações a f_cmd (RNF-02).
 - O Estado a 1/T_c é a maior taxa útil. Mantém a V-05 como ensaio de pior caso e dá a maior folga ao RNF-03.
 - A Odometria a 20 Hz fica no dobro da taxa do LiDAR, o suficiente para o TF interpolar a pose de cada varredura. Ocupação total ≈ 20 %.
-- O eco do comando permite conferir, no lado do RPi, que o controlador aplica o comportamento e os parâmetros enviados (RF-01). É o comando em vigor no ciclo: o recebido ou, depois do vencimento, TWIST(0, 0) (RNF-02). Os reflexos não alteram o eco e aparecem nas máscaras. Acrescenta dois valores de ponto flutuante e não altera a ocupação de forma significativa.
+- O eco do comando permite conferir, no lado do RPi, que o controlador aplica o comportamento e os parâmetros enviados (RF-01). É o comando em vigor no ciclo: o recebido ou, depois do vencimento, TWIST(0, 0) (RNF-02). Os reflexos não alteram o eco e aparecem nas máscaras. Acrescenta o comando inteiro (comportamento e cinco float32) e não altera a ocupação de forma significativa.
 - Tipos padrão saem prontos do ESP32 sempre que cabem no orçamento, sem tradutor no RPi (ADR 009 mantida).
 
 ## Nota

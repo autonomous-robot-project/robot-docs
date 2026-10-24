@@ -30,7 +30,7 @@ Toda mudança precisa preservar estas regras:
 | Sentido | Tópico | Tipo | Taxa | Conteúdo |
 | --- | --- | --- | --- | --- |
 | RPi → ESP32 | Comando | Próprio | 20 Hz | Comportamento ativo + parâmetros, numa mensagem atômica (ADR 024) |
-| ESP32 → RPi | Estado | Próprio | 100 Hz | Máscaras de 64 bits de falhas e reflexos ativos; eco do comando em vigor |
+| ESP32 → RPi | Estado | Próprio | 100 Hz | Máscaras de 32 bits de falhas e reflexos ativos; eco do comando em vigor |
 | ESP32 → RPi | Odometria | `nav_msgs/Odometry` | 20 Hz | Pose em `odom`, carimbada no ESP32 com o relógio sincronizado ao agente (ADR 027) |
 | ESP32 → RPi | Bateria | `sensor_msgs/BatteryState` | ~1 Hz | Tensão filtrada |
 | ESP32 → RPi | Instrumentação | Próprio | 10 Hz | C_max, R_max, prazos perdidos, acumulados desde o boot; Δ da V-07. Só no build de verificação (ADR 028) |
