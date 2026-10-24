@@ -289,3 +289,37 @@ Com as rodas suspensas (V-04), o launch publica map -> odom estático e identida
 
 O agente micro-ROS e o sequenciador rodam em SCHED_FIFO, prioridade 50 (`chrt -f 50`), no kernel padrão, sem afinidade de núcleo (ADR 039).
 O deliberador (Nav2, SLAM) e o `odom_to_tf_ros2` ficam no escalonador comum.
+
+## Deliberador
+
+### Nós
+
+| Nó | Função |
+| --- | --- |
+| `planner_server` (Nav2, Theta*) | Responde `ComputePathToPose` ao sequenciador (ADRs 014 e 034) |
+| `slam_toolbox` | Mapeia continuamente; publica o mapa e map -> odom (ADR 040) |
+| `ldlidar_stl_ros2` | Driver do LiDAR (LDROBOT D500); publica `/scan` a 10 Hz |
+| `static_transform_publisher` | base_link -> laser |
+| `lifecycle_manager` | Configura e ativa os nós gerenciados |
+
+Sem `bt_navigator` nem `controller_server` (ADR 015).
+
+### Costmap global
+
+Três camadas: estática (mapa do SLAM), obstáculo (`/scan`) e inflação, na resolução do mapa, 0,05 m (ADR 041).
+O VL53L0X fica fora: um obstáculo visto só por ele termina a escada em aborto (ADR 038).
+A zona proibida do planner é raio do robô + margem m, e o custo de travessia tem peso mínimo (ADR 042).
+O planner pode atravessar espaço desconhecido.
+
+### Árvore de frames
+
+map -> odom (SLAM, ADR 040) -> base_link (`odom_to_tf_ros2`, ADR 026) -> laser (estático).
+
+### Launch
+
+O deliberador tem launch próprio, separado do do sequenciador, com um processo por nó.
+Desligar o deliberador (RF-05, V-01) é não lançá-lo, e ele fica no escalonador comum (ADR 039).
+Um argumento escolhe a configuração:
+
+- operação: SLAM publica o mapa e map -> odom; o planner usa o mapa do SLAM;
+- ensaio (V-04, V-08 C1): `map_server` serve o M e o launch publica map -> odom identidade (ADR 035); na V-08 C1, o SLAM roda com frame e tópico próprios, só como carga (ADR 040).
