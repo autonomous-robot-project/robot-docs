@@ -7,7 +7,7 @@ revogada_por:
 affects: []
 evidence: []
 ---
-# 015 - Sequência de comportamentos GIRAR e SEGUIR
+# 015 - Sequência de comportamentos primitivos
 
 ## Problema
 
@@ -15,7 +15,7 @@ Qual lógica de comportamentos deve ser utilizada para guiar a trajetória do co
 
 ## Decisão
 
-Sequência de comportamentos primitivos de GIRAR e SEGUIR.
+Sequência de comportamentos primitivos, definidos na ADR 024.
 
 ## Alternativa descartada
 
@@ -24,7 +24,3 @@ Usar o controller server do Nav2 para seguir o caminho.
 ## Racional
 
 O controller server do Nav2 é um laço de realimentação que liga sensores (pose e costmap) a atuadores (cmd_vel), que na definição de Gat é um papel da camada do controlador.
-
-## Nota
-
-É possível adicionar SEGUIR_RUMO ou IR_PARA.
