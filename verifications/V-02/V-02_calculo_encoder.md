@@ -87,7 +87,7 @@ Verificação: v_r = 0,2 m/s > v_min = 0,068 m/s ✓
 
 ## Passo 8 - Latência total de detecção
 
-$$t^* + T_f \approx 102 + 300 \approx 400\ \text{ms} < 1\ \text{s (duração do travamento)}\ ✓$$
+$$t^* + T_f \approx 102 + 300 \approx 400\ \text{ms} < 2\ \text{s (duração do travamento)}\ ✓$$
 
 ## Passo 9 - Filtro de bordas espúrias
 
@@ -103,5 +103,5 @@ Os Passos 1 a 6 dependem apenas da roda e do encoder. Quando o tempo de acomoda�
 
 ## Limitações
 
-- **Sentido de rotação:** o encoder de canal único não mede sentido. O sinal da velocidade é tomado do comando.
+- **Sentido de rotação:** o encoder de canal único não mede sentido. O sentido fica travado enquanto a roda gira e só é reavaliado com a roda parada (ADR 019).
 - **Taxa de realimentação:** a 0,2 m/s a medida atualiza a ~20 Hz, o que limita a banda do laço de velocidade e tende a aumentar o tempo de acomodação, e com ele T_f e v_min.

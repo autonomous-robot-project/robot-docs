@@ -8,26 +8,20 @@ $$\theta_{alvo} = \operatorname{atan2}(y_v - y,\ x_v - x)$$
 
 $$d = \sqrt{(x_v - x)^2 + (y_v - y)^2}$$
 
-Em seguida, ativa GIRAR até θ_alvo e SEGUIR por d. Após o último vértice, ativa PARAR.
+Em seguida, ativa GIRAR(θ_alvo) e depois IR_PARA(x_v, y_v). Após o último vértice, ativa VELOCIDADE(0, 0).
 
 ## Por que partir da pose atual
 
-| | Partida no vértice anterior do plano | Partida na odometria atual |
-| :---: | :---: | :---: |
-| Contas | atan2 e hipotenusa, uma vez por trecho | atan2 e hipotenusa, uma vez por trecho |
-| Erro de cada trecho | Soma-se ao dos anteriores | É corrigido pelo trecho seguinte |
-| Erro no objetivo | Cresce com o número de trechos | Só o do último trecho |
-
-O custo é o mesmo. Muda apenas a origem de (x, y).
+O IR_PARA vai ao próprio vértice, então o erro de posição não se acumula em nenhum dos casos. Partir da pose atual faz o GIRAR apontar para o vértice, e não para a direção do trecho no plano, e deixa ao IR_PARA só o resíduo do GIRAR.
 
 ## Conformidade com a arquitetura
 
 - **RNF-03:** sem busca nem planejamento. São duas operações de tempo constante por trecho.
 - **Gat (1998):** o sequenciador usa estado interno (pose e índice do vértice atual) sem busca nem projeção temporal.
-- **RNF-04:** a decisão de término (Δθ ≥ alvo, distância ≥ d) fica no sequenciador, e não no controlador.
+- **RNF-04:** a decisão de término (|e_θ| ≤ ε_θ e d ≤ ε_d, com a odometria em repouso) fica no sequenciador, e não no controlador.
 
 ## Consequência no V-04
 
-Como só o último trecho propaga erro até o objetivo:
+Como nenhum trecho propaga erro até o objetivo:
 
-$$\varepsilon_g \ge e_d + L_{último} \cdot e_\theta$$
+$$\varepsilon_g = \varepsilon_d$$

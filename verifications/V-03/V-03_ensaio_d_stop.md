@@ -22,7 +22,7 @@ v_max é um resultado do ensaio, não um dado: o projeto não troca garantia por
 ## Condições
 
 - Piso de operação do robô.
-- Modo de parada do DRV8871: freio (IN1 = IN2 = alto).
+- Parada pela rampa a_dec em decaimento lento (ADR 023).
 
 ## Parte A – Alcance do sensor (d_sensor)
 
@@ -34,7 +34,7 @@ v_max é um resultado do ensaio, não um dado: o projeto não troca garantia por
 
 1. Configure d_stop = d_sensor.
 2. Inicie a gravação com `ros2 bag` da distância do VL53L0X, da velocidade medida e do estado do reflexo.
-3. Posicione o robô a 2 m ou mais de uma parede lisa e fosca, alinhado a ela, e comande SEGUIR(v).
+3. Posicione o robô a 2 m ou mais de uma parede lisa e fosca, alinhado a ela, e comande VELOCIDADE(v, 0).
 4. Aguarde o reflexo parar o robô.
 5. Execute os passos 3 e 4 cinco vezes por velocidade, aumentando v a cada série.
 
@@ -50,12 +50,12 @@ $$d_{parada} = d_{disparo} - d_{final}$$
 - A velocidade medida no instante do disparo deve ser v (conferir no bag). Se o robô ainda estivesse acelerando, a distância sai subestimada.
 - d_parada é medida a partir da leitura que disparou o reflexo (d_disparo), não do instante em que o obstáculo cruzou D_STOP. Até essa leitura chegar, o robô já avançou. v_max·T_S cobre essa diferença. O d_stop só fica fechado depois que T_S for fixado.
 - A distância vem do VL53L0X, não do encoder (resolução de 10,2 mm por pulso e deslizamento na frenagem). Uma fita no chão serve de conferência.
-- O resultado vale apenas para o modo de parada e o piso registrados.
+- O resultado vale apenas para o a_dec e o piso registrados.
 - Premissas da garantia: obstáculos estáticos que entram no campo do sensor além de d_parada. O campo é estreito (≈ 25°), então obstáculos laterais em curvas ou giros podem escapar.
 
 ## Notas – DRV8871
 
-**Parada em freio (IN1 = IN2 = alto)**, usada no reflexo, no vencimento do comando e em PARAR:
+**Freio (IN1 = IN2 = alto)**, o duty zero do decaimento lento, aplicado abaixo de V_MIN (ADR 030):
 
 - Os MOSFETs de baixo curto-circuitam o motor, e a força contraeletromotriz gera torque de frenagem proporcional à velocidade. A distância de parada é menor e depende menos do piso que no modo livre.
 - A corrente de frenagem não passa da corrente de stall (1,2 A), porque a força contraeletromotriz não passa da tensão de alimentação. Fica abaixo do limite do DRV8871.
