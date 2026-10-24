@@ -15,7 +15,7 @@ O encoder de canal único mede o deslocamento, mas não o sentido. O sinal da ve
 
 ## Decisão
 
-O sentido de cada roda fica travado enquanto ela gira. Ele só é reavaliado quando a roda é dada como parada (sem borda por T_VEL) e, nesse momento, passa a seguir o sentido da tensão aplicada.
+O sentido de cada roda fica travado enquanto ela gira. Ele só é reavaliado quando a roda é dada como parada (sem borda por T_vel) e, nesse momento, passa a seguir o sentido da tensão aplicada.
 
 A estimação é feita na tarefa de controle. A ISR só registra instante e contagem de bordas.
 
@@ -23,7 +23,7 @@ A estimação é feita na tarefa de controle. A ISR só registra instante e cont
 
 - **Sinal da referência:** erra a cada inversão de referência e quando o reflexo ou o vencimento alteram a referência.
 - **Sinal da tensão aplicada:** erra em toda frenagem, porque a roda gira para um lado enquanto o PI aplica tensão no sentido oposto.
-- **Híbrido com limiar acima de V_MIN:** acrescenta a faixa de erro da frenagem e um parâmetro, sem reduzir o pior caso.
+- **Híbrido com limiar acima de v_min:** acrescenta a faixa de erro da frenagem e um parâmetro, sem reduzir o pior caso.
 - **Encoder de quadratura:** muda o hardware fixado.
 
 ## Racional

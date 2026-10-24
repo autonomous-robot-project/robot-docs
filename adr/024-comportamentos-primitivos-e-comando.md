@@ -11,7 +11,7 @@ evidence: [V-01, V-09]
 
 ## Problema
 
-O RF-01 e o RF-04 exigem um conjunto de comportamentos primitivos selecionados pelo sequenciador. Com um único comportamento de velocidade, o término do TURN_TO ficaria a cargo do sequenciador em escala de T_SEQ, o que daria vários graus de erro. Isso deixaria uma malha de realimentação contínua morando fora do controlador.
+O RF-01 e o RF-04 exigem um conjunto de comportamentos primitivos selecionados pelo sequenciador. Com um único comportamento de velocidade, o término do TURN_TO ficaria a cargo do sequenciador em escala de T_seq, o que daria vários graus de erro. Isso deixaria uma malha de realimentação contínua morando fora do controlador.
 
 ## Decisão
 
@@ -29,13 +29,13 @@ O término é sempre do sequenciador. O controlador converge, restringe por refl
 
 ## Alternativa descartada
 
-- **Só Twist (um comportamento):** a precisão do giro ficaria limitada por T_SEQ, e o conjunto do RF-01 se reduziria a um elemento.
+- **Só Twist (um comportamento):** a precisão do giro ficaria limitada por T_seq, e o conjunto do RF-01 se reduziria a um elemento.
 - **Twist com tópico de modo separado:** o comportamento e os parâmetros chegariam separados e poderiam ficar inconsistentes, cada um com o seu vencimento.
 - **Fila de comportamentos no controlador:** exigiria decidir o término no controlador, o que contradiz o RNF-04 e a ADR 017. A continuidade já é garantida pela rampa da ADR 023.
 
 ## Racional
 
-- Para Gat, um comportamento é uma função de transferência. Os três fecham malhas diferentes sobre os encoders. O controle de posição exige o laço de 10 ms, não T_SEQ.
+- Para Gat, um comportamento é uma função de transferência. Os três fecham malhas diferentes sobre os encoders. O controle de posição exige o laço de 10 ms, não T_seq.
 - Gat cita "mover-se até um destino" como primitivo clássico. O Alfred usava seguimento de rumo com o término por posição no sequenciador.
 - Uma pose completa (x, y, θ) não admite realimentação contínua estática em robô diferencial (Brockett, 1983). Por isso a pose é composta pelo sequenciador a partir de TURN_TO e GO_TO.
 - Esta ADR define os comportamentos que compõem a sequência da ADR 015: TURN_TO(θ do vértice) e depois GO_TO(vértice).

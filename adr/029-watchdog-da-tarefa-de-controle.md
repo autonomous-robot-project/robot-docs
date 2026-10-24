@@ -15,7 +15,7 @@ Se a tarefa de controle travar, o PWM fica no último duty e o reflexo frontal d
 
 ## Decisão
 
-A tarefa de controle é inscrita no watchdog de tarefas do ESP-IDF, com prazo de poucos T_C. Ao estourar o prazo, o chip reinicia e o estado seguro dos drivers da ADR 008 assume.
+A tarefa de controle é inscrita no watchdog de tarefas do ESP-IDF, com prazo de poucos T_c. Ao estourar o prazo, o chip reinicia e o estado seguro dos drivers da ADR 008 assume.
 
 Após um reinício por watchdog, o controlador publica o código de falha "reinício por watchdog", ativo por tempo limitado.
 

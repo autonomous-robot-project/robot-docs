@@ -11,7 +11,7 @@ evidence: [V-07, V-08]
 
 ## Problema
 
-Como o nó do sequenciador (ADR 031) agenda os callbacks e quando publica o comando? A reação a uma borda no Estado precisa ficar bem abaixo de T_seq (RNF-03), sem ser atrasada pela consulta ao deliberador (RNF-05), e o comando precisa ser republicado a F_CMD = 20 Hz para não vencer (RNF-02).
+Como o nó do sequenciador (ADR 031) agenda os callbacks e quando publica o comando? A reação a uma borda no Estado precisa ficar bem abaixo de T_seq (RNF-03), sem ser atrasada pela consulta ao deliberador (RNF-05), e o comando precisa ser republicado a f_cmd = 20 Hz para não vencer (RNF-02).
 
 ## Decisão
 

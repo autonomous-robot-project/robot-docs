@@ -34,4 +34,4 @@ O planner precisa de um mapa, e o sequenciador precisa do map → odom (ADR 035)
 - Pacote: `slam_toolbox`, o SLAM de referência do Nav2.
 - O SLAM fica no escalonador comum (ADR 039). Se atrasar, descarta varreduras e o mapa piora, mas o sequenciador não é afetado.
 - Sem relocalização entre sessões: cada sessão começa um mapa novo, com a origem na pose inicial.
-- Ensaios (V-04 e V-08 C1): o planner usa o M, e o map → odom é identidade e estático (ADR 035). Na V-08 C1, o SLAM roda com frame e tópico próprios, que ninguém consome, só como carga. Assim, toda consulta parte de p₀ em M e é um planejamento completo e repetível.
+- Ensaios (V-04 e V-08 C1): o planner usa o M, e o map → odom é identidade e estático (ADR 035). Na V-08 C1, o SLAM roda com frame e tópico próprios, que ninguém consome, só como carga. As consultas da V-08 C1 partem de p₀, informado pela missão de ensaio, porque a odometria se desloca com as rodas suspensas; assim, toda consulta é um planejamento completo e repetível.

@@ -17,8 +17,8 @@ O reflexo de obstáculo frontal depende do VL53L0X. O controlador precisa reagir
 
 A cada ciclo, a leitura do sensor é classificada em um de três estados:
 
-- **obstáculo:** medida válida abaixo de D_STOP, ou alvo abaixo do alcance mínimo;
-- **livre:** medida válida em D_STOP ou acima, ou sem alvo no alcance;
+- **obstáculo:** medida válida abaixo de d_stop, ou alvo abaixo do alcance mínimo;
+- **livre:** medida válida em d_stop ou acima, ou sem alvo no alcance;
 - **falha:** nenhuma leitura classificável há mais de T_S.
 
 A falha é tratada como obstáculo: avanço da referência igual a zero, com giro e ré permitidos. A falha é reportada ao sequenciador. No boot, antes da primeira leitura válida, o estado é falha.

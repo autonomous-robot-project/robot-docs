@@ -27,7 +27,7 @@ A implementação deve garantir:
 ## Alternativa descartada
 
 - **Struct compartilhada com seção crítica própria:** mesmo efeito, com código de concorrência a justificar.
-- **Buffer triplo lock-free:** sem ganho mensurável com T_C = 10 ms e de verificação mais difícil.
+- **Buffer triplo lock-free:** sem ganho mensurável com T_c = 10 ms e de verificação mais difícil.
 
 ## Racional
 

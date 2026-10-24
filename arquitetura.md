@@ -17,8 +17,8 @@ d ≤ 48 % limita a tensão média no motor a ≈ 6 V. d = 0 é freio total.
 
 A frequência do PWM deve ser alta em relação a L/R do motor (ordem de 20 kHz).
 v_max deve ser alcançável com a bateria em até V_CRIT.
-v_max e D_STOP obedecem d_parada(v_max) + v_max·T_S ≤ D_STOP ≤ d_sensor, com d_parada ≈ v_max²/(2·a_dec) + latências (ADRs 021 e 023).
-Os valores saem do ensaio de d_stop da V-03.
+v_max e d_stop obedecem d_parada(v_max) + v_max·T_S ≤ d_stop ≤ d_sensor, com d_parada ≈ v_max²/(2·a_dec) + latências (ADRs 021 e 023).
+Os valores saem de um ensaio no chão, com o protótipo completo (issue #27).
 
 ### Troca de dados entre contextos do controlador
 
@@ -49,7 +49,7 @@ A ISR de captura registra apenas o instante e a contagem acumulada de bordas de 
 A tarefa de controle calcula a partir desses registros:
 
 - o período;
-- a velocidade, nula após T_VEL sem borda;
+- a velocidade, nula após T_vel sem borda;
 - o sentido;
 - a odometria.
 
@@ -60,7 +60,7 @@ Só é reavaliado com a roda parada, quando passa a seguir a tensão aplicada (A
 
 | Tarefa | Núcleo | Tempo real | Função |
 | --- | --- | --- | --- |
-| Controle | 1 | Sim (T_C = 10 ms) | Ciclo de controle |
+| Controle | 1 | Sim (T_c = 10 ms) | Ciclo de controle |
 | Sensor | 0 | Não | Lê o VL53L0X no ritmo do sensor (ADR 020) |
 | micro-ROS | 0 | Não | Enlace com o sequenciador |
 
@@ -139,7 +139,7 @@ A odometria só é publicada após a primeira sincronização (ADR 027).
 
 ### Ciclo da tarefa de controle
 
-A cada T_C = 10 ms, liberado nos instantes t_k:
+A cada T_c = 10 ms, liberado nos instantes t_k:
 
 1. Ler as caixas de correio: comando, bordas do encoder, sensor frontal (ADR 017).
 2. Medir: velocidade e sentido das rodas, odometria, tensão filtrada da bateria (ADR 019).
@@ -171,7 +171,7 @@ O boot é seguro por construção:
 - sensor frontal em falha até a primeira leitura válida (ADR 021);
 - odometria só após a primeira sincronização (ADR 027).
 
-A tarefa de controle é vigiada pelo watchdog de tarefas do ESP-IDF, com prazo de poucos T_C (ADR 029).
+A tarefa de controle é vigiada pelo watchdog de tarefas do ESP-IDF, com prazo de poucos T_c (ADR 029).
 Após um reinício por watchdog, o estado publica o código "reinício por watchdog" por tempo limitado.
 
 Cada camada vigia a de cima:
