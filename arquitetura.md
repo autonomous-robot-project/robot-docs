@@ -1,325 +1,239 @@
 # Arquitetura
 
-## Controlador
+Três camadas (Gat, 1998), em dois processadores:
 
-### Atuação
-
-A referência efetiva passa por uma rampa assimétrica antes do PI (ADR 023).
-
-- a_acel: limitada pela corrente da bateria.
-- a_dec: mais íngreme, limitada pelo escorregamento e por não aplicar tensão reversa com a roda girando.
-
-O integrador só acumula fora da saturação (duty ≤ 48 %).
-O DRV8871 opera em decaimento lento; a frenagem é o próprio PWM, e o freio total é duty = 0.
-
-"Duty" é a fração de acionamento d (fração do período em 1-0 ou 0-1); o restante do período é freio (1-1).
-d ≤ 48 % limita a tensão média no motor a ≈ 6 V. d = 0 é freio total.
-
-A frequência do PWM deve ser alta em relação a L/R do motor (ordem de 20 kHz).
-v_max deve ser alcançável com a bateria em até V_CRIT.
-v_max e d_stop obedecem d_parada(v_max) + v_max·T_S ≤ d_stop ≤ d_sensor, com d_parada ≈ v_max²/(2·a_dec) + latências (ADRs 021 e 023).
-Os valores saem de um ensaio no chão, com o protótipo completo (issue #27).
-
-### Troca de dados entre contextos do controlador
-
-ISR do encoder, tarefa de controle, tarefa de sensor e tarefa micro-ROS trocam dados só por caixas de correio do FreeRTOS (ADR 017).
-São quatro caixas:
-
-- comando: micro-ROS -> controle;
-- estado: controle -> micro-ROS;
-- bordas do encoder: ISR -> controle;
-- sensor frontal: sensor -> controle (ADR 020).
-
-Cada uma guarda o último valor e tem um único produtor.
-A tarefa de controle nunca espera por elas (RNF-01).
-
-### Componentes do firmware
-
-O firmware se divide em dois componentes ESP-IDF (ADR 018):
-
-- `controlador`: tarefa de tempo real, sensores, atuação e caixas de correio.
-- `enlace`: tarefa micro-ROS e conversão de mensagens.
-
-O `enlace` depende do `controlador`, nunca o contrário.
-O `main` apenas inicializa os dois.
-
-### Encoders
-
-A ISR de captura registra apenas o instante e a contagem acumulada de bordas de cada roda.
-A tarefa de controle calcula a partir desses registros:
-
-- o período;
-- a velocidade, nula após T_vel sem borda;
-- o sentido;
-- a odometria.
-
-O sentido de cada roda fica travado enquanto ela gira.
-Só é reavaliado com a roda parada, quando passa a seguir a tensão aplicada (ADR 019).
-
-### Tarefas do controlador
-
-| Tarefa | Núcleo | Tempo real | Função |
+| Camada | Onde | Natureza | Implementação |
 | --- | --- | --- | --- |
-| Controle | 1 | Sim (T_c = 10 ms) | Ciclo de controle |
-| Sensor | 0 | Não | Lê o VL53L0X no ritmo do sensor (ADR 020) |
-| micro-ROS | 0 | Não | Enlace com o sequenciador |
+| Controlador | ESP32-S3 | Tempo real rígido (T_c = 10 ms) | ESP-IDF + FreeRTOS, micro-ROS |
+| Sequenciador | RPi 5 | Rápido, sem garantia rígida (reação < T_seq = 100 ms) | Nó ROS 2 único em Python, SCHED_FIFO |
+| Deliberador | RPi 5 | Sem restrição de tempo | Nav2 `planner_server` (Theta*) + `slam_toolbox` |
 
-A tarefa de sensor publica distância, status e instante da medida numa caixa de correio.
-A tarefa de controle a lê sem esperar (ADR 017).
-A prioridade é decrescente na ordem da tabela.
+Enlace: micro-ROS sobre UART a 921600 baud, agente no RPi (ADR 012). O porquê de cada decisão está nas ADRs citadas.
 
-### Reflexos do controlador
+## Invariantes
 
-Reflexo é a resposta local do controlador a uma condição que ele próprio detecta.
-Exemplos: obstáculo, bateria crítica, falha de sensor, erro interno.
-Todo reflexo segue duas regras:
+Toda mudança precisa preservar estas regras:
 
-- só restringe a referência recebida, nunca a amplia;
-- é reportado ao sequenciador, que decide a recuperação (RF-02, RF-03).
+1. **O controlador só restringe, nunca decide.** Ele converge para o alvo do comportamento ativo, restringe por reflexos e reporta. Término e troca de comportamento são do sequenciador (ADR 024, RNF-04).
+2. **Todo estado do controlador é filtragem ou vence.** O comando vence em T_cmd = 200 ms e vira TWIST(0, 0) (RNF-02).
+3. **Condições são publicadas como estado atual, não como eventos.** O controlador publica máscaras; o sequenciador detecta bordas, conta episódios e decide tentativas (ADRs 025 e 037).
+4. **Nada bloqueia o sequenciador.** A consulta ao deliberador é assíncrona, e o planejamento roda em outro processo (ADR 033).
+5. **Todo caminho do deliberador ao controlador passa pelo sequenciador.** O deliberador entrega resultados (plano, map → odom), e o sequenciador os converte em comportamentos (RF-07).
+6. **Cada camada vigia a de cima:**
+   - o watchdog vigia a tarefa de controle (ADR 029);
+   - o controlador vigia o sequenciador pelo vencimento do comando;
+   - o sequenciador vigia o notebook pelo heartbeat (ADR 016).
+7. **O isolamento no RPi vem da prioridade, não de limites no deliberador** (ADR 039).
 
-#### Reflexo de obstáculo frontal
+## Interface ESP32 ↔ RPi
 
-A cada ciclo, a tarefa de controle classifica a leitura do VL53L0X em um de três estados:
+| Sentido | Tópico | Tipo | Taxa | Conteúdo |
+| --- | --- | --- | --- | --- |
+| RPi → ESP32 | Comando | Próprio | 20 Hz | Comportamento ativo + parâmetros, numa mensagem atômica (ADR 024) |
+| ESP32 → RPi | Estado | Próprio | 100 Hz | Máscaras de 64 bits de falhas e reflexos ativos; eco do comando em vigor |
+| ESP32 → RPi | Odometria | `nav_msgs/Odometry` | 20 Hz | Pose em `odom`, carimbada no ESP32 com o relógio sincronizado ao agente (ADR 027) |
+| ESP32 → RPi | Bateria | `sensor_msgs/BatteryState` | ~1 Hz | Tensão filtrada |
+| ESP32 → RPi | Instrumentação | Próprio | 10 Hz | C_max, R_max, prazos perdidos, acumulados desde o boot; Δ da V-07. Só no build de verificação (ADR 028) |
 
-- obstáculo;
-- livre;
-- falha: sem leitura classificável há mais de T_S.
+- Toda a QoS do enlace é best effort, volatile, profundidade 1, e os consumidores precisam pedir a mesma (ADR 025).
+- Os códigos das máscaras são constantes do `robot-interfaces`.
+- A ocupação do enlace é de ≈ 20 %, com orçamento de 50 %. Um dado novo entra no Estado, salvo pelos critérios da ADR 025.
 
-Obstáculo e falha zeram o avanço da referência; giro e ré continuam permitidos (ADR 021).
-A recuperação do barramento fica na tarefa de sensor.
+**Frames:** map → odom (`slam_toolbox`) → base_link (`odom_to_tf_ros2` no RPi, com o carimbo original; ADR 026) → laser (estático).
 
-#### Reflexo de bateria crítica
-
-A tarefa de controle lê o ADC da bateria a cada ciclo e mantém a tensão filtrada.
-Abaixo de V_CRIT, a referência vai a zero.
-O reflexo libera sozinho quando a tensão volta acima de V_CRIT, sem retenção nem histerese (ADR 022).
-Cada episódio é reportado ao sequenciador, que é dono do limiar de aviso e da decisão de encerrar a missão.
-
-### Comportamentos primitivos
-
-O controlador tem três comportamentos, selecionados pelo sequenciador por uma mensagem própria
-que traz o comportamento ativo e seus parâmetros (ADR 024):
-
-| Comportamento | Controla | Parâmetros |
-| --- | --- | --- |
-| TWIST | Velocidade linear e angular | (v, ω) |
-| TURN_TO | Posição angular | θ (odom) |
-| GO_TO | Posição linear | (x, y) (odom) |
-
-Cada comportamento produz uma referência (v, ω).
-Essa referência passa pelos reflexos, pelo vencimento e pela rampa antes do PI,
-então uma troca de comportamento nunca é brusca nos motores.
-
-O controlador nunca decide término nem troca de comportamento; isso é papel do sequenciador.
-Os estados TURN_TO -> GO_TO do sequenciador correspondem aos comportamentos de mesmo nome (ADR 015, ADR 024).
-
-### Interface do controlador com o RPi
-
-| Sentido | Tópico | Tipo | Taxa |
-| --- | --- | --- | --- |
-| RPi -> ESP32 | Comando | Próprio (comportamento + parâmetros) | 20 Hz |
-| ESP32 -> RPi | Estado | Próprio (falhas e reflexos ativos em máscaras de 64 bits, eco do comando: comportamento ativo e parâmetros em vigor) | 100 Hz |
-| ESP32 -> RPi | Odometria | Odometry | 20 Hz |
-| ESP32 -> RPi | Bateria | BatteryState | ~1 Hz |
-| ESP32 -> RPi | Instrumentação | Próprio (C_max, R_max, prazos perdidos; Δ e índice do evento da V-07) | 10 Hz |
-
-Todos com QoS best effort, volatile, profundidade 1 (ADR 025).
-Ocupação do enlace ≈ 20 % (orçamento: 50 %).
-Dados novos seguem o critério da ADR 025.
-
-### TF odom -> base_link
-
-O pacote `odom_to_tf_ros2`, no RPi, assina a odometria e transmite o TF odom -> base_link com o carimbo original da mensagem (ADR 026).
-
-### TF e tempo
-
-O controlador registra o instante de cada pose no relógio local do ESP32.
-A tarefa micro-ROS sincroniza periodicamente esse relógio com o do agente e converte o instante ao publicar.
-A odometria só é publicada após a primeira sincronização (ADR 027).
-
-### Ciclo da tarefa de controle
-
-A cada T_c = 10 ms, liberado nos instantes t_k:
-
-1. Ler as caixas de correio: comando, bordas do encoder, sensor frontal (ADR 017).
-2. Medir: velocidade e sentido das rodas, odometria, tensão filtrada da bateria (ADR 019).
-3. Calcular a referência (v, ω) pelo comportamento ativo (ADR 024).
-4. Restringir: vencimento do comando e reflexos, gerando a referência efetiva (RNF-02, ADRs 021 e 022).
-5. Aplicar a rampa assimétrica (ADR 023).
-6. Converter pela cinemática inversa na referência de cada roda.
-7. PI por roda, com integração condicional e saturação d ≤ 48 % (ADR 023).
-8. Escrever o PWM.
-9. Monitor de falha (RF-02).
-10. Publicar o estado e a instrumentação (ADRs 025 e 027).
-
-A atuação (até a etapa 8) vem antes da manutenção (etapas 9 e 10),
-o que mantém mínimo e constante o atraso entre medida e PWM.
-As restrições da etapa 4 comutam entre si.
-
-### Estado interno do controlador
-
-- Filtragem: tensão filtrada da bateria, velocidade e sentido de rotação de cada roda (ADR 019), pose da odometria e integrador do PI, limitado pela integração condicional e zerado na zona morta (ADRs 023 e 030).
-- Efêmero: comando, que vence por idade (ADR 017, RNF-02); sensor frontal, que envelhece até a falha (ADR 021); códigos de prazo perdido e de reinício por watchdog, ativos por tempo limitado (ADRs 028 e 029).
-- Fora do escopo: a instrumentação, que é ferramenta de verificação e não existe no build de produção (ADR 028).
-
-### Inicialização e watchdog
-
-O boot é seguro por construção:
-
-- drivers em roda livre pelos pull-downs internos do DRV8871 (ADR 008);
-- caixa de comando vazia = comando vencido (ADR 017);
-- sensor frontal em falha até a primeira leitura válida (ADR 021);
-- odometria só após a primeira sincronização (ADR 027).
-
-A tarefa de controle é vigiada pelo watchdog de tarefas do ESP-IDF, com prazo de poucos T_c (ADR 029).
-Após um reinício por watchdog, o estado publica o código "reinício por watchdog" por tempo limitado.
-
-Cada camada vigia a de cima:
-
-- o watchdog do ESP-IDF vigia a tarefa de controle;
-- o controlador vigia o sequenciador pelo vencimento do comando;
-- o sequenciador vigia o notebook pelo heartbeat (ADR 016).
-
-### Instrumentação e prazo perdido
-
-A instrumentação (C_max, R_max, prazos perdidos) é ferramenta de verificação, ativada por opção de build (ADR 028).
-
-- Build de verificação: mede no `controlador`, acumula desde o boot e publica pelo `enlace`.
-- Build de produção: a instrumentação não existe no binário.
-
-A perda de prazo é detectada em todos os builds.
-Ela aparece como código de falha no estado, ativo por tempo limitado, sem reflexo.
-
-## Sequenciador
-
-### Processo
-
-O sequenciador é um único nó ROS 2 em Python (rclpy), num único processo (ADR 031).
-O nó concentra:
-
-- a execução dos passos;
-- a republicação do comando;
-- a detecção de bordas;
-- o heartbeat;
-- o aviso de bateria;
-- a consulta ao deliberador.
+## Controlador (ESP32-S3)
 
 ### Estrutura
 
-Uma missão é uma lista de passos: comportamento, parâmetros calculados na entrada e predicado de término (ADR 032).
-O predicado satisfeito avança ao próximo passo.
-Uma borda de subida nas máscaras do Estado consulta a tabela de reações pelo código: insere passos de recuperação, aborta ou ignora.
-Missões de ensaio e a missão do plano usam o mesmo formato.
+O firmware tem dois componentes ESP-IDF (ADR 018):
 
-| Peça | O que é |
+- `controlador`: tarefas, sensores, atuação;
+- `enlace`: micro-ROS e conversão de mensagens. Depende do `controlador`, nunca o contrário.
+
+| Tarefa | Núcleo | Prioridade | Papel |
+| --- | --- | --- | --- |
+| Controle | 1 | Mais alta, tempo real | Ciclo de 10 ms |
+| Sensor | 0 | Média | Lê o VL53L0X no ritmo do sensor; o I/O e a recuperação do I²C ficam aqui (ADR 020) |
+| micro-ROS | 0 | Baixa | Enlace e sincronização de relógio |
+
+Os contextos trocam dados só por caixas de correio do FreeRTOS: fila de um elemento, último valor, um produtor (ADR 017). São quatro: comando, estado, bordas do encoder e sensor frontal. A tarefa de controle nunca espera por elas, e caixa de comando vazia vale como comando vencido.
+
+### Ciclo de controle (a cada T_c, por `vTaskDelayUntil`)
+
+1. Lê as caixas de correio.
+2. Mede velocidade, sentido e odometria a partir das bordas, e a tensão da bateria.
+3. O comportamento ativo calcula a referência (v, ω).
+4. Restringe pelo vencimento do comando e pelos reflexos. As restrições comutam entre si.
+5. Aplica a rampa assimétrica (a_acel < a_dec; ADR 023).
+6. Faz a cinemática inversa para a referência de cada roda.
+7. PI por roda, com integração condicional, saturação em duty ≤ 48 % e zona morta abaixo de v_min (ADR 030).
+8. Escreve o PWM.
+9. Monitor de falha (RF-02).
+10. Publica nas caixas de correio.
+
+A atuação vem antes da manutenção, para manter constante o atraso entre medida e PWM. O laço não faz I/O, não aloca memória e não tem laço sem limite (RNF-01).
+
+O DRV8871 opera em decaimento lento: a frenagem é o próprio PWM, e duty = 0 é freio total (ADR 023). A frequência do PWM é alta em relação a L/R do motor (ordem de 20 kHz).
+
+**Garantia de parada:** d_parada(v_max) + v_max·T_S ≤ d_stop ≤ d_sensor, com d_parada ≈ v_max²/(2·a_dec) + latências, e v_max alcançável com a bateria em V_CRIT (ADRs 021 e 023; valores pela issue #27).
+
+### Comportamentos (ADR 024)
+
+| Comportamento | Controla | Parâmetros | Perfil de convergência (ADR 030) |
+| --- | --- | --- | --- |
+| TWIST | (v, ω) | (v, ω) | — |
+| TURN_TO | Rumo | θ em `odom` | ω ∝ √(2·α_dec·\|e\|) |
+| GO_TO | Posição | (x, y) em `odom` | v ∝ √(2·a_dec·d) · max(0, cos e) |
+
+O alvo de giro nunca fica a 180° ou mais do rumo atual; o sequenciador garante isso. Toda troca de comportamento passa pela rampa, então nunca é brusca nos motores.
+
+### Encoders (canal único)
+
+- A ISR (MCPWM) registra só o instante e a contagem das bordas de subida.
+- A velocidade é s/Δt, com s = 10,2 mm, e vale zero após T_vel sem borda.
+- O sentido fica travado enquanto a roda gira e passa a seguir a tensão aplicada só com a roda parada (ADR 019).
+
+### Reflexos
+
+Todo reflexo restringe a referência e é reportado na máscara correspondente.
+
+| Reflexo | Condição | Efeito |
+| --- | --- | --- |
+| Obstáculo frontal | VL53L0X < d_stop | Zera o avanço; giro e ré continuam permitidos (ADR 021) |
+| Falha do sensor frontal | Sem leitura classificável há mais de T_S, e também no boot | Igual ao obstáculo |
+| Bateria crítica | Tensão filtrada < V_CRIT | Referência a zero; libera sozinho, sem histerese (ADR 022) |
+
+### Falhas reportadas
+
+| Falha | Detecção |
 | --- | --- |
-| `Mission(steps, reactions)` | Lista de passos e tabela padrão de reações |
-| `Step(behavior, until, reactions)` | Comportamento, término opcional e reações próprias |
-| Comportamentos | `TWIST(v, ω)`, `TURN_TO(θ)`, `GO_TO(target)` (ADR 024) |
-| Alvos | `MapPoint`: reconvertido a cada entrada (ADR 035). `Offset(turn, distance)`: resolvido uma vez e compartilhado entre passos |
-| `heading_to(target)` | Rumo da pose atual até o alvo, calculado na entrada |
-| Términos (`until`) | Padrão do TURN_TO: \|e_θ\| ≤ ε_θ em repouso. Padrão do GO_TO: d ≤ ε_d em repouso. Explícitos: `distance_traveled(d)`, `cleared(code)` |
-| Reações | `recover(steps)`: executa os passos de recuperação e reentra no passo. `retry()`: reentra direto. `abort()`: TWIST(0, 0) e fim. `ignore()`: o código não afeta o passo |
+| Falha cognizante | Erro de velocidade acima de e_f por T_f, com referência ≥ v_min |
+| Prazo perdido | Detectado em todos os builds (ADR 028) |
+| Reinício por watchdog | Watchdog de tarefas sobre a tarefa de controle, com prazo de poucos T_c (ADR 029) |
 
-Bordas só disparam reações; términos testam condições atuais.
-A reação é escolhida por código ou grupo de códigos, do passo para a missão, com `abort()` como padrão.
-Tolerâncias e velocidades são parâmetros ROS.
+Os códigos de prazo perdido e de reinício ficam ativos por tempo limitado.
 
-Giro acima de θ_max é feito em duas partes, por reentrada no TURN_TO.
-Repouso fora da tolerância, depois de movimento no passo, gera o evento `NO_PROGRESS` para a tabela de reações (ADR 036).
+### Boot seguro
 
-### Eventos
+- Pull-downs mantêm os drivers em roda livre no reset e na gravação (ADR 008).
+- Caixa de comando vazia vale como comando vencido.
+- O sensor frontal começa em falha.
+- A odometria só é publicada após a primeira sincronização de relógio.
 
-- Só bordas de subida das máscaras do Estado disparam reações (ADR 037).
-- Máscara anterior desconhecida vale 0: toda condição ativa ao subir o nó, quando o enlace volta ou na entrada de um passo gera borda.
-- Eco diferente do último comando enviado por mais de T_eco (> T_cmd) gera `COMMAND_NOT_ECHOED`.
-- Sem Estado há mais de T_LINK = T_cmd gera `LINK_LOST`, verificado no timer de republicação.
-- Sem heartbeat há mais de T_HB, a condição `HEARTBEAT_LOST` fica ativa (por nível).
-- Tensão do BatteryState abaixo de V_WARN ativa `BATTERY_LOW`, que só cai acima de V_WARN + H (histerese, ADRs 009 e 022).
-- Eventos do próprio sequenciador (`NO_PROGRESS`, `COMMAND_NOT_ECHOED`, `LINK_LOST`, `HEARTBEAT_LOST`, `BATTERY_LOW`) entram na mesma tabela de reações e não fazem parte do `robot-interfaces`.
+## Sequenciador (RPi 5)
 
-### Recuperação
+### Modelo
 
-A reação pode ser uma escada, `ladder(r1, r2, …)`: a k-ésima ocorrência do código no mesmo passo aplica r_k, e depois do último degrau vem `abort()` (ADR 038).
-Esperas usam `wait_until_clear(code, timeout)`, que ignora o próprio código; o tempo estourado sobe um degrau.
-`replan()` pede um plano novo da pose atual, no máximo N_REPLAN vezes por missão.
-A tabela da missão por plano está na ADR 038.
+Um nó `rclpy`, um processo, executor de uma thread (ADRs 031 e 033).
 
-### Heartbeat
+Uma missão é `Mission(steps, reactions)`, e um passo é `Step(behavior, until, reactions)` (ADR 032).
 
-O notebook publica `/heartbeat` (`std_msgs/Empty`, best effort) a 10 Hz, com `ros2 topic pub -r 10`; Ctrl-C é a parada remota (ADR 016).
-O sequenciador mede a idade pela hora de chegada; acima de T_HB = 0,5 s, `HEARTBEAT_LOST` aborta a missão com TWIST(0, 0) explícito (ADR 038).
-O heartbeat é exigido por padrão; as missões de ensaio (V-01, V-07, V-08) o ignoram na tabela e rodam sem notebook.
+#### Andamento da missão
 
-### Execução
+- Os parâmetros do passo são calculados na entrada, a partir da pose atual.
+- O predicado `until` é testado na Odometria; satisfeito, o sequenciador avança ao próximo passo.
+- Uma borda de subida numa máscara consulta a tabela de reações, primeiro a do passo e depois a da missão. O padrão é `abort()`.
+- Reações: `recover(steps)` executa os passos e reentra no passo; `retry()` reentra direto; `abort()` dá TWIST(0, 0) e encerra; `ignore()`; e `ladder(r1, r2, …)`. A escada aplica r_k na k-ésima ocorrência do código no mesmo passo e aborta depois do último degrau (ADR 038).
+
+#### Alvos
+
+- `MapPoint`: vértice em `map`, convertido para `odom` na entrada de cada passo, com o map → odom mais recente (ADR 035).
+- `Offset(turn, distance)`: relativo à pose, resolvido uma vez e compartilhado entre passos.
+- `heading_to(target)`: rumo da pose atual até o alvo, calculado na entrada.
+
+#### Términos padrão
+
+- TURN_TO: |e_θ| ≤ ε_θ em repouso.
+- GO_TO: d ≤ ε_d em repouso.
+- Explícitos: `distance_traveled(d)` e `cleared(code)`.
+- Giro acima de θ_max é feito em partes. Repouso fora da tolerância gera `NO_PROGRESS` (ADR 036).
+
+Missões de ensaio e a missão por plano usam o mesmo formato e o mesmo motor. Tolerâncias, velocidades e limiares são parâmetros ROS.
+
+A pose do robô vem da Odometria. Do TF, o sequenciador só usa o map → odom.
+
+### Callbacks
 
 | Callback | Taxa | Trabalho |
 | --- | --- | --- |
-| Estado | 100 Hz | Bordas nas máscaras -> tabela de reações |
+| Estado | 100 Hz | Bordas → tabela de reações |
 | Odometria | 20 Hz | Pose e predicado do passo |
-| Timer | 20 Hz | Republica o comando vigente (RNF-02) |
-| Resposta do deliberador | Esporádica | Plano -> passos |
+| Timer | 20 Hz | Republica o comando; verifica a idade do Estado e do heartbeat |
+| Resposta do planner | Esporádica | Plano → passos |
 
-Todos os callbacks rodam num executor de uma thread (ADR 033).
-A consulta ao deliberador é assíncrona; o planejamento roda em outro processo.
-Toda transição publica o comando no próprio callback, sem esperar o timer.
-Ocioso (sem missão ou depois de `abort()`), o sequenciador continua publicando TWIST(0, 0) a 20 Hz.
+Toda transição publica o comando no próprio callback, sem esperar o timer. Ocioso, o sequenciador publica TWIST(0, 0).
 
-### Consulta ao deliberador
+### Eventos próprios (ADR 037)
 
-O sequenciador pede o plano ao `planner_server` do Nav2 pela action `ComputePathToPose`, sem bloquear (ADRs 014 e 033).
-O planner é o Theta*: o caminho é uma poligonal interpolada na resolução do mapa.
-O sequenciador extrai os vértices onde a direção muda e gera um par TURN_TO -> GO_TO por trecho (ADR 034).
-Resposta de meta antiga é descartada; erro do planner ou deliberador ausente é falha da missão.
+São eventos do próprio sequenciador, que entram na mesma tabela de reações:
 
-### Conversão map -> odom
-
-Na entrada de cada passo, o vértice é convertido de `map` para `odom` com o TF mais recente; o alvo fica fixo durante o passo (ADR 035).
-O TF é lido por um buffer do `tf2_ros` no executor do nó, sem espera.
-A pose do robô vem da Odometria; do TF só se usa o map -> odom, publicado pelo SLAM.
-Com as rodas suspensas (V-04), o launch publica map -> odom estático e identidade.
-
-### Missões
-
-- Missão por plano: o objetivo chega por `/goal_pose` (PoseStamped), publicado pelo "2D Goal Pose" do RViz. Um objetivo novo preempta a missão atual.
-- Missões de ensaio (V-01, V-07, V-08): escolhidas pelo parâmetro `missao` no launch e iniciadas quando o nó sobe. Reiniciar o ensaio é reiniciar o nó.
-- Com `missao` vazio, o nó espera `/goal_pose`; com uma missão de ensaio, ignora `/goal_pose`.
-
-### Implantação
-
-O agente micro-ROS e o sequenciador rodam em SCHED_FIFO, prioridade 50 (`chrt -f 50`), no kernel padrão, sem afinidade de núcleo (ADR 039).
-O deliberador (Nav2, SLAM) e o `odom_to_tf_ros2` ficam no escalonador comum.
-
-## Deliberador
-
-### Nós
-
-| Nó | Função |
+| Evento | Condição |
 | --- | --- |
-| `planner_server` (Nav2, Theta*) | Responde `ComputePathToPose` ao sequenciador (ADRs 014 e 034) |
-| `slam_toolbox` | Mapeia continuamente; publica o mapa e map -> odom (ADR 040) |
-| `ldlidar_stl_ros2` | Driver do LiDAR (LDROBOT D500); publica `/scan` a 10 Hz |
-| `static_transform_publisher` | base_link -> laser |
-| `lifecycle_manager` | Configura e ativa os nós gerenciados |
+| `COMMAND_NOT_ECHOED` | Eco do Estado diferente do comando enviado por mais de T_eco (> T_cmd) |
+| `LINK_LOST` | Sem Estado há mais de T_cmd |
+| `HEARTBEAT_LOST` | Sem `/heartbeat` do notebook há mais de T_HB = 0,5 s. Por nível; a parada remota é dar Ctrl-C no notebook |
+| `BATTERY_LOW` | Tensão abaixo de V_WARN, com histerese H. Por nível |
+| `NO_PROGRESS` | Repouso fora da tolerância, depois de ter havido movimento no passo (ADR 036) |
 
-Sem `bt_navigator` nem `controller_server` (ADR 015).
+A máscara anterior desconhecida vale 0 ao subir o nó, quando o enlace volta e na entrada de cada passo. Assim, toda condição já ativa nesses instantes gera borda. Esses eventos não fazem parte do `robot-interfaces`.
 
-### Costmap global
+O notebook publica `/heartbeat` (`std_msgs/Empty`, best effort) a 10 Hz com `ros2 topic pub -r 10`. O sequenciador mede a idade pela hora de chegada.
 
-Três camadas: estática (mapa do SLAM), obstáculo (`/scan`) e inflação, na resolução do mapa, 0,05 m (ADR 041).
-O VL53L0X fica fora: um obstáculo visto só por ele termina a escada em aborto (ADR 038).
-A zona proibida do planner é raio do robô + margem m, e o custo de travessia tem peso mínimo (ADR 042).
-O planner pode atravessar espaço desconhecido.
+### Missão por plano
 
-### Árvore de frames
+1. O objetivo chega por `/goal_pose` (RViz). Um objetivo novo preempta a missão atual.
+2. O sequenciador envia `ComputePathToPose` ao `planner_server`, de forma assíncrona. Resposta de meta antiga é descartada (ADR 034).
+3. Os vértices são os pontos onde a direção do `Path` muda. Cada trecho vira um par TURN_TO(rumo) → GO_TO(vértice).
+4. Diante de obstáculo frontal no GO_TO: espera T_WAIT, depois `replan()` da pose atual, no máximo N_REPLAN vezes por missão, e por fim aborta (ADR 038).
+5. Erro do planner, deliberador ausente, TF ausente, roda travada, bateria baixa ou crítica, heartbeat perdido e enlace perdido abortam a missão.
 
-map -> odom (SLAM, ADR 040) -> base_link (`odom_to_tf_ros2`, ADR 026) -> laser (estático).
+As missões de ensaio (V-01, V-07, V-08) são escolhidas pelo parâmetro `missao` no launch e começam quando o nó sobe; reiniciar o ensaio é reiniciar o nó. Elas ignoram o `/goal_pose` e o heartbeat. Com `missao` vazio, o nó espera o `/goal_pose`.
 
-### Launch
+## Deliberador (RPi 5)
 
-O deliberador tem launch próprio, separado do do sequenciador, com um processo por nó.
-Desligar o deliberador (RF-05, V-01) é não lançá-lo, e ele fica no escalonador comum (ADR 039).
-Um argumento escolhe a configuração:
+| Nó | Papel |
+| --- | --- |
+| `planner_server` (Theta*) | Responde `ComputePathToPose` (ADRs 014 e 034) |
+| `slam_toolbox` | Mapeamento contínuo; publica `/map` e map → odom (ADR 040) |
+| `ldlidar_stl_ros2` | LDROBOT D500; publica `/scan` a 10 Hz |
+| `static_transform_publisher` | base_link → laser |
+| `lifecycle_manager` | Ativa os nós gerenciados |
 
-- operação: SLAM publica o mapa e map -> odom; o planner usa o mapa do SLAM;
-- ensaio (V-04, V-08 C1): `map_server` serve o M e o launch publica map -> odom identidade (ADR 035); na V-08 C1, o SLAM roda com frame e tópico próprios, só como carga (ADR 040).
+Não há `bt_navigator` nem `controller_server`: seguir caminho é papel do controlador (ADR 015).
+
+#### Costmap global (ADRs 041 e 042)
+
+- Três camadas: estática (mapa do SLAM), obstáculo (`/scan`, marca e limpa a cada varredura) e inflação. Resolução de 0,05 m.
+- Zona proibida = raio do robô + margem m. O custo de travessia tem peso mínimo, então o caminho é o mais curto fora da zona proibida.
+- O planner pode atravessar espaço desconhecido.
+- O VL53L0X fica fora do costmap. Um obstáculo visto só por ele leva a escada ao aborto.
+
+**Launch:** é separado do do sequenciador, com um processo por nó. Desligar o deliberador (RF-05) é não lançá-lo. Um argumento escolhe a configuração:
+
+| Configuração | Mapa do planner | map → odom | SLAM |
+| --- | --- | --- | --- |
+| Operação | Do SLAM | SLAM | Ativo |
+| Ensaio (V-04, V-08 C1) | M, pelo `map_server` | Identidade, estático (ADR 035) | V-04: desligado. V-08 C1: frame e tópico próprios, só como carga |
+
+Na V-08 C1, as consultas partem de p₀, informado pela missão de ensaio (ADR 040).
+
+## Implantação no RPi 5
+
+| Processo | Escalonamento |
+| --- | --- |
+| Agente micro-ROS, sequenciador | SCHED_FIFO 50 (`chrt -f 50`), kernel padrão, sem afinidade (ADR 039) |
+| Deliberador, `odom_to_tf_ros2`, driver do LiDAR | Escalonador comum |
+
+## Parâmetros em aberto
+
+Têm ponto de partida, mas o valor final depende de medição:
+
+| Grupo | Parâmetros |
+| --- | --- |
+| Controlador | a_acel, a_dec, T_S, T_f, constante do filtro da bateria, V_WARN, H, prazo do watchdog, deriva entre os relógios |
+| Sequenciador | θ_max = 170°, T_WAIT = 5 s, N_REPLAN = 3, T_HB = 0,5 s, T_eco |
+| Deliberador | Margem do plano m = 0,10 m |
+| No chão (issue #27) | d_stop = 0,15 m, v_max |
+| Geometria (issue #25) | Raio do robô, bitola, pose do LiDAR |
+
+As pendências estão nas issues do robot-docs.
