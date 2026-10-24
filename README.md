@@ -10,7 +10,7 @@ com o controlador num ESP32-S3 e o sequenciador e o deliberador num RPi 5 (ROS 2
 | `arquitetura.md` | Como o sistema é hoje (cita as ADRs, não as repete) |
 | `adr/` | Por que ele é assim |
 | `requisitos.md`, `objetivos.md` | O que o sistema precisa cumprir |
-| `verificacoes/` | Como se prova que cumpre |
+| `verifications/` | Como se prova que cumpre |
 | `notas/` | O que aconteceu na bancada (anotações cruas) |
 | `hardware/` | Cabeamento e ligações |
 | `referencias/` | Material de apoio |

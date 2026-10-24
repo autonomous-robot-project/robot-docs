@@ -1,5 +1,7 @@
 # Arquitetura
 
+## Controlador
+
 ### Atuação
 
 A referência efetiva passa por uma rampa assimétrica antes do PI (ADR 023).
@@ -100,16 +102,16 @@ que traz o comportamento ativo e seus parâmetros (ADR 024):
 
 | Comportamento | Controla | Parâmetros |
 | --- | --- | --- |
-| VELOCIDADE | Velocidade linear e angular | (v, ω) |
-| GIRAR | Posição angular | θ (odom) |
-| IR_PARA | Posição linear | (x, y) (odom) |
+| TWIST | Velocidade linear e angular | (v, ω) |
+| TURN_TO | Posição angular | θ (odom) |
+| GO_TO | Posição linear | (x, y) (odom) |
 
 Cada comportamento produz uma referência (v, ω).
 Essa referência passa pelos reflexos, pelo vencimento e pela rampa antes do PI,
 então uma troca de comportamento nunca é brusca nos motores.
 
 O controlador nunca decide término nem troca de comportamento; isso é papel do sequenciador.
-Os estados GIRAR -> IR_PARA do sequenciador correspondem aos comportamentos de mesmo nome (ADR 015, ADR 024).
+Os estados TURN_TO -> GO_TO do sequenciador correspondem aos comportamentos de mesmo nome (ADR 015, ADR 024).
 
 ### Interface do controlador com o RPi
 
@@ -187,3 +189,103 @@ A instrumentação (C_max, R_max, prazos perdidos) é ferramenta de verificaçã
 
 A perda de prazo é detectada em todos os builds.
 Ela aparece como código de falha no estado, ativo por tempo limitado, sem reflexo.
+
+## Sequenciador
+
+### Processo
+
+O sequenciador é um único nó ROS 2 em Python (rclpy), num único processo (ADR 031).
+O nó concentra:
+
+- a execução dos passos;
+- a republicação do comando;
+- a detecção de bordas;
+- o heartbeat;
+- o aviso de bateria;
+- a consulta ao deliberador.
+
+### Estrutura
+
+Uma missão é uma lista de passos: comportamento, parâmetros calculados na entrada e predicado de término (ADR 032).
+O predicado satisfeito avança ao próximo passo.
+Uma borda de subida nas máscaras do Estado consulta a tabela de reações pelo código: insere passos de recuperação, aborta ou ignora.
+Missões de ensaio e a missão do plano usam o mesmo formato.
+
+| Peça | O que é |
+| --- | --- |
+| `Mission(steps, reactions)` | Lista de passos e tabela padrão de reações |
+| `Step(behavior, until, reactions)` | Comportamento, término opcional e reações próprias |
+| Comportamentos | `TWIST(v, ω)`, `TURN_TO(θ)`, `GO_TO(target)` (ADR 024) |
+| Alvos | `MapPoint`: reconvertido a cada entrada (ADR 035). `Offset(turn, distance)`: resolvido uma vez e compartilhado entre passos |
+| `heading_to(target)` | Rumo da pose atual até o alvo, calculado na entrada |
+| Términos (`until`) | Padrão do TURN_TO: \|e_θ\| ≤ ε_θ em repouso. Padrão do GO_TO: d ≤ ε_d em repouso. Explícitos: `distance_traveled(d)`, `cleared(code)` |
+| Reações | `recover(steps)`: executa os passos de recuperação e reentra no passo. `retry()`: reentra direto. `abort()`: TWIST(0, 0) e fim. `ignore()`: o código não afeta o passo |
+
+Bordas só disparam reações; términos testam condições atuais.
+A reação é escolhida por código ou grupo de códigos, do passo para a missão, com `abort()` como padrão.
+Tolerâncias e velocidades são parâmetros ROS.
+
+Giro acima de θ_max é feito em duas partes, por reentrada no TURN_TO.
+Repouso fora da tolerância, depois de movimento no passo, gera o evento `NO_PROGRESS` para a tabela de reações (ADR 036).
+
+### Eventos
+
+- Só bordas de subida das máscaras do Estado disparam reações (ADR 037).
+- Máscara anterior desconhecida vale 0: toda condição ativa ao subir o nó, quando o enlace volta ou na entrada de um passo gera borda.
+- Eco diferente do último comando enviado por mais de T_eco (> T_cmd) gera `COMMAND_NOT_ECHOED`.
+- Sem Estado há mais de T_LINK = T_cmd gera `LINK_LOST`, verificado no timer de republicação.
+- Sem heartbeat há mais de T_HB, a condição `HEARTBEAT_LOST` fica ativa (por nível).
+- Tensão do BatteryState abaixo de V_WARN ativa `BATTERY_LOW`, que só cai acima de V_WARN + H (histerese, ADRs 009 e 022).
+- Eventos do próprio sequenciador (`NO_PROGRESS`, `COMMAND_NOT_ECHOED`, `LINK_LOST`, `HEARTBEAT_LOST`, `BATTERY_LOW`) entram na mesma tabela de reações e não fazem parte do `robot-interfaces`.
+
+### Recuperação
+
+A reação pode ser uma escada, `ladder(r1, r2, …)`: a k-ésima ocorrência do código no mesmo passo aplica r_k, e depois do último degrau vem `abort()` (ADR 038).
+Esperas usam `wait_until_clear(code, timeout)`, que ignora o próprio código; o tempo estourado sobe um degrau.
+`replan()` pede um plano novo da pose atual, no máximo N_REPLAN vezes por missão.
+A tabela da missão por plano está na ADR 038.
+
+### Heartbeat
+
+O notebook publica `/heartbeat` (`std_msgs/Empty`, best effort) a 10 Hz, com `ros2 topic pub -r 10`; Ctrl-C é a parada remota (ADR 016).
+O sequenciador mede a idade pela hora de chegada; acima de T_HB = 0,5 s, `HEARTBEAT_LOST` aborta a missão com TWIST(0, 0) explícito (ADR 038).
+O heartbeat é exigido por padrão; as missões de ensaio (V-01, V-07, V-08) o ignoram na tabela e rodam sem notebook.
+
+### Execução
+
+| Callback | Taxa | Trabalho |
+| --- | --- | --- |
+| Estado | 100 Hz | Bordas nas máscaras -> tabela de reações |
+| Odometria | 20 Hz | Pose e predicado do passo |
+| Timer | 20 Hz | Republica o comando vigente (RNF-02) |
+| Resposta do deliberador | Esporádica | Plano -> passos |
+
+Todos os callbacks rodam num executor de uma thread (ADR 033).
+A consulta ao deliberador é assíncrona; o planejamento roda em outro processo.
+Toda transição publica o comando no próprio callback, sem esperar o timer.
+Ocioso (sem missão ou depois de `abort()`), o sequenciador continua publicando TWIST(0, 0) a 20 Hz.
+
+### Consulta ao deliberador
+
+O sequenciador pede o plano ao `planner_server` do Nav2 pela action `ComputePathToPose`, sem bloquear (ADRs 014 e 033).
+O planner é o Theta*: o caminho é uma poligonal interpolada na resolução do mapa.
+O sequenciador extrai os vértices onde a direção muda e gera um par TURN_TO -> GO_TO por trecho (ADR 034).
+Resposta de meta antiga é descartada; erro do planner ou deliberador ausente é falha da missão.
+
+### Conversão map -> odom
+
+Na entrada de cada passo, o vértice é convertido de `map` para `odom` com o TF mais recente; o alvo fica fixo durante o passo (ADR 035).
+O TF é lido por um buffer do `tf2_ros` no executor do nó, sem espera.
+A pose do robô vem da Odometria; do TF só se usa o map -> odom, publicado pelo SLAM.
+Com as rodas suspensas (V-04), o launch publica map -> odom estático e identidade.
+
+### Missões
+
+- Missão por plano: o objetivo chega por `/goal_pose` (PoseStamped), publicado pelo "2D Goal Pose" do RViz. Um objetivo novo preempta a missão atual.
+- Missões de ensaio (V-01, V-07, V-08): escolhidas pelo parâmetro `missao` no launch e iniciadas quando o nó sobe. Reiniciar o ensaio é reiniciar o nó.
+- Com `missao` vazio, o nó espera `/goal_pose`; com uma missão de ensaio, ignora `/goal_pose`.
+
+### Implantação
+
+O agente micro-ROS e o sequenciador rodam em SCHED_FIFO, prioridade 50 (`chrt -f 50`), no kernel padrão, sem afinidade de núcleo (ADR 039).
+O deliberador (Nav2, SLAM) e o `odom_to_tf_ros2` ficam no escalonador comum.
