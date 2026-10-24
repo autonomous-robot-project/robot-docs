@@ -8,7 +8,7 @@ Três camadas (Gat, 1998), em dois processadores:
 | Sequenciador | RPi 5 | Rápido, sem garantia rígida (reação < T_seq = 100 ms) | Nó ROS 2 único em Python, SCHED_FIFO |
 | Deliberador | RPi 5 | Sem restrição de tempo | Nav2 `planner_server` (Theta*) + `slam_toolbox` |
 
-Enlace: micro-ROS sobre UART a 921600 baud, agente no RPi (ADR 012). O porquê de cada decisão está nas ADRs citadas.
+Enlace: micro-ROS sobre UART a 921600 baud, pelos GPIO, com o agente no RPi (ADRs 012 e 043). O porquê de cada decisão está nas ADRs citadas.
 
 ## Invariantes
 

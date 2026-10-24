@@ -17,6 +17,7 @@
 | DRV8871 (x2) | 3 | GND, IN1, IN2 |
 | Buzzer passivo | 3 | VCC, sinal, GND |
 | Divisor da bateria | 2 | sinal, GND |
+| Enlace UART (RPi GPIO 14/15 ↔ ESP32-S3 UART1) | 3 | TX, RX, GND (cruzados: TX de um no RX do outro) |
 
 ## Padrão de cores (igual em todos os chicotes)
 
