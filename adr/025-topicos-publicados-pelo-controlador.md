@@ -35,7 +35,7 @@ Critério para dados novos:
 ## Alternativa descartada
 
 - **Tópico único agregado:** mistura a interface da arquitetura com a instrumentação de ensaio, e a Odometry a 100 Hz ocuparia ≈ 76 % do enlace.
-- **Um tópico por dado:** multiplica mensagens e caixas de correio, sem consumidor que precise disso.
+- **Um tópico por dado:** multiplica mensagens e canais de último valor, sem consumidor que precise disso.
 - **Contador de episódios no controlador:** é estado que não vence (RNF-02), e contadores pertencem ao sequenciador.
 - **Lista de códigos ativos:** tamanho variável, que exige pré-alocação e complica o retrato atômico.
 - **QoS reliable:** retransmissões atrasam o dado novo atrás do velho e podem bloquear a tarefa micro-ROS à espera de confirmação. Não há ganho quando a próxima mensagem já traz o estado completo.

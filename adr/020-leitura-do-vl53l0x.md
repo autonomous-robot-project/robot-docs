@@ -15,9 +15,9 @@ A leitura do VL53L0X exige espera no barramento I²C. O sensor produz uma medida
 
 ## Decisão
 
-Uma tarefa de sensor, sem tempo real e com prioridade acima da micro-ROS, lê o VL53L0X no ritmo do próprio sensor. Ela publica numa caixa de correio (ADR 017) três dados: distância, status e instante da medida.
+Uma tarefa de sensor, sem tempo real e com prioridade acima da micro-ROS, lê o VL53L0X no ritmo do próprio sensor. Ela publica num canal de último valor (ADR 017) três dados: distância, status e instante da medida.
 
-A tarefa de controle lê essa caixa sem esperar. O controlador passa a ter três tarefas: controle, sensor e micro-ROS. A tarefa de controle fica fixada no núcleo 1; as tarefas de sensor e micro-ROS, no núcleo 0.
+A tarefa de controle lê esse canal sem esperar. O controlador passa a ter três tarefas: controle, sensor e micro-ROS. A tarefa de controle fica fixada no núcleo 1; as tarefas de sensor e micro-ROS, no núcleo 0.
 
 ## Alternativa descartada
 

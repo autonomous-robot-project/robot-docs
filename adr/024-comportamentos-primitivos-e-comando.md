@@ -39,7 +39,7 @@ O término é sempre do sequenciador. O controlador converge, restringe por refl
 - Gat cita "mover-se até um destino" como primitivo clássico. O Alfred usava seguimento de rumo com o término por posição no sequenciador.
 - Uma pose completa (x, y, θ) não admite realimentação contínua estática em robô diferencial (Brockett, 1983). Por isso a pose é composta pelo sequenciador a partir de TURN_TO e GO_TO.
 - Esta ADR define os comportamentos que compõem a sequência da ADR 015: TURN_TO(θ do vértice) e depois GO_TO(vértice).
-- Uma mensagem só mantém o comando atômico: uma caixa de correio e um vencimento (ADR 017, RNF-02). Coerente com a ADR 012.
+- Uma mensagem só mantém o comando atômico: um canal de último valor e um vencimento (ADR 017, RNF-02). Coerente com a ADR 012.
 
 ## Nota
 

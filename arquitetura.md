@@ -56,11 +56,11 @@ O firmware tem dois componentes ESP-IDF (ADR 018):
 | Sensor | 0 | Média | Lê o VL53L0X no ritmo do sensor; o I/O e a recuperação do I²C ficam aqui (ADR 020) |
 | micro-ROS | 0 | Baixa | Enlace e sincronização de relógio |
 
-Os contextos trocam dados só por caixas de correio do FreeRTOS: fila de um elemento, último valor, um produtor (ADR 017). São quatro: comando, estado, bordas do encoder e sensor frontal. A tarefa de controle nunca espera por elas, e caixa de comando vazia vale como comando vencido.
+Os contextos trocam dados só por canais de último valor: fila do FreeRTOS de um elemento, último valor, um produtor (ADR 017). São quatro: comando, estado, bordas do encoder e sensor frontal. A tarefa de controle nunca espera por eles, e canal de comando vazio vale como comando vencido.
 
 ### Ciclo de controle (a cada T_c, por `vTaskDelayUntil`)
 
-1. Lê as caixas de correio.
+1. Lê os canais de último valor.
 2. Mede velocidade, sentido e odometria a partir das bordas, e a tensão da bateria.
 3. O comportamento ativo calcula a referência (v, ω).
 4. Restringe pelo vencimento do comando e pelos reflexos. As restrições comutam entre si.
@@ -69,7 +69,7 @@ Os contextos trocam dados só por caixas de correio do FreeRTOS: fila de um elem
 7. PI por roda, com integração condicional, saturação em duty ≤ 48 % e zona morta abaixo de v_min (ADR 030).
 8. Escreve o PWM.
 9. Monitor de falha (RF-02).
-10. Publica nas caixas de correio.
+10. Publica nos canais de último valor.
 
 A atuação vem antes da manutenção, para manter constante o atraso entre medida e PWM. O laço não faz I/O, não aloca memória e não tem laço sem limite (RNF-01).
 
@@ -116,7 +116,7 @@ Os códigos de prazo perdido e de reinício ficam ativos por tempo limitado.
 ### Boot seguro
 
 - Pull-downs mantêm os drivers em roda livre no reset e na gravação (ADR 008).
-- Caixa de comando vazia vale como comando vencido.
+- Canal de comando vazio vale como comando vencido.
 - O sensor frontal começa em falha.
 - A odometria só é publicada após a primeira sincronização de relógio.
 

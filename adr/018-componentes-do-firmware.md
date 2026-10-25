@@ -17,7 +17,7 @@ A parte de tempo real do controlador não deve depender da comunicação com o s
 
 O firmware tem dois componentes ESP-IDF e um ponto de entrada:
 
-- **controlador:** tarefa de tempo real, sensores, atuação e as caixas de correio (ADR 017). Não depende do micro-ROS.
+- **controlador:** tarefa de tempo real, sensores, atuação e os canais de último valor (ADR 017). Não depende do micro-ROS.
 - **enlace:** tarefa micro-ROS e conversão de mensagens. Depende do controlador, nunca o contrário.
 - **main:** só inicializa os dois.
 
