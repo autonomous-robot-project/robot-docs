@@ -31,5 +31,5 @@ A ADR 012 fixa o protocolo (micro-ROS sobre serial), mas não o meio entre o RPi
 
 ## Nota
 
-- Pinos provisórios no ESP32-S3: GPIO 17 (TX) e 18 (RX), fora dos pinos de strapping. Revistos no mapeamento geral de pinos.
+- Pinos no ESP32-S3: GPIO 42 (TX) e 41 (RX), no mapa de pinos (`hardware/cabeamento.md`, #38). Os provisórios eram 17/18.
 - No RPi, a UART0 nos GPIO 14/15 vem do overlay `uart0-pi5`, sem console do Linux nela.

@@ -8,6 +8,38 @@
 - **Proteção:** espiral de 6 mm (5 m). Um chicote por dispositivo, com carcaça nas duas pontas e espiral começando ~1 cm depois dela. A exceção é juntar os 2 encoders ou os 2 drivers, se o trajeto for parecido.
 - **Fixação:** abraçadeira de nylon a cada 10 a 15 cm, sem apertar.
 
+## Mapa de pinos (ESP32-S3-DevKitC-1 N16R8, CP2102)
+
+Um lado para os fios ruidosos e outro para os sensíveis, cada chicote saindo junto ao seu GND.
+O breakout dá GND em dupont e borne: 2 + 1 embaixo à esquerda, 1 + 1 em cima à direita e 2 + 2 embaixo à direita.
+O 3V3 só existe em cima à esquerda.
+
+Lado esquerdo (ruidoso: PWM dos drivers):
+
+| GPIO | Função | GND |
+|---|---|---|
+| 11 / 12 | DRV8871 esquerdo IN1 / IN2 | dupont de baixo, 1 |
+| 13 / 14 | DRV8871 direito IN1 / IN2 | dupont de baixo, 2 |
+| 10 | Reservado para o buzzer | definido quando ele entrar |
+
+Lado direito (sensível e enlace):
+
+| GPIO | Função | GND | VCC |
+|---|---|---|---|
+| 1 | Divisor da bateria (ADC1_CH0) | dupont de cima | — |
+| 42 / 41 | UART1 TX / RX (enlace, ADR 043) | borne de cima | — |
+| 40 / 39 | I²C SDA / SCL (VL53L0X) | dupont de baixo, 1 | 3V3 |
+| 47 / 21 | Encoder esquerdo / direito | dupont de baixo, 2, e borne de baixo | 3V3 |
+
+- Os encoders vão em 3V3, para a saída chegar ao ESP32 em 3,3 V.
+- O ESP32-S3 é alimentado pela USB do RPi 5.
+- Os pinos de JTAG (39 a 42) servem para o enlace e o I²C: no S3, o JTAG padrão vai pela USB, e o estado desses pinos no reset não importa para eles.
+- Só os drivers dependem do estado no reset. O DRV8871 tem pull-down interno de 100 kΩ em IN1/IN2 (ADR 008), e a #21 confirma o nível baixo no reset e na gravação.
+
+Fora do mapa: strapping (0, 3, 45, 46), flash e PSRAM octal (26 a 37), USB nativa (19, 20), UART0 do CP2102 (43, 44) e LED RGB da placa (38).
+
+Livres: 2 (separa o divisor do enlace), 4 a 9, 15 a 18 e 48. GND livres: borne de baixo à esquerda e um borne de baixo à direita.
+
 ## Chicotes
 
 | Dispositivo | Vias | Sinais |
@@ -17,7 +49,7 @@
 | DRV8871 (x2) | 3 | GND, IN1, IN2 |
 | Buzzer passivo | 3 | VCC, sinal, GND |
 | Divisor da bateria | 2 | sinal, GND |
-| Enlace UART (RPi GPIO 14/15 ↔ ESP32-S3 UART1) | 3 | TX, RX, GND (cruzados: TX de um no RX do outro) |
+| Enlace UART (RPi GPIO 14/15 ↔ ESP32-S3 GPIO 42/41) | 3 | TX, RX, GND (cruzados: TX de um no RX do outro) |
 
 ## Padrão de cores (igual em todos os chicotes)
 
@@ -35,8 +67,8 @@ O preto é o único com folga curta: ~7 GND, com 3 m disponíveis. Meça os trec
 
 ## Leitura de bateria (3S Li-ion, 9,0 a 12,6 V)
 
-```
-Bateria (+) ──[47k 1%]──┬──[1k]──┬── ADC1 (GPIO1-10)
+```markdown
+Bateria (+) ──[47k 1%]──┬──[1k]──┬── GPIO1 (ADC1_CH0)
                         │        │
                       [10k]   [100nF]
                         │        │
