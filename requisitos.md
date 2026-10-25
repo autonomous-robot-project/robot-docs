@@ -32,7 +32,7 @@
 
 **Nota:** justifica a decisão arquitetural central: por que a camada de controlador está em um MCU dedicado.
 
-**RNF-02 - Estado interno efêmero.** Todo estado interno do controlador que não seja de filtragem deve vencer em tempo limitado. O último comando recebido deve vencer em até T_cmd + T_c, resultando no comportamento de parada.
+**RNF-02 - Estado interno efêmero.** Toda representação interna do mundo no controlador que não seja de filtragem deve vencer em tempo limitado. O último comando recebido deve vencer em tempo limitado, resultando no comportamento de parada.
 **Camada:** controlador. **Verificação:** ensaio (bancada, com interrupção do publicador de comandos como instância).
 
 **Nota:** o vencimento do comando é o mecanismo de estado efêmero exigido por Gat e não configura violação do RNF-04.

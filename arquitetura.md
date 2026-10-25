@@ -33,7 +33,7 @@ Toda mudança precisa preservar estas regras:
 | ESP32 → RPi | Estado (`/controller/state`) | Próprio | 100 Hz | Máscaras de 32 bits de falhas e reflexos ativos; eco do comando em vigor |
 | ESP32 → RPi | Odometria | `nav_msgs/Odometry` | 20 Hz | Pose em `odom`, carimbada no ESP32 com o relógio sincronizado ao agente (ADR 027) |
 | ESP32 → RPi | Bateria | `sensor_msgs/BatteryState` | ~1 Hz | Tensão filtrada |
-| ESP32 → RPi | Instrumentação | Próprio | 10 Hz | C_max, R_max, prazos perdidos, acumulados desde o boot; Δ da V-07. Só no build de verificação (ADR 028) |
+| ESP32 → RPi | Instrumentação | Próprio | 10 Hz | C_max, R_max, prazos perdidos, vencimentos do comando e o atraso do último, acumulados desde o boot; Δ da V-07 (ADR 028) |
 
 - Toda a QoS do enlace é best effort, volatile, profundidade 1, e os consumidores precisam pedir a mesma (ADR 025).
 - Os códigos das máscaras são constantes do `robot-interfaces`.
