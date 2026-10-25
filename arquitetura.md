@@ -73,7 +73,7 @@ Os contextos trocam dados só por canais de último valor: fila do FreeRTOS de u
 
 A atuação vem antes da manutenção, para manter constante o atraso entre medida e PWM. O laço não faz I/O, não aloca memória e não tem laço sem limite (RNF-01).
 
-O DRV8871 opera em decaimento lento: a frenagem é o próprio PWM, e duty = 0 é freio total (ADR 023). A frequência do PWM é alta em relação a L/R do motor (ordem de 20 kHz).
+O DRV8871 opera em decaimento lento: a frenagem é o próprio PWM, e duty = 0 é freio total (ADR 023). A frequência do PWM é alta em relação a L/R do motor (ordem de 20 kHz). O PWM vem do LEDC, um canal por pino: o pino do sentido fica em duty 100 % e o outro recebe o PWM invertido.
 
 **Garantia de parada:** d_parada(v_max) + v_max·T_S ≤ d_stop ≤ d_sensor, com d_parada ≈ v_max²/(2·a_dec) + latências, e v_max alcançável com a bateria em V_CRIT (ADRs 021 e 023; valores pela issue #27).
 
@@ -89,7 +89,7 @@ O alvo de giro nunca fica a 180° ou mais do rumo atual; o sequenciador garante 
 
 ### Encoders (canal único)
 
-- A ISR (MCPWM) registra só o instante e a contagem das bordas de subida.
+- A ISR de GPIO registra só o instante e a contagem das bordas de subida.
 - A velocidade é s/Δt, com s = 10,2 mm, e vale zero após T_vel sem borda.
 - O sentido fica travado enquanto a roda gira e passa a seguir a tensão aplicada só com a roda parada (ADR 019).
 
