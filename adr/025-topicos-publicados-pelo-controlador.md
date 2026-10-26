@@ -20,7 +20,7 @@ O controlador publica dados com consumidores e taxas diferentes por um enlace UA
 | Estado | Próprio | Falhas ativas e reflexos ativos (máscaras de 32 bits com códigos do `robot-interfaces`), eco do comando (comportamento ativo e parâmetros em vigor) | 100 Hz (= 1/T_c) | Sequenciador |
 | Odometria | Odometry | Pose e velocidade | 20 Hz | Sequenciador, TF/SLAM |
 | Bateria | BatteryState | Tensão filtrada | ~1 Hz | Sequenciador |
-| Instrumentação | Próprio | C_max, R_max, prazos perdidos; Δ e índice do evento (V-07) | 10 Hz | Verificação |
+| Instrumentação | Próprio | C_max, R_max, prazos perdidos; Δ e índice do evento (V-07); velocidade medida de cada roda (V-02) | 10 Hz | Verificação |
 
 QoS de todos os tópicos do enlace, inclusive o comando (ADR 024): best effort, volatile, keep last com profundidade 1. Os consumidores devem pedir a mesma QoS.
 
