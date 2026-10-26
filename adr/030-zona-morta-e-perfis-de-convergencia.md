@@ -40,10 +40,10 @@ Esse erro se soma ao erro da odometria. A tolerância de término no sequenciado
 
 - Abaixo de v_min a velocidade não é observável, então controlá-la é impossível. O monitor de falha já ignora essa faixa.
 - A regra depende da entrada (a referência), não de estado interno, e mantém o RNF-04.
-- A desaceleração constante a_dec minimiza o erro final. Ela fica abaixo do que o freio entrega (τ_freio, ADR 023); se exigisse mais, a malha não acompanharia o perfil e o robô passaria do alvo.
-- TWIST(0, 0) é o freio total, a parada mais rápida.
+- A desaceleração constante a_dec é a mais rápida sem escorregamento nem tensão reversa (ADR 023). Ela minimiza o erro final e não exige mais do que a rampa permite. Se exigisse, a rampa cortaria o perfil e o robô passaria do alvo.
+- A parada mais rápida possível com controle é TWIST(0, 0) com a_dec.
 
 ## Nota
 
-- Os perfis usam um a_dec abaixo da desaceleração do freio, com folga para o atraso da malha (τ_mf) e para a discretização em T_c.
+- Os perfis usam um a_dec um pouco abaixo do limite da rampa, como folga para a discretização em T_c.
 - O erro final do TURN_TO, de alguns graus, é o maior efeito desta decisão e deve ser medido na V-01.

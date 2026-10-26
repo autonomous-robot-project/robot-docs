@@ -64,17 +64,18 @@ Os contextos trocam dados só por canais de último valor: fila do FreeRTOS de u
 2. Mede velocidade, sentido e odometria a partir das bordas, e a tensão da bateria.
 3. O comportamento ativo calcula a referência (v, ω).
 4. Restringe pelo vencimento do comando e pelos reflexos. As restrições comutam entre si.
-5. Faz a cinemática inversa para a referência de cada roda.
-6. PI por roda, com integração condicional, saturação em duty ≤ 48 % e zona morta abaixo de v_min (ADRs 023 e 030). Os ganhos saem do modelo do motor e do tempo de acomodação t_s: malha de 1ª ordem, sem sobressinal.
-7. Escreve o PWM.
-8. Monitor de falha (RF-02).
-9. Publica nos canais de último valor.
+5. Aplica a rampa assimétrica (a_acel < a_dec; ADR 023).
+6. Faz a cinemática inversa para a referência de cada roda.
+7. PI por roda, com integração condicional, saturação em duty ≤ 48 % e zona morta abaixo de v_min (ADR 030). Os ganhos saem do modelo do motor e do tempo de acomodação t_s: malha de 1ª ordem, sem sobressinal.
+8. Escreve o PWM.
+9. Monitor de falha (RF-02).
+10. Publica nos canais de último valor.
 
 A atuação vem antes da manutenção, para manter constante o atraso entre medida e PWM. O laço não faz I/O, não aloca memória e não tem laço sem limite (RNF-01).
 
 O DRV8871 opera em decaimento lento: a frenagem é o próprio PWM, e duty = 0 é freio total (ADR 023). A frequência do PWM é alta em relação a L/R do motor (ordem de 20 kHz). O PWM vem do LEDC, um canal por pino: o pino do sentido fica em duty 100 % e o outro recebe o PWM invertido. Os dois canais de um driver trocam de duty cada um no início do seu próximo período, então a passagem de roda livre para freio no 1º ciclo após o boot pode dar um pulso de tração de até um período (50 µs). Aceito: estimado em ~0,4 A no motor TT, sem vencer o atrito da caixa; a #21 mede na bancada.
 
-**Garantia de parada:** d_parada(v_max) + v_max·T_S ≤ d_stop ≤ d_sensor, com d_parada ≈ v_max·τ_freio + latências (TWIST(0, 0) é o freio total), e v_max alcançável com a bateria em V_CRIT (ADRs 021 e 023; valores pela issue #27).
+**Garantia de parada:** d_parada(v_max) + v_max·T_S ≤ d_stop ≤ d_sensor, com d_parada ≈ v_max²/(2·a_dec) + latências, e v_max alcançável com a bateria em V_CRIT (ADRs 021 e 023; valores pela issue #27).
 
 ### Comportamentos (ADR 024)
 
@@ -84,7 +85,7 @@ O DRV8871 opera em decaimento lento: a frenagem é o próprio PWM, e duty = 0 é
 | TURN_TO | Rumo | θ em `odom` | ω ∝ √(2·α_dec·\|e\|) |
 | GO_TO | Posição | (x, y) em `odom` | v ∝ √(2·a_dec·d) · max(0, cos e) |
 
-O alvo de giro nunca fica a 180° ou mais do rumo atual; o sequenciador garante isso. Toda troca de comportamento passa pela malha de velocidade de 1ª ordem (ADR 023), então nunca é brusca nos motores.
+O alvo de giro nunca fica a 180° ou mais do rumo atual; o sequenciador garante isso. Toda troca de comportamento passa pela rampa, então nunca é brusca nos motores.
 
 ### Encoders (canal único)
 
@@ -231,7 +232,7 @@ Têm ponto de partida, mas o valor final depende de medição:
 
 | Grupo | Parâmetros |
 | --- | --- |
-| Controlador | t_s, τ_freio, a_dec dos perfis, T_S, T_f, constante do filtro da bateria, V_WARN, H, prazo do watchdog, deriva entre os relógios |
+| Controlador | a_acel, a_dec, t_s, T_S, T_f, constante do filtro da bateria, V_WARN, H, prazo do watchdog, deriva entre os relógios |
 | Sequenciador | θ_max = 170°, T_WAIT = 5 s, N_REPLAN = 3, T_HB = 0,5 s, T_eco |
 | Deliberador | Margem do plano m = 0,10 m |
 | No chão (issue #27) | d_stop = 0,15 m, v_max |

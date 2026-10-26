@@ -31,7 +31,7 @@ O término é sempre do sequenciador. O controlador converge, restringe por refl
 
 - **Só Twist (um comportamento):** a precisão do giro ficaria limitada por T_seq, e o conjunto do RF-01 se reduziria a um elemento.
 - **Twist com tópico de modo separado:** o comportamento e os parâmetros chegariam separados e poderiam ficar inconsistentes, cada um com o seu vencimento.
-- **Fila de comportamentos no controlador:** exigiria decidir o término no controlador, o que contradiz o RNF-04 e a ADR 017. A continuidade já é garantida pela malha de velocidade de 1ª ordem (ADR 023).
+- **Fila de comportamentos no controlador:** exigiria decidir o término no controlador, o que contradiz o RNF-04 e a ADR 017. A continuidade já é garantida pela rampa da ADR 023.
 
 ## Racional
 
