@@ -30,14 +30,14 @@ Lado direito (sensível e enlace):
 | 42 / 41 | UART1 TX / RX (enlace, ADR 043) | borne de cima | — |
 | 40 / 39 | I²C SDA / SCL (VL53L0X) | dupont de baixo, 1 | 3V3 |
 | 47 / 21 | Encoder esquerdo / direito | dupont de baixo, 2, e borne de baixo | 3V3 |
-| 48 | Injeção de laço infinito na tarefa de controle (V-02): nível baixo trava a tarefa | encostado no GND só no ensaio | — |
+| 38 | Injeção de laço infinito na tarefa de controle (V-02): nível baixo trava a tarefa | encostado no GND só no ensaio | — |
 
 - Os encoders vão em 3V3, para a saída chegar ao ESP32 em 3,3 V.
 - O ESP32-S3 é alimentado pela USB do RPi 5.
 - Os pinos de JTAG (39 a 42) servem para o enlace e o I²C: no S3, o JTAG padrão vai pela USB, e o estado desses pinos no reset não importa para eles.
 - Só os drivers dependem do estado no reset. O DRV8871 tem pull-down interno de 100 kΩ em IN1/IN2 (ADR 008), e a #21 confirma o nível baixo no reset e na gravação.
 
-Fora do mapa: strapping (0, 3, 45, 46), flash e PSRAM octal (26 a 37), USB nativa (19, 20), UART0 do CP2102 (43, 44) e LED RGB da placa (38).
+Fora do mapa: strapping (0, 3, 45, 46), flash e PSRAM octal (26 a 37), USB nativa (19, 20), UART0 do CP2102 (43, 44) e LED RGB da placa (48).
 
 Livres: 2 (separa o divisor do enlace), 4 a 9 e 15 a 18. GND livres: borne de baixo à esquerda e um borne de baixo à direita.
 
