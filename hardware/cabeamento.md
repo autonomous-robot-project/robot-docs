@@ -39,9 +39,9 @@ Lado direito (sensível e enlace):
 
 Fora do mapa: strapping (0, 3, 45, 46), flash e PSRAM octal (26 a 37), USB nativa (19, 20), UART0 do CP2102 (43, 44) e LED RGB da placa (48).
 
-Livres: 2 (separa o divisor do enlace), 4 a 9 e 15 a 18.
+Livres: 2 (separa o divisor do enlace), 4 a 9 e 15 a 18. GND livres: borne de baixo à esquerda e um borne de baixo à direita.
 
-Só para o ensaio da V-02: uma chave gangorra em série no VM do DRV8871 esquerdo, para cortar a alimentação do motor (falha cognizante sem travar a roda). GND livres: borne de baixo à esquerda e um borne de baixo à direita.
+Só para o ensaio da V-02: uma chave gangorra em série no VM do DRV8871 esquerdo, para cortar a alimentação do motor (falha cognizante sem travar a roda). O ESP32 continua aplicando nível alto em IN1/IN2 com o VM cortado, o que o DRV8871 admite: "Safe to provide logic high signals without VM present" (datasheet, No-VM Behavior).
 
 ## Chicotes
 
@@ -67,6 +67,8 @@ O preto é o único com folga curta: ~7 GND, com 3 m disponíveis. Meça os trec
 - Encoders longe dos fios de motor.
 - Encoder e driver nunca na mesma espiral.
 - GND comum entre ESP32, drivers e divisor.
+- O GND do divisor vai ao GND do ESP32, sem fio próprio até a bateria: um segundo retorno ao negativo faria a corrente do motor passar pelos fios de sinal se o negativo principal soltar (ADR 046).
+- Bateria ligada por XT30, para o negativo não soltar durante um ensaio.
 - GND de potência dos drivers e negativo do buck do RPi em borne parafusado, com fio grosso, num ponto único no negativo da bateria (ADR 046).
 - Capacitor de bulk no VM de 47 µF / 50 V em cada módulo DRV8871.
 
