@@ -6,7 +6,7 @@
 **Camada:** controlador. **Verificação:** ensaio (bancada), na mesma sessão do RF-04.
 
 **RF-02 - Falha cognizante do controlador.** O controlador deve detectar e reportar ao sequenciador a incapacidade de executar o comportamento ativo.
-**Camada:** controlador + interface com o sequenciador. **Verificação:** ensaio (bancada, rodas suspensas, travamento manual da roda).
+**Camada:** controlador + interface com o sequenciador. **Verificação:** ensaio (bancada, rodas suspensas, corte da alimentação do motor de uma roda).
 
 **RF-03 - Reflexo reativo do controlador.** O controlador deve restringir o comando dos atuadores em resposta direta a condições detectadas pelos sensores, independentemente do comando recebido e do estado das demais camadas.
 **Camada:** controlador. **Verificação:** ensaio (bancada, com detecção de obstáculo como instância).

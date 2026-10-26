@@ -89,7 +89,9 @@ Verificação: v_r = 0,2 m/s > v_min ≈ 0,07 m/s ✓
 
 ## Passo 8 - Latência total de detecção
 
-$$t^* + T_f \approx 0{,}1 + 1 \approx 1{,}1\ \text{s} < 2\ \text{s (duração do travamento)}\ ✓$$
+$$t^* + T_f \approx 0{,}1 + 1 \approx 1{,}1\ \text{s} < 3\ \text{s (duração do corte)}\ ✓$$
+
+No ensaio a falha é o corte da alimentação do motor, e a roda não para na hora: desacelera por inércia contra o atrito do redutor. O tempo até ela cair abaixo de (1 − e_f)·v_r soma-se a t* e é medido na bancada.
 
 ## Passo 9 - Filtro de bordas espúrias
 

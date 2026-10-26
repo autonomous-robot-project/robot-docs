@@ -39,7 +39,9 @@ Lado direito (sensível e enlace):
 
 Fora do mapa: strapping (0, 3, 45, 46), flash e PSRAM octal (26 a 37), USB nativa (19, 20), UART0 do CP2102 (43, 44) e LED RGB da placa (48).
 
-Livres: 2 (separa o divisor do enlace), 4 a 9 e 15 a 18. GND livres: borne de baixo à esquerda e um borne de baixo à direita.
+Livres: 2 (separa o divisor do enlace), 4 a 9 e 15 a 18.
+
+Só para o ensaio da V-02: uma chave gangorra em série no VM do DRV8871 esquerdo, para cortar a alimentação do motor (falha cognizante sem travar a roda). GND livres: borne de baixo à esquerda e um borne de baixo à direita.
 
 ## Chicotes
 
