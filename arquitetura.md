@@ -224,6 +224,8 @@ Na V-08 C1, as consultas partem de p₀, informado pela missão de ensaio (ADR 0
 | Agente micro-ROS, sequenciador | SCHED_FIFO 50 (`chrt -f 50`), kernel padrão, sem afinidade (ADR 039) |
 | Deliberador, `odom_to_tf_ros2`, driver do LiDAR | Escalonador comum |
 
+Todos os processos ROS do RPi, inclusive o agente e os scripts de verificação, rodam com `FASTDDS_BUILTIN_TRANSPORTS=UDPv4` (ADR 045). Os scripts de bancada rodam com `env -i`, então a variável é passada explicitamente.
+
 ## Parâmetros em aberto
 
 Têm ponto de partida, mas o valor final depende de medição:
