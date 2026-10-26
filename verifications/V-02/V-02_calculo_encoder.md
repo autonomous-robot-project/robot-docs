@@ -83,7 +83,9 @@ Abaixo de v_min a medida já não é válida, então a velocidade é declarada z
 
 $$T_{vel} = \frac{s}{v_{min}} = (1 - e_f)\, T_f = 0{,}5 \cdot 1 = 0{,}5\ \text{s}$$
 
-Verificação: v_r = 0,2 m/s > v_min = 0,020 m/s ✓
+Abaixo de ~0,07 m/s as bordas ficam tão esparsas que a malha de velocidade entra em ciclo limite (teste no notebook com o modelo do encoder; provisório, a confirmar com o motor). O v_min usado é o maior dos dois limites, ≈ 0,07 m/s. O T_vel continua vindo da detecção, 0,5 s: com o limite de controle ele seria igual ao intervalo entre bordas em v_min, e a estimativa zeraria entre duas bordas.
+
+Verificação: v_r = 0,2 m/s > v_min ≈ 0,07 m/s ✓
 
 ## Passo 8 - Latência total de detecção
 
