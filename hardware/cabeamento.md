@@ -10,45 +10,51 @@
 
 ## Mapa de pinos (ESP32-S3-DevKitC-1 N16R8, CP2102)
 
-Um lado para os fios ruidosos e outro para os sensíveis, cada chicote saindo junto ao seu GND.
+Cada roda fica no seu lado da placa: a direita no header do TX/RX (J3) e a esquerda no do 3V3 (J1).
+O driver fica na metade de cima e o encoder embaixo, perto da USB, ligado pelo borne.
 O breakout dá GND em dupont e borne: 2 + 1 embaixo à esquerda, 1 + 1 em cima à direita e 2 + 2 embaixo à direita.
 O 3V3 só existe em cima à esquerda.
 
-Lado esquerdo (ruidoso: PWM dos drivers):
+Lado esquerdo (J1, roda esquerda):
 
 | GPIO | Função | GND |
 |---|---|---|
-| 11 / 12 | DRV8871 esquerdo IN1 / IN2 | dupont de baixo, 1 |
-| 13 / 14 | DRV8871 direito IN1 / IN2 | dupont de baixo, 2 |
+| 4 / 5 | DRV8871 esquerdo IN1 / IN2 | dupont de baixo |
 | 10 | Reservado para o buzzer | definido quando ele entrar |
+| 11 | Injeção de laço infinito na tarefa de controle (V-02): nível baixo trava a tarefa | encostado no GND só no ensaio |
+| 14 | Encoder esquerdo (borne) | borne de baixo |
 
-Lado direito (sensível e enlace):
+Lado direito (J3, roda direita):
 
 | GPIO | Função | GND | VCC |
 |---|---|---|---|
-| 1 | Divisor da bateria (ADC1_CH0) | dupont de cima | — |
-| 42 / 41 | UART1 TX / RX (enlace, ADR 043) | borne de cima | — |
-| 40 / 39 | I²C SDA / SCL (VL53L0X) | dupont de baixo, 1 | 3V3 |
-| 47 / 21 | Encoder esquerdo / direito | dupont de baixo, 2, e borne de baixo | 3V3 |
-| 38 | Injeção de laço infinito na tarefa de controle (V-02): nível baixo trava a tarefa | encostado no GND só no ensaio | — |
+| 1 | Divisor da bateria (ADC1_CH0) | dupont de baixo | — |
+| 2 / 42 | DRV8871 direito IN1 / IN2 | dupont de cima | — |
+| 41 / 40 | UART1 TX / RX (enlace, ADR 043; provisório, a rediscutir) | borne de cima | — |
+| 39 / 38 | I²C SDA / SCL (VL53L0X) | dupont de baixo | 3V3 |
+| 21 | Encoder direito (borne) | borne de baixo | 3V3 |
 
 - Os encoders vão em 3V3, para a saída chegar ao ESP32 em 3,3 V.
 - O ESP32-S3 é alimentado pela USB do RPi 5.
-- Os pinos de JTAG (39 a 42) servem para o enlace e o I²C: no S3, o JTAG padrão vai pela USB, e o estado desses pinos no reset não importa para eles.
+- Os pinos de JTAG (39 a 42) servem para o driver direito, o enlace e o I²C: no S3, o JTAG padrão vai pela USB, e o estado desses pinos no reset não importa para eles.
+- O 1 e o 2 são os únicos ADC1 do header direito; o divisor fica com o 1.
 - Só os drivers dependem do estado no reset. O DRV8871 tem pull-down interno de 100 kΩ em IN1/IN2 (ADR 008), e a #21 confirma o nível baixo no reset e na gravação.
 
-Fora do mapa: strapping (0, 3, 45, 46), flash e PSRAM octal (26 a 37), USB nativa (19, 20), UART0 do CP2102 (43, 44) e LED RGB da placa (48).
+Fora do mapa: strapping (0, 3, 45, 46), flash e PSRAM octal (26 a 37), USB nativa (19, 20: alimentação e gravação pelo RPi, ADR 044), UART0 do CP2102 (43, 44) e LED RGB da placa (48).
 
-Livres: 2 (separa o divisor do enlace), 4 a 9 e 15 a 18. GND livres: borne de baixo à esquerda e um borne de baixo à direita.
+Livres: 6 a 9, 12, 13, 15 a 18 e 47. GND livres: um dupont de baixo à esquerda e um borne de baixo à direita.
 
-Só para o ensaio da V-02: uma chave gangorra em série no VM do DRV8871 esquerdo, para cortar a alimentação do motor (falha cognizante sem travar a roda). O ESP32 continua aplicando nível alto em IN1/IN2 com o VM cortado, o que o DRV8871 admite: "Safe to provide logic high signals without VM present" (datasheet, No-VM Behavior).
+Chave dos motores: uma chave gangorra com LED (20 A) no VM dos dois DRV8871, depois do fusível. Ela desliga só os motores; o ESP32 segue alimentado pelo RPi. Na V-02, é ela que corta a alimentação (falha cognizante sem travar a roda). O ESP32 continua aplicando nível alto em IN1/IN2 com o VM cortado, o que o DRV8871 admite: "Safe to provide logic high signals without VM present" (datasheet, No-VM Behavior).
+
+- Pinos da chave: prata do centro na entrada (+ depois do fusível), a outra prata na saída para o VM dos drivers e o dourado (terra do LED) no GND. "Ligado" é a posição em que as duas pratas fecham.
+- Fusível geral (lâmina mini) no + da bateria, logo depois do XT30: 2 A na primeira energização (motores soltos); 5 A provisório com os motores, até a corrente de roda travada ser medida. Quando o RPi passar para a bateria, ele divide o mesmo fusível, e o valor é revisto. Até lá, o RPi fica na tomada.
 
 ## Chicotes
 
 | Dispositivo | Vias | Sinais | Trança |
 |---|---|---|---|
 | VL53L0X | 4 | VCC, GND, SDA, SCL (XSHUT e GPIO1 não usados) | Nenhuma (SDA com SCL aumenta a diafonia) |
-| Encoder (x2) | 3 | VCC, GND, sinal | Par sinal + GND, VCC ao lado |
+| Encoder (x2) | 3 | VCC, GND, sinal | Nenhuma (fio curto, encoder junto ao ESP32) |
 | DRV8871 (x2) | 3 | GND, IN1, IN2 | Tripla IN1 + IN2 + GND |
 | Buzzer passivo | 3 | VCC, sinal, GND | Nenhuma |
 | Divisor da bateria | 2 | sinal, GND | Par sinal + GND |
@@ -85,7 +91,7 @@ GND ────────────────────┴────�
 - Fator: V_bat = V_pino × 5,7. Em 12,6 V o pino vê 2,2 V, e em 9 V vê 1,58 V.
 - Firmware: `analogReadMilliVolts()` com média de várias amostras. Ajuste o fator comparando com o multímetro.
 - Use só pino ADC1 (o ADC2 não é utilizável no S3).
-- O divisor fica sempre ligado, porque não há chave principal (~220 µA, ~15 meses para descarregar a bateria de 2500 mAh).
+- O divisor fica sempre ligado: liga antes da chave dos motores, senão leria 0 V com eles desligados (~220 µA, ~15 meses para descarregar a bateria de 2500 mAh).
 - Faça a leitura com os motores parados ou com média, porque o PWM dos motores perturba o ADC.
 
 ## Verificação antes de ligar
