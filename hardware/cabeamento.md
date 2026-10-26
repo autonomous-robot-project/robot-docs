@@ -43,14 +43,14 @@ Livres: 2 (separa o divisor do enlace), 4 a 9 e 15 a 18. GND livres: borne de ba
 
 ## Chicotes
 
-| Dispositivo | Vias | Sinais |
-|---|---|---|
-| VL53L0X | 4 | VCC, GND, SDA, SCL (XSHUT e GPIO1 não usados) |
-| Encoder (x2) | 3 | VCC, GND, sinal |
-| DRV8871 (x2) | 3 | GND, IN1, IN2 |
-| Buzzer passivo | 3 | VCC, sinal, GND |
-| Divisor da bateria | 2 | sinal, GND |
-| Enlace UART (RPi GPIO 14/15 ↔ ESP32-S3 GPIO 42/41) | 3 | TX, RX, GND (cruzados: TX de um no RX do outro) |
+| Dispositivo | Vias | Sinais | Trança |
+|---|---|---|---|
+| VL53L0X | 4 | VCC, GND, SDA, SCL (XSHUT e GPIO1 não usados) | Nenhuma (SDA com SCL aumenta a diafonia) |
+| Encoder (x2) | 3 | VCC, GND, sinal | Par sinal + GND, VCC ao lado |
+| DRV8871 (x2) | 3 | GND, IN1, IN2 | Tripla IN1 + IN2 + GND |
+| Buzzer passivo | 3 | VCC, sinal, GND | Nenhuma |
+| Divisor da bateria | 2 | sinal, GND | Par sinal + GND |
+| Enlace UART (RPi GPIO 14/15 ↔ ESP32-S3 GPIO 42/41) | 3 | TX, RX, GND (cruzados: TX de um no RX do outro) | Tripla TX + RX + GND |
 
 ## Padrão de cores (igual em todos os chicotes)
 
@@ -60,10 +60,12 @@ O preto é o único com folga curta: ~7 GND, com 3 m disponíveis. Meça os trec
 
 ## Regras de roteamento
 
-- I2C curto (≤ 20-30 cm), sozinho, longe de motor e VM.
+- I2C curto (≤ 20-30 cm), sem trança, sozinho na espiral. Cruza fios de potência só a ~90°, nunca em paralelo.
+- Fios de potência (OUT1/OUT2 de cada motor, VM/GND de cada driver) trançados em par.
 - Encoders longe dos fios de motor.
 - Encoder e driver nunca na mesma espiral.
 - GND comum entre ESP32, drivers e divisor.
+- GND de potência dos drivers e negativo do buck do RPi em borne parafusado, com fio grosso, num ponto único no negativo da bateria (ADR 046).
 - Capacitor de bulk no VM de 47 µF / 50 V em cada módulo DRV8871.
 
 ## Leitura de bateria (3S Li-ion, 9,0 a 12,6 V)
@@ -79,7 +81,7 @@ GND ────────────────────┴────�
 - Fator: V_bat = V_pino × 5,7. Em 12,6 V o pino vê 2,2 V, e em 9 V vê 1,58 V.
 - Firmware: `analogReadMilliVolts()` com média de várias amostras. Ajuste o fator comparando com o multímetro.
 - Use só pino ADC1 (o ADC2 não é utilizável no S3).
-- Alimente o divisor depois da chave principal, para não drenar a bateria desligada (~220 µA).
+- O divisor fica sempre ligado, porque não há chave principal (~220 µA, ~15 meses para descarregar a bateria de 2500 mAh).
 - Faça a leitura com os motores parados ou com média, porque o PWM dos motores perturba o ADC.
 
 ## Verificação antes de ligar
@@ -87,3 +89,4 @@ GND ────────────────────┴────�
 1. Teste de puxão em 3 ou 4 crimpagens antes dos chicotes reais.
 2. Continuidade de cada fio, ponta a ponta, sem curto entre vizinhos.
 3. Medir a saída do divisor com o multímetro antes de ligá-lo ao pino do ADC. Com a bateria cheia deve dar ~2,2 V.
+4. Continuidade do GND de potência de cada driver e do negativo do buck até o ponto único na bateria (ADR 046).
