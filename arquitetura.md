@@ -73,7 +73,7 @@ Os contextos trocam dados só por canais de último valor: fila do FreeRTOS de u
 
 A atuação vem antes da manutenção, para manter constante o atraso entre medida e PWM. O laço não faz I/O, não aloca memória e não tem laço sem limite (RNF-01).
 
-O DRV8871 opera em decaimento lento: a frenagem é o próprio PWM, e duty = 0 é freio total (ADR 023). A frequência do PWM é alta em relação a L/R do motor (ordem de 20 kHz). O PWM vem do LEDC, um canal por pino: o pino do sentido fica em duty 100 % e o outro recebe o PWM invertido.
+O DRV8871 opera em decaimento lento: a frenagem é o próprio PWM, e duty = 0 é freio total (ADR 023). A frequência do PWM é alta em relação a L/R do motor (ordem de 20 kHz). O PWM vem do LEDC, um canal por pino: o pino do sentido fica em duty 100 % e o outro recebe o PWM invertido. Os dois canais de um driver trocam de duty cada um no início do seu próximo período, então a passagem de roda livre para freio no 1º ciclo após o boot pode dar um pulso de tração de até um período (50 µs). Aceito: estimado em ~0,4 A no motor TT, sem vencer o atrito da caixa; a #21 mede na bancada.
 
 **Garantia de parada:** d_parada(v_max) + v_max·T_S ≤ d_stop ≤ d_sensor, com d_parada ≈ v_max²/(2·a_dec) + latências, e v_max alcançável com a bateria em V_CRIT (ADRs 021 e 023; valores pela issue #27).
 
