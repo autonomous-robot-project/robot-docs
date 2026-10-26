@@ -8,7 +8,7 @@
 | N | Pulsos por volta (bordas de subida, canal único) | 20 |
 | v_r | Velocidade comandada no ensaio | 0,2 m/s |
 | e_f | Limiar de erro relativo para falha | 50 % |
-| T_f | Persistência do erro para detectar falha | 300 ms (estimativa) |
+| T_f | Persistência do erro para detectar falha | 1 s (2 × t_s de projeto, t_s = 0,5 s) |
 | T_c | Período do laço de controle | 10 ms |
 
 ## Passo 1 - Deslocamento por pulso
@@ -75,19 +75,19 @@ Exige-se que a espera do Passo 6 não exceda a persistência, t* ≤ T_f:
 
 $$\frac{s}{(1 - e_f)\, v} \le T_f \quad\Rightarrow\quad v \ge \frac{s}{(1 - e_f)\, T_f}$$
 
-$$v_{min} = \frac{s}{(1 - e_f)\, T_f} = \frac{0{,}0102}{0{,}5 \cdot 0{,}3} \approx 0{,}068\ \text{m/s}$$
+$$v_{min} = \frac{s}{(1 - e_f)\, T_f} = \frac{0{,}0102}{0{,}5 \cdot 1} \approx 0{,}020\ \text{m/s}$$
 
 Com e_f = 50 %, a expressão se reduz a 2s/T_f. A forma geral continua válida se e_f mudar.
 
 Abaixo de v_min a medida já não é válida, então a velocidade é declarada zero após um intervalo sem bordas de:
 
-$$T_{vel} = \frac{s}{v_{min}} = (1 - e_f)\, T_f = 0{,}5 \cdot 0{,}3 = 150\ \text{ms}$$
+$$T_{vel} = \frac{s}{v_{min}} = (1 - e_f)\, T_f = 0{,}5 \cdot 1 = 0{,}5\ \text{s}$$
 
-Verificação: v_r = 0,2 m/s > v_min = 0,068 m/s ✓
+Verificação: v_r = 0,2 m/s > v_min = 0,020 m/s ✓
 
 ## Passo 8 - Latência total de detecção
 
-$$t^* + T_f \approx 102 + 300 \approx 400\ \text{ms} < 2\ \text{s (duração do travamento)}\ ✓$$
+$$t^* + T_f \approx 0{,}1 + 1 \approx 1{,}1\ \text{s} < 2\ \text{s (duração do travamento)}\ ✓$$
 
 ## Passo 9 - Filtro de bordas espúrias
 
