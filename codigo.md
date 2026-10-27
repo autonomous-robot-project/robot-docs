@@ -1,0 +1,62 @@
+# Código: estrutura, criticidade e rastreabilidade
+
+Cada arquivo de código do robot-firmware e do robot-ros-system, com o papel na estrutura, a criticidade e o
+requisito e a verificação que pedem por ele. Confira a linha ao criar, mudar, renomear ou remover um arquivo.
+
+- **Estrutura.** Domínio: a lógica que vem dos requisitos e das ADRs, sem dependência de plataforma (no firmware,
+  compila no `test/host` sem ESP-IDF). Infraestrutura: periféricos, FreeRTOS, micro-ROS, ROS 2 e leitura de bags.
+- **Criticidade.** Quanto rigor de verificação o arquivo exige. Depende do papel do arquivo na evidência, não da
+  estrutura: um mesmo pino pode ser atuação (T2) ou instrumento de medição (T1).
+- Caminhos relativos à raiz de cada repositório. Os testes (`test/`) não entram na tabela: são a verificação dos
+  arquivos T1. `arduinoide/` é o protótipo anterior, fora do sistema.
+
+| Nível | Critério | O que é aqui | Como se verifica |
+| --- | --- | --- | --- |
+| **T1, evidência** | Um erro nele altera um resultado citado na monografia **sem ser detectado** | Instrumentos de medição do firmware (Instrumentação, encoder e velocidade), scripts de critério (`check_vNN`) e scripts que tiram números de dados brutos (`tools/`) | Lido linha a linha pelo autor; teste com dados sintéticos e resposta conhecida, com um caso que deve falhar; validação física ou cruzamento com uma medida independente |
+| **T2, produto** | Um erro nele aparece no ensaio que o verifica | O resto do código que roda no robô: domínio (controle, supervisão) e infraestrutura (drivers, enlace) | Ensaio da verificação (V-NN) e testes de host do domínio; leitura não exigida |
+| **T3, descartável** | Nunca é citado | Exploração: scratchpad, spikes, builds temporários e ensaios inválidos | Nenhuma; não fica no repositório nem nesta tabela. Um resultado obtido com T3 só entra na monografia depois de refeito com o código promovido a T1 |
+
+O código sob teste é T2, não T1: o ensaio é o detector dos erros dele. Só é T1 o que produz o número ou o veredito
+do ensaio.
+
+## robot-firmware
+
+| Arquivo | Estrutura | Criticidade | Requisito | Verificação | Observação |
+| --- | --- | --- | --- | --- | --- |
+| `components/controller/src/control/acceleration_limiter.cpp` | domínio | T2 | RF-01 | V-01, V-02 | ADR 023; teste no host |
+| `components/controller/src/control/inverse_kinematics.cpp` | domínio | T2 | RF-01 | V-01 | |
+| `components/controller/src/control/wheel_pi.cpp` | domínio | T2 | RF-01 | V-02 | teste no host |
+| `components/controller/src/sensing/wheel_speed.cpp` | domínio | T1 | RF-02, RF-03 | V-01, V-02, V-03 | instrumento (velocidade da V-03, odometria) e sob teste; sem teste no host próprio |
+| `components/controller/src/sensing/wheel_encoder.cpp` | infraestrutura | T1 | RF-02, RF-03 | V-01, V-02, V-03 | bordas validadas fisicamente (nota 0010) |
+| `components/controller/src/supervision/wheel_tracking_monitor.cpp` | domínio | T2 | RF-02 | V-02 | o corte do VM é o detector independente; teste no host |
+| `components/controller/src/supervision/task_watchdog.cpp` | infraestrutura | T2 | RF-02 | V-02 | ADR 029 |
+| `components/controller/src/supervision/watchdog_test_trigger.cpp` | infraestrutura | T2 | RF-02 | V-02 | injeção do laço infinito |
+| `components/controller/src/instrumentation/expiry_meter.cpp` | domínio | T1 | RNF-02 | V-06 | ADR 028 |
+| `components/controller/src/actuation/driver_input.cpp` | infraestrutura | T2 | RF-01 | V-02 | ADR 008, nota 0009 |
+| `components/controller/src/actuation/motor_driver.cpp` | infraestrutura | T2 | RF-01 | V-02 | ADR 008, nota 0009 |
+| `components/controller/src/controller.cpp` | misto | T1 (trechos) | RF-02, RNF-01, RNF-02 | V-02, V-05, V-06 | infraestrutura: `start`, `run`, `now`; domínio: `control_cycle`, `command_in_force`, `active_faults`; T1: `record_instrumentation` e o instante de liberação em `run` |
+| `components/link/src/link.cpp` | infraestrutura | T2 | todos | `check_link` | ADRs 012, 043 |
+| `components/link/src/session.cpp` | infraestrutura | T2 | todos | `check_link` | ADRs 012, 043 |
+| `components/link/src/agent.cpp` | infraestrutura | T2 | todos | `check_link` | ADRs 012, 043 |
+| `components/link/src/uart_transport.cpp` | infraestrutura | T2 | todos | `check_link` | ADR 043 |
+| `components/link/src/message_conversion.cpp` | infraestrutura | T2 | RF-01 | V-01 | adaptador entre as mensagens e os tipos do controlador (ADR 018) |
+| `main/main.cpp` | infraestrutura | T2 | todos | todas | só inicia os componentes |
+| `tools/encoder_ao/main/main.cpp` | infraestrutura | T1 | | | nota 0010 |
+| `tools/encoder_ao/analyze_encoder_ao.py` | domínio | T1 | | | nota 0010 |
+| `tools/motor_characterization/main/duty_schedule.cpp` | infraestrutura | T1 | | | nota 0010 |
+| `tools/motor_characterization/main/edge_reporter.cpp` | infraestrutura | T1 | | | nota 0010 |
+| `tools/motor_characterization/main/main.cpp` | infraestrutura | T1 | | | nota 0010 |
+| `tools/motor_characterization/characterize.py` | domínio | T1 | | | K e tau citados (nota 0010) |
+| `tools/driver_inputs/in21.py` | domínio | T1 | | | nota 0009 (#21) |
+
+## robot-ros-system
+
+| Arquivo | Estrutura | Criticidade | Requisito | Verificação | Observação |
+| --- | --- | --- | --- | --- | --- |
+| `robot_verification/robot_verification/check_v02.py` | domínio | T1 | RF-02 | V-02 | julga pelas janelas anunciadas, não pela velocidade medida |
+| `robot_verification/robot_verification/check_v06.py` | domínio | T1 | RNF-02 | V-06 | |
+| `robot_verification/robot_verification/recording.py` | infraestrutura | T1 | | todas | leitura do bag e veredito |
+| `robot_verification/robot_verification/measure_link_load.py` | infraestrutura | T1 | | | orçamento da ADR 025 (nota 0006) |
+| `robot_verification/robot_verification/run_v02.py` | infraestrutura | T2 | RF-02 | V-02 | erro invalida a rodada, e o `check_v02` detecta |
+| `robot_verification/robot_verification/check_link.py` | infraestrutura | T2 | | | precondição de bancada |
+| `robot_verification/robot_verification/link.py` | infraestrutura | T2 | | | QoS e agente compartilhados |
