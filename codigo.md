@@ -3,8 +3,9 @@
 Cada arquivo de código do robot-firmware e do robot-ros-system, com o papel na estrutura, a criticidade e o
 requisito e a verificação que pedem por ele. Confira a linha ao criar, mudar, renomear ou remover um arquivo.
 
-- **Estrutura.** Domínio: a lógica que vem dos requisitos e das ADRs, sem dependência de plataforma (no firmware,
-  compila no `test/host` sem ESP-IDF). Infraestrutura: periféricos, FreeRTOS, micro-ROS, ROS 2 e leitura de bags.
+- **Estrutura** (ADR 047, nas três camadas). Domínio: a lógica que vem dos requisitos e das ADRs, sem dependência de
+  plataforma (no firmware, compila no `test/host` sem ESP-IDF; no RPi, roda sem rclpy). Infraestrutura: periféricos,
+  FreeRTOS, micro-ROS, ROS 2 e leitura de bags.
 - **Criticidade.** Quanto rigor de verificação o arquivo exige. Depende do papel do arquivo na evidência, não da
   estrutura: um mesmo pino pode ser atuação (T2) ou instrumento de medição (T1).
 - Caminhos relativos à raiz de cada repositório. Os testes (`test/`) não entram na tabela: são a verificação dos
