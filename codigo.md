@@ -9,7 +9,7 @@ requisito e a verificação que pedem por ele. Confira a linha ao criar, mudar, 
 - **Criticidade.** Quanto rigor de verificação o arquivo exige. Depende do papel do arquivo na evidência, não da
   estrutura: um mesmo pino pode ser atuação (T2) ou instrumento de medição (T1).
 - Caminhos relativos à raiz de cada repositório. Os testes (`test/`) não entram na tabela: são a verificação dos
-  arquivos T1. `arduinoide/` é o protótipo anterior, fora do sistema.
+  arquivos T1.
 
 | Nível | Critério | O que é aqui | Como se verifica |
 | --- | --- | --- | --- |
