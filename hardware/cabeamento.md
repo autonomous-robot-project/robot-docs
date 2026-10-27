@@ -38,7 +38,7 @@ Lado direito (J3, roda direita):
 - O ESP32-S3 é alimentado pela USB do RPi 5.
 - Os pinos de JTAG (39 a 42) servem para o driver direito, o enlace e o I²C: no S3, o JTAG padrão vai pela USB, e o estado desses pinos no reset não importa para eles.
 - O 1 e o 2 são os únicos ADC1 do header direito; o divisor fica com o 1.
-- Só os drivers dependem do estado no reset. O DRV8871 tem pull-down interno de 100 kΩ em IN1/IN2 (ADR 008), e a #21 confirma o nível baixo no reset e na gravação.
+- Só os drivers dependem do estado no reset. O DRV8871 tem pull-down interno de 100 kΩ em IN1/IN2 (ADR 008), e a #21 confirmou o nível baixo no reset; na gravação, os pinos mantêm o último estado, e grava-se com a chave dos motores desligada (ADR 008, nota 0009).
 
 Fora do mapa: strapping (0, 3, 45, 46), flash e PSRAM octal (26 a 37), USB nativa (19, 20: alimentação e gravação pelo RPi, ADR 044), UART0 do CP2102 (43, 44) e LED RGB da placa (48).
 
