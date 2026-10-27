@@ -1,0 +1,6 @@
+Wheel L: 6639 edges
+  dead zone forward: starts at duty +0.093, stops at duty +0.044
+  dead zone backward: starts at duty -0.096, stops at duty -0.045
+Wheel R: 6477 edges
+  dead zone forward: starts at duty +0.019, stops at duty +0.043
+  dead zone backward: starts at duty -0.117, stops at duty -0.043

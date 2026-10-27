@@ -22,4 +22,4 @@ Surpresas:
 
 Pendências:
 
-- Conferir na bancada: velocidade com a roda girando, zero após T_vel, filtro de repique.
+- Conferir na bancada: zero após T_vel. A velocidade com a roda girando e o repique foram resolvidos na nota 0010.

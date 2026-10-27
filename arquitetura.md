@@ -89,7 +89,8 @@ O alvo de giro nunca fica a 180° ou mais do rumo atual; o sequenciador garante 
 
 ### Encoders (canal único)
 
-- A ISR de GPIO registra só o instante e a contagem das bordas de subida.
+- A ISR de GPIO registra o instante das bordas de subida. Uma amostragem a cada 500 µs conta a fenda quando o nível fica
+  alto por 2 ms depois de estável em baixo, porque o comparador do sensor oscila nas transições (nota 0010).
 - A velocidade é s/Δt, com s = 10,2 mm, e vale zero após T_vel sem borda.
 - O sentido fica travado enquanto a roda gira e passa a seguir a tensão aplicada só com a roda parada (ADR 019).
 
