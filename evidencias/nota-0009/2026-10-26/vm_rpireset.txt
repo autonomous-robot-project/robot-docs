@@ -1,0 +1,14 @@
+vm_rpireset: 24000000 samples (12.0 s)
+RST: starts 1; edges: none
+GPIO 11: starts 1; edges: none
+left driver (D0/D1): 5 segments; drive segments: 1, longest 33.0 us at 3525.164 ms
+         0.000 ms    3525.163 ms  brake
+      3525.163 ms       0.001 ms  free
+      3525.164 ms       0.033 ms  BACKWARD
+      3525.197 ms      10.152 ms  free
+      3535.349 ms    8464.651 ms  brake
+right driver (D2/D3): 4 segments; drive segments: 1, longest 20.0 us at 3525.235 ms
+         0.000 ms    3525.235 ms  brake
+      3525.235 ms       0.020 ms  BACKWARD
+      3525.256 ms      10.073 ms  free
+      3535.329 ms    8464.671 ms  brake

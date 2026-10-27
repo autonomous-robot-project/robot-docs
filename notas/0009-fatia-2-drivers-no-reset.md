@@ -1,8 +1,10 @@
 # Fatia 2, #21 - Drivers no reset e na gravação - 2026-10-26 - commit 37c43b8 (firmware)
 
+Ferramenta: robot-firmware/tools/driver_inputs/in21.py. Evidência: evidencias/nota-0009/2026-10-26/.
+
 Montagem: DRV8871 com VM da 3S pela chave dos motores (fusível de 2 A), motores TT ligados, rodas suspensas.
 ESP32 pela USB nativa do RPi. Analisador lógico (clone Saleae, 2 MHz) no RPi: CH0 a CH3 nos IN (GPIO 4, 5, 2, 42),
-CH4 no RST e CH5 no GPIO 11. Captura com `~/fw/in21.py`.
+CH4 no RST e CH5 no GPIO 11.
 
 Medido:
 

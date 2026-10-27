@@ -1,0 +1,15 @@
+Device only sent 31989760 samples.
+vm_flash: 31989760 samples (16.0 s)
+RST: starts 1; edges: none
+GPIO 11: starts 1; edges: none
+left driver (D0/D1): 5 segments; drive segments: 1, longest 33.5 us at 8679.950 ms
+         0.000 ms    8679.949 ms  brake
+      8679.949 ms       0.001 ms  free
+      8679.950 ms       0.034 ms  BACKWARD
+      8679.984 ms      10.151 ms  free
+      8690.135 ms    7304.745 ms  brake
+right driver (D2/D3): 4 segments; drive segments: 1, longest 20.0 us at 8680.022 ms
+         0.000 ms    8680.022 ms  brake
+      8680.022 ms       0.020 ms  BACKWARD
+      8680.042 ms      10.073 ms  free
+      8690.115 ms    7304.765 ms  brake
