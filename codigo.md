@@ -56,8 +56,11 @@ do ensaio.
 | --- | --- | --- | --- | --- | --- |
 | `robot_verification/robot_verification/check_v02.py` | domínio | T1 | RF-02 | V-02 | julga pelas janelas anunciadas, não pela velocidade medida |
 | `robot_verification/robot_verification/check_v06.py` | domínio | T1 | RNF-02 | V-06 | |
-| `robot_verification/robot_verification/recording.py` | infraestrutura | T1 | | todas | leitura do bag e veredito |
+| `robot_verification/robot_verification/recording.py` | infraestrutura | T1 | | todas | leitura do bag, veredito e `ControllerRecording` (comando, Estado, Instrumentação) |
 | `robot_verification/robot_verification/measure_link_load.py` | infraestrutura | T1 | | | orçamento da ADR 025 (nota 0006) |
+| `robot_verification/robot_verification/measure_closed_loop.py` | domínio | T1 | RF-01, RF-02 | | parada após T_vel, v_min sem ciclo-limite (nota 0011) |
 | `robot_verification/robot_verification/run_v02.py` | infraestrutura | T2 | RF-02 | V-02 | erro invalida a rodada, e o `check_v02` detecta |
+| `robot_verification/robot_verification/run_closed_loop.py` | infraestrutura | T2 | RF-01, RF-02 | | erro invalida a rodada, e o `measure_closed_loop` detecta |
+| `robot_verification/robot_verification/plot_closed_loop.py` | infraestrutura | T2 | | | figuras da nota 0011; os números vêm do `measure_closed_loop` |
 | `robot_verification/robot_verification/check_link.py` | infraestrutura | T2 | | | precondição de bancada |
-| `robot_verification/robot_verification/link.py` | infraestrutura | T2 | | | QoS e agente compartilhados |
+| `robot_verification/robot_verification/link.py` | infraestrutura | T2 | | | QoS, agente e gravador do bag compartilhados |

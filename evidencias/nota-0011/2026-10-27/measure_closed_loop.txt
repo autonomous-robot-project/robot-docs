@@ -1,0 +1,12 @@
+closed loop: 7 steps (7 scheduled)
+  stop, left: zero after 0.77 s (expected 0.82 s, limit 1.02 s), passed: True
+  stop, right: zero after 0.77 s (expected 0.82 s, limit 1.02 s), passed: True
+  0.07 m/s, left: mean 0.070 m/s, spread 6%, zero samples 0, passed: True
+  0.07 m/s, right: mean 0.070 m/s, spread 2%, zero samples 0, passed: True
+  0.10 m/s, left: mean 0.100 m/s, spread 5%, zero samples 0, passed: True
+  0.10 m/s, right: mean 0.100 m/s, spread 3%, zero samples 0, passed: True
+  0.15 m/s, left: mean 0.151 m/s, spread 5%, zero samples 0, passed: True
+  0.15 m/s, right: mean 0.150 m/s, spread 3%, zero samples 0, passed: True
+  FAULT_COGNIZANT states: 0
+  echo of every step: True
+closed loop: PASS
