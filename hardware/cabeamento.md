@@ -58,7 +58,7 @@ Chave dos motores: uma chave gangorra com LED (20 A) no VM dos dois DRV8871, dep
 | DRV8871 (x2) | 3 | GND, IN1, IN2 | Tripla IN1 + IN2 + GND |
 | Buzzer passivo | 3 | VCC, sinal, GND | Nenhuma |
 | Divisor da bateria | 2 | sinal, GND | Par sinal + GND |
-| Enlace UART (RPi GPIO 14/15 ↔ ESP32-S3 GPIO 42/41) | 3 | TX, RX, GND (cruzados: TX de um no RX do outro) | Tripla TX + RX + GND |
+| Enlace UART (RPi GPIO 14/15 ↔ ESP32-S3 GPIO 41/40) | 3 | TX, RX, GND (cruzados: TX de um no RX do outro) | Tripla TX + RX + GND |
 
 ## Padrão de cores (igual em todos os chicotes)
 
