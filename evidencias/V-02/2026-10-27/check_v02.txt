@@ -1,0 +1,9 @@
+V-02: 3 power cuts (3 expected), injection recorded: True
+  tolerances: active within 2.16 s of each cut, inactive within 1.55 s of each restore
+  state recorded without holes: True
+  start without failure: True
+  cut 1: command echoed: True, wheel stopped: True, passed: True
+  cut 2: command echoed: True, wheel stopped: True, passed: True
+  cut 3: command echoed: True, wheel stopped: True, passed: True
+  watchdog restart reported: True
+V-02: PASS
