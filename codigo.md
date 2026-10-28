@@ -26,8 +26,12 @@ do ensaio.
 | --- | --- | --- | --- | --- | --- |
 | `components/controller/src/control/acceleration_limiter.cpp` | domínio | T2 | RF-01 | V-01, V-02 | ADR 023; teste no host |
 | `components/controller/src/control/inverse_kinematics.cpp` | domínio | T2 | RF-01 | V-01 | |
+| `components/controller/src/control/forward_kinematics.cpp` | domínio | T2 | RF-01 | V-01, V-04 | velocidade da Odometria |
+| `components/controller/src/control/turn_to.cpp` | domínio | T2 | RF-01 | V-01 | ADRs 024 e 030; teste no host |
+| `components/controller/src/control/go_to.cpp` | domínio | T2 | RF-01 | V-01 | ADRs 024 e 030; teste no host |
 | `components/controller/src/control/wheel_pi.cpp` | domínio | T2 | RF-01 | V-02 | teste no host |
 | `components/controller/src/sensing/wheel_speed.cpp` | domínio | T1 | RF-02, RF-03 | V-01, V-02, V-03 | instrumento (velocidade da V-03, odometria) e sob teste; sem teste no host próprio |
+| `components/controller/src/sensing/wheel_odometry.cpp` | domínio | T1 | RF-01 | V-01, V-04 | ADR 048; instrumento da pose; teste no host |
 | `components/controller/src/sensing/wheel_encoder.cpp` | infraestrutura | T1 | RF-02, RF-03 | V-01, V-02, V-03 | bordas validadas fisicamente (nota 0010) |
 | `components/controller/src/supervision/wheel_tracking_monitor.cpp` | domínio | T2 | RF-02 | V-02 | o corte do VM é o detector independente; teste no host |
 | `components/controller/src/supervision/task_watchdog.cpp` | infraestrutura | T2 | RF-02 | V-02 | ADR 029 |
@@ -41,7 +45,7 @@ do ensaio.
 | `components/link/src/session.cpp` | infraestrutura | T2 | todos | `check_link` | ADRs 012, 043 |
 | `components/link/src/agent.cpp` | infraestrutura | T2 | todos | `check_link` | ADRs 012, 043 |
 | `components/link/src/uart_transport.cpp` | infraestrutura | T2 | todos | `check_link` | ADR 043 |
-| `components/link/src/message_conversion.cpp` | infraestrutura | T2 | RF-01 | V-01 | adaptador entre as mensagens e os tipos do controlador (ADR 018) |
+| `components/link/src/message_conversion.cpp` | infraestrutura | T2 | RF-01 | V-01, V-04 | adaptador entre as mensagens e os tipos do controlador (ADR 018); Odometria (ADR 027) |
 | `main/main.cpp` | infraestrutura | T2 | todos | todas | só inicia os componentes |
 | `tools/encoder_ao/main/main.cpp` | infraestrutura | T1 | | | nota 0010 |
 | `tools/encoder_ao/analyze_encoder_ao.py` | domínio | T1 | | | nota 0010 |
