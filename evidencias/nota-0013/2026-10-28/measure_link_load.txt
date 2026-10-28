@@ -1,0 +1,3 @@
+measure_link_load (60 s, comando a 20 Hz), saída do v05_bench.sh em 2026-10-28:
+RPi -> ESP32: 905 B/s = 1.0% of 92160 B/s (budget 50%)
+ESP32 -> RPi: 5598 B/s = 6.1% of 92160 B/s (budget 50%)
