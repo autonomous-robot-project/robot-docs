@@ -33,3 +33,4 @@ A ADR 012 fixa o protocolo (micro-ROS sobre serial), mas não o meio entre o RPi
 
 - Pinos no ESP32-S3: GPIO 41 (TX) e 40 (RX), no mapa de pinos (`hardware/cabeamento.md`, #38), provisórios até a UART1 ser rediscutida. Antes foram 17/18 e 42/41.
 - No RPi, a UART0 nos GPIO 14/15 vem do overlay `uart0-pi5`, sem console do Linux nela.
+- MTU do transporte em 1024 B (`UCLIENT_CUSTOM_TRANSPORT_MTU`, no `app-colcon.meta` do firmware), acima dos 512 B padrão: um stream best effort não fragmenta, e a `nav_msgs/Odometry` serializada tem ~715 B (ADR 025). A alternativa, a Odometria em stream reliable com fragmentação, é o caminho comum (linorobot2), mas exige histórico de stream maior e retransmissões na tarefa micro-ROS, descartadas pela ADR 025. Publishers: 4 (`RMW_UXRCE_MAX_PUBLISHERS`), um por tópico da ADR 025.

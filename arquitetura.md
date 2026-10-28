@@ -61,7 +61,7 @@ Os contextos trocam dados só por canais de último valor: fila do FreeRTOS de u
 ### Ciclo de controle (a cada T_c, por `vTaskDelayUntil`)
 
 1. Lê os canais de último valor.
-2. Mede velocidade, sentido e odometria a partir das bordas, e a tensão da bateria.
+2. Mede velocidade, sentido e odometria a partir das bordas (odometria pela contagem, ADR 048), e a tensão da bateria.
 3. O comportamento ativo calcula a referência (v, ω).
 4. Restringe pelo vencimento do comando e pelos reflexos. As restrições comutam entre si.
 5. Aplica a rampa assimétrica (a_acel < a_dec; ADR 023).
@@ -82,8 +82,8 @@ O DRV8871 opera em decaimento lento: a frenagem é o próprio PWM, e duty = 0 é
 | Comportamento | Controla | Parâmetros | Perfil de convergência (ADR 030) |
 | --- | --- | --- | --- |
 | TWIST | (v, ω) | (v, ω) | — |
-| TURN_TO | Rumo | θ em `odom` | ω ∝ √(2·α_dec·\|e\|) |
-| GO_TO | Posição | (x, y) em `odom` | v ∝ √(2·a_dec·d) · max(0, cos e) |
+| TURN_TO | Rumo | θ em `odom` | ω ∝ √(2·α_dec·\|e_θ\|) |
+| GO_TO | Posição | (x, y) em `odom` | v ∝ √(2·a_dec·e_d) · max(0, cos e_θ); ω ∝ sin e_θ · min(1, e_d/d₀) |
 
 O alvo de giro nunca fica a 180° ou mais do rumo atual; o sequenciador garante isso. Toda troca de comportamento passa pela rampa, então nunca é brusca nos motores.
 
