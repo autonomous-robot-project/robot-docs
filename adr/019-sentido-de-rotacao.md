@@ -35,3 +35,5 @@ A estimação é feita na tarefa de controle. A ISR só registra instante e cont
 ## Nota
 
 Na parada, a decisão coincide com a tensão aplicada, então esta ADR já incorpora a informação da alternativa anterior nesse regime.
+
+Na reversão, a roda precisa ser dada como parada antes de a tensão reversa chegar. A rampa (ADR 023) mantém a referência na zona morta por v_min/a_dec + v_min/a_acel ≈ 0,42 s, e a roda freada para em ~50 ms. Por isso T_vel = 0,3 s < 0,42 − 0,05. Com T_vel = 0,51 s, 2 de 20 inversões perderam o sentido e a roda disparou (nota 0014). O firmware confere a desigualdade em tempo de compilação.

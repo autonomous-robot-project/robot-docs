@@ -1,0 +1,11 @@
+behaviors_series.py, firmware 87cc48b (T_vel = 0,51 s), saída da rodada em 2026-10-28:
+1793163982.944 TURN_TO +90 deg: settled 2.43 s, final error -3.6 deg
+1793163987.093 TURN_TO -90 deg: settled 3.14 s, final error +3.6 deg
+1793163990.231 TURN_TO +45 deg: settled 2.13 s, final error -1.8 deg
+1793163993.370 TURN_TO -45 deg: settled 2.13 s, final error +1.8 deg
+1793163997.316 TURN_TO +170 deg: settled 2.93 s, final error -1.6 deg
+1793164001.364 TURN_TO -170 deg: settled 3.04 s, final error +1.6 deg
+1793164004.399 TURN_TO +30 deg: settled 2.02 s, final error +2.7 deg
+1793164018.765 GO_TO 1.0 m ahead, 0.0 m left, aligned True: settled 6.83 s, final distance 1 mm
+1793164026.861 GO_TO 1.0 m ahead, 0.3 m left, aligned False: settled 7.08 s, final distance 5 mm
+1793164046.194 GO_TO 2.0 m ahead, 0.0 m left, aligned True: settled 11.79 s, final distance 1 mm

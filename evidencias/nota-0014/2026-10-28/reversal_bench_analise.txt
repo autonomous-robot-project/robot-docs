@@ -1,0 +1,7 @@
+TWIST   linear +0.15    0.0-   3.0 s: end pose x +0.505 y -0.044 theta -23.4 deg
+TWIST   linear -0.15    3.0-   5.0 s: end pose x +0.371 y +0.006 theta -23.4 deg
+TWIST   linear +0.00    5.0-   8.0 s: end pose x +0.338 y +0.019 theta -19.5 deg
+reverse phase at    3.0 s: non-negative readings []
+runaway episodes (start, duration, wheel): []
+FAULT_COGNIZANT intervals (start, duration): []
+C_max 695 us, R_max 710 us (since boot), deadline misses in the recording 0

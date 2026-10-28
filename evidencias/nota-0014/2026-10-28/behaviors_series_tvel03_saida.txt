@@ -1,0 +1,11 @@
+behaviors_series.py, firmware 1eb42d6 (T_vel = 0,3 s), saída da rodada em 2026-10-28:
+1793164507.850 TURN_TO +90 deg: settled 2.33 s, final error -3.6 deg
+1793164511.798 TURN_TO -90 deg: settled 2.94 s, final error +3.6 deg
+1793164514.734 TURN_TO +45 deg: settled 1.92 s, final error -1.8 deg
+1793164517.771 TURN_TO -45 deg: settled 2.02 s, final error +1.8 deg
+1793164521.617 TURN_TO +170 deg: settled 2.83 s, final error -1.6 deg
+1793164525.463 TURN_TO -170 deg: settled 2.83 s, final error +1.6 deg
+1793164529.005 TURN_TO +30 deg: settled 2.53 s, final error +2.7 deg
+1793164543.276 GO_TO 1.0 m ahead, 0.0 m left, aligned True: settled 6.73 s, final distance 6 mm
+1793164551.172 GO_TO 1.0 m ahead, 0.3 m left, aligned False: settled 6.88 s, final distance 5 mm
+1793164570.296 GO_TO 2.0 m ahead, 0.0 m left, aligned True: settled 11.58 s, final distance 1 mm
