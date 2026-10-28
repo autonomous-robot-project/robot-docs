@@ -33,9 +33,10 @@ do ensaio.
 | `components/controller/src/supervision/task_watchdog.cpp` | infraestrutura | T2 | RF-02 | V-02 | ADR 029 |
 | `components/controller/src/supervision/watchdog_test_trigger.cpp` | infraestrutura | T2 | RF-02 | V-02 | injeção do laço infinito |
 | `components/controller/src/instrumentation/expiry_meter.cpp` | domínio | T1 | RNF-02 | V-06 | ADR 028 |
+| `components/controller/src/instrumentation/deadline_meter.cpp` | domínio | T1 | RNF-01 | V-05 | ADR 028; teste no host com caso que deve falhar |
 | `components/controller/src/actuation/driver_input.cpp` | infraestrutura | T2 | RF-01 | V-02 | ADR 008, nota 0009 |
 | `components/controller/src/actuation/motor_driver.cpp` | infraestrutura | T2 | RF-01 | V-02 | ADR 008, nota 0009 |
-| `components/controller/src/controller.cpp` | misto | T1 (trechos) | RF-02, RNF-01, RNF-02 | V-02, V-05, V-06 | infraestrutura: `start`, `run`, `now`; domínio: `control_cycle`, `command_in_force`, `active_faults`; T1: `record_instrumentation` e o instante de liberação em `run` |
+| `components/controller/src/controller.cpp` | misto | T1 (trechos) | RF-02, RNF-01, RNF-02 | V-02, V-05, V-06 | infraestrutura: `start`, `run`, `now`; domínio: `control_cycle`, `command_in_force`, `active_faults`; T1: `record_expiry`, `publish_instrumentation`, o instante de liberação em `run` e o início e o fim em `control_cycle` |
 | `components/link/src/link.cpp` | infraestrutura | T2 | todos | `check_link` | ADRs 012, 043 |
 | `components/link/src/session.cpp` | infraestrutura | T2 | todos | `check_link` | ADRs 012, 043 |
 | `components/link/src/agent.cpp` | infraestrutura | T2 | todos | `check_link` | ADRs 012, 043 |
