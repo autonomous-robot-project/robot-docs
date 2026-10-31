@@ -70,12 +70,14 @@ do ensaio.
 | `robot_verification/robot_verification/check_v02.py` | domínio | T1 | RF-02 | V-02 | julga pelas janelas anunciadas, não pela velocidade medida |
 | `robot_verification/robot_verification/check_v03.py` | domínio | T1 | RF-03 | V-03 | julga pelas janelas anunciadas, não pelo bit do reflexo (nota 0015, D8); teste com dados sintéticos |
 | `robot_verification/robot_verification/check_v05.py` | domínio | T1 | RNF-01 | V-05 | sobre a gravação da V-07; perdas pela diferença início–fim, máximos desde o boot como limite superior |
+| `robot_verification/robot_verification/check_v07.py` | domínio | T1 | RNF-03 | V-07 | Δ medido pelo controlador (ADR 049), sem cronometrar o sequenciador; teste com casos que devem falhar e inválidos |
 | `robot_verification/robot_verification/check_v06.py` | domínio | T1 | RNF-02 | V-06 | |
 | `robot_verification/robot_verification/recording.py` | infraestrutura | T1 | | todas | leitura do bag, veredito, `ControllerRecording` (comando, Estado, Instrumentação, Odometria), marcadores dos procedimentos e buracos na gravação |
 | `robot_verification/robot_verification/measure_link_load.py` | infraestrutura | T1 | | | orçamento da ADR 025 (nota 0006) |
 | `robot_verification/robot_verification/measure_closed_loop.py` | domínio | T1 | RF-01, RF-02 | | parada após T_vel, v_min sem ciclo-limite (nota 0011) |
 | `robot_verification/robot_verification/run_v02.py` | infraestrutura | T2 | RF-02 | V-02 | erro invalida a rodada, e o `check_v02` detecta |
 | `robot_verification/robot_verification/run_v03.py` | infraestrutura | T2 | RF-03 | V-03 | erro invalida a rodada, e o `check_v03` detecta |
+| `robot_verification/robot_verification/run_v07.py` | infraestrutura | T2 | RNF-03 | V-07 | só conta os eventos para parar; erro invalida a rodada, e o `check_v07` detecta |
 | `robot_verification/robot_verification/run_closed_loop.py` | infraestrutura | T2 | RF-01, RF-02 | | erro invalida a rodada, e o `measure_closed_loop` detecta |
 | `robot_verification/robot_verification/plot_closed_loop.py` | infraestrutura | T2 | | | figuras da nota 0011; os números vêm do `measure_closed_loop` |
 | `robot_verification/robot_verification/plot_recording.py` | infraestrutura | T2 | | | uma figura por campo gravado dos tópicos do controlador (nota 0013); os números vêm do check |
