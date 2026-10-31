@@ -38,6 +38,7 @@ do ensaio.
 | `components/controller/src/sensing/front_range_classifier.cpp` | domínio | T2 | RF-03 | V-03 | ADR 021; tabela de status, S_MIN_VLX e T_S na nota 0015; teste no host |
 | `components/controller/src/supervision/wheel_tracking_monitor.cpp` | domínio | T2 | RF-02 | V-02 | o corte do VM é o detector independente; teste no host |
 | `components/controller/src/supervision/task_watchdog.cpp` | infraestrutura | T2 | RF-02 | V-02 | ADR 029 |
+| `components/controller/src/supervision/deadline_miss_fault.cpp` | domínio | T2 | RNF-01 | V-05 | ADR 028; teste no host |
 | `components/controller/src/supervision/watchdog_test_trigger.cpp` | infraestrutura | T2 | RF-02 | V-02 | injeção do laço infinito |
 | `components/controller/src/instrumentation/expiry_meter.cpp` | domínio | T1 | RNF-02 | V-06 | ADR 028 |
 | `components/controller/src/instrumentation/deadline_meter.cpp` | domínio | T1 | RNF-01 | V-05 | ADR 028; teste no host com caso que deve falhar |
