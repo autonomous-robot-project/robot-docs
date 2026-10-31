@@ -80,6 +80,7 @@ do ensaio.
 | `robot_verification/robot_verification/measure_closed_loop.py` | domínio | T1 | RF-01, RF-02 | | parada após T_vel, v_min sem ciclo-limite (nota 0011) |
 | `robot_verification/robot_verification/run_v02.py` | infraestrutura | T2 | RF-02 | V-02 | erro invalida a rodada, e o `check_v02` detecta |
 | `robot_verification/robot_verification/run_v03.py` | infraestrutura | T2 | RF-03 | V-03 | erro invalida a rodada, e o `check_v03` detecta |
+| `robot_verification/robot_verification/run_v01.py` | infraestrutura | T2 | RF-04, RF-05 | V-01 | conduz as duas execuções, um bag por execução, e salva `ros2 node list` no início e no fim de cada uma (nota 0016) |
 | `robot_verification/robot_verification/run_v04.py` | infraestrutura | T2 | RF-06, RF-07 | V-04 | pede o plano por `/goal_pose`, como na operação; erro invalida ou reprova a rodada, e o `check_v04` detecta |
 | `robot_verification/robot_verification/run_v07.py` | infraestrutura | T2 | RNF-03 | V-07 | só conta os eventos para parar; erro invalida a rodada, e o `check_v07` detecta |
 | `robot_verification/robot_verification/run_closed_loop.py` | infraestrutura | T2 | RF-01, RF-02 | | erro invalida a rodada, e o `measure_closed_loop` detecta |
@@ -95,7 +96,7 @@ do ensaio.
 | `robot_verification/bench/behaviors_series.py` | domínio | T1 | RF-01 | V-01 | conduz e mede os erros finais de TURN_TO e GO_TO (nota 0014); como rodou, fora do Ruff |
 | `robot_verification/bench/analyze_behaviors.py` | domínio | T1 | RF-01, RF-02 | V-01, V-02 | disparos, falhas e prazos dos bags da nota 0014 |
 | `robot_verification/robot_verification/check_link.py` | infraestrutura | T2 | | | precondição de bancada |
-| `robot_verification/robot_verification/link.py` | infraestrutura | T2 | | | QoS, agente e gravador do bag compartilhados |
+| `robot_verification/robot_verification/link.py` | infraestrutura | T2 | | | QoS, agente (com `chrt`, ADR 039), sequenciador e gravador do bag compartilhados |
 | `robot_bringup/launch/deliberator_test.launch.py` | infraestrutura | T2 | RF-05, RF-06 | V-04, V-09 | deliberador na configuração de ensaio; ADRs 026 e 035 |
 | `robot_bringup/config/deliberator_test.yaml` | infraestrutura | T2 | RF-06 | V-04 | Theta* e costmap sem camada de obstáculo; ADRs 041 e 042, F7 D1 |
 | `robot_bringup/maps/make_map_m.py` | domínio | T2 | RF-06 | V-04 | gera o M da V-04; `m.pgm` e `m.yaml` versionados (nota 0003) |
