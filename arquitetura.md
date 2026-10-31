@@ -212,7 +212,7 @@ Não há `bt_navigator` nem `controller_server`: seguir caminho é papel do cont
 - O planner pode atravessar espaço desconhecido.
 - O VL53L0X fica fora do costmap. Um obstáculo visto só por ele leva a escada ao aborto.
 
-**Launch:** é separado do do sequenciador, com um processo por nó. Desligar o deliberador (RF-05) é não lançá-lo. Um argumento escolhe a configuração:
+**Launch:** é separado do do sequenciador, com um processo por nó, no pacote `robot_bringup`. Desligar o deliberador (RF-05) é não lançá-lo. O `odom_to_tf_ros2` sobe com o deliberador, o único que consome o odom → base_link. Hoje só existe a configuração de ensaio da V-04 (`deliberator_test.launch.py`); a da V-08 C1 entra com o SLAM como carga, e a de operação depois das verificações (F7 D1):
 
 | Configuração | Mapa do planner | Costmap global | map → odom | SLAM |
 | --- | --- | --- | --- | --- |

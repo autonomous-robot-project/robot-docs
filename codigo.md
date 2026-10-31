@@ -88,3 +88,6 @@ do ensaio.
 | `robot_verification/bench/analyze_behaviors.py` | domínio | T1 | RF-01, RF-02 | V-01, V-02 | disparos, falhas e prazos dos bags da nota 0014 |
 | `robot_verification/robot_verification/check_link.py` | infraestrutura | T2 | | | precondição de bancada |
 | `robot_verification/robot_verification/link.py` | infraestrutura | T2 | | | QoS, agente e gravador do bag compartilhados |
+| `robot_bringup/launch/deliberator_test.launch.py` | infraestrutura | T2 | RF-05, RF-06 | V-04, V-09 | deliberador na configuração de ensaio; ADRs 026 e 035 |
+| `robot_bringup/config/deliberator_test.yaml` | infraestrutura | T2 | RF-06 | V-04 | Theta* e costmap sem camada de obstáculo; ADRs 041 e 042, F7 D1 |
+| `robot_bringup/maps/make_map_m.py` | domínio | T2 | RF-06 | V-04 | gera o M da V-04; `m.pgm` e `m.yaml` versionados (nota 0003) |
