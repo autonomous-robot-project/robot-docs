@@ -102,7 +102,7 @@ Todo reflexo restringe a referência e é reportado na máscara correspondente.
 
 | Reflexo | Condição | Efeito |
 | --- | --- | --- |
-| Obstáculo frontal | VL53L0X < d_stop | Zera o avanço; giro e ré continuam permitidos (ADR 021) |
+| Obstáculo frontal | Medida válida do VL53L0X < d_stop (nota 0015) | Zera o avanço; giro e ré continuam permitidos (ADR 021) |
 | Bateria crítica | Tensão filtrada < V_CRIT | Referência a zero; libera sozinho, sem histerese (ADR 022) |
 
 ### Falhas reportadas
@@ -112,7 +112,7 @@ Todo reflexo restringe a referência e é reportado na máscara correspondente.
 | Falha cognizante | Erro de velocidade acima de e_f por T_f, com referência ≥ v_min |
 | Prazo perdido | Detectado em todos os builds (ADR 028) |
 | Reinício por watchdog | Watchdog de tarefas sobre a tarefa de controle, com prazo de poucos T_c (ADR 029) |
-| Falha do sensor frontal | Sem leitura classificável há mais de T_S, e também no boot. Zera o avanço como o obstáculo frontal (ADR 021) |
+| Falha do sensor frontal | Só leituras inválidas há mais de T_S = 100 ms, e também no boot (nota 0015). Zera o avanço como o obstáculo frontal (ADR 021) |
 
 Os códigos de prazo perdido e de reinício ficam ativos por tempo limitado. A falha do sensor frontal fica em `faults`, não em `reflexes`: a máscara de reflexos reporta condições do ambiente, e o critério da V-03 exige falha inativa (nota 0015).
 
@@ -235,7 +235,7 @@ Têm ponto de partida, mas o valor final depende de medição:
 
 | Grupo | Parâmetros |
 | --- | --- |
-| Controlador | a_acel, a_dec, t_s, T_S, T_f, constante do filtro da bateria, V_WARN, H, prazo do watchdog, deriva entre os relógios |
+| Controlador | a_acel, a_dec, t_s, T_f, S_MIN_VLX = 0,02 MCPS/SPAD e offset do VL53L0X, constante do filtro da bateria, V_WARN, H, prazo do watchdog, deriva entre os relógios |
 | Sequenciador | θ_max = 170°, T_WAIT = 5 s, N_REPLAN = 3, T_HB = 0,5 s, T_eco |
 | Deliberador | Margem do plano m = 0,10 m |
 | No chão (issue #27) | d_stop = 0,15 m, v_max |

@@ -69,3 +69,37 @@ lacuna de 14,8 s com o fio fora por ~2 s: depois de religado, o sensor ficou ~10
 
 A refazer com o suporte montado no protótipo: o offset (o valor é deste módulo e desta montagem) e o sinal do falso
 alvo (o crosstalk depende do que fica diante da capa).
+
+## Decisões com os dados do I3 (D6 e D7), 2026-10-30
+
+Vocabulário: cada leitura da tarefa de sensor é **medida válida** (tem distância; obstáculo se d < d_stop, senão
+livre), **sem alvo** (livre) ou **inválida** (não renova a idade). Falha (ADR 021) = nenhuma leitura não inválida há
+mais de T_S. "Inválida" aqui não é o "range status inválido" do ST, que inclui o sem alvo.
+
+- **Falso alvo (D6a):** limiar de sinal por SPAD no classificador, S_MIN_VLX = 0,02 MCPS/SPAD; status 11 abaixo dele
+  é sem alvo. Por SPAD porque o sinal total do falso alvo (0,29 a 0,45 MCPS) passa do limite padrão de 0,25 MCPS da
+  checagem de sinal do ST (a confirmar no UM2039), e por SPAD a separação é de ~470×. O limiar só precisa preservar
+  alvos abaixo de d_stop: além dele, perder o alvo dá livre, como a distância daria. Folga: 8× acima do maior falso
+  alvo (0,0024); ~1,5× abaixo do preto a 150 mm estimado (1,15 MCPS/SPAD do branco a 100 mm, com 1/d² e refletância
+  de 5 %: ≈ 0,03, a confirmar); > 50× abaixo do anteparo da V-03 (1,13). Descartados: compensação de crosstalk no
+  registrador do sensor (comportamento com a frente livre a confirmar, mais calibração e ensaio, e ainda poderia
+  pedir o limiar) e limiar de distância (o falso alvo, 0 a 87 mm, cobre o alvo real a 1 cm, 7 a 15 mm).
+- **Tabela de status (D6b):** só os status observados.
+
+  | Status | Leitura | Base (I3) |
+  | --- | --- | --- |
+  | 11, sinal/SPAD ≥ S_MIN_VLX | medida válida | alvo a 100 mm e a ~1 cm |
+  | 11, sinal/SPAD < S_MIN_VLX | sem alvo | frente livre |
+  | 6, 9 | sem alvo | só com a frente livre; nenhum em ~5800 medidas com alvo |
+  | outro, ou erro de I²C | inválida | não observado: lado seguro |
+
+  O alvo abaixo do alcance mínimo (ADR 021) chegou como status 11 com 7 a 15 mm e cai em obstáculo pela distância.
+  Descartados: 6 e 9 como inválidas (na sala aberta, o status 9 teve 13,7 % das medidas, em sequências de até
+  278 ms: o robô pararia com a frente livre) e o mapeamento de todos os códigos do ST (regras para casos não vistos
+  nem testáveis a tempo). Código não observado vira inválida e, após T_S, zera o avanço com a falha reportada.
+- **T_S (D7):** 100 ms, ≈ 3 intervalos máximos (32 ms em ~19 500 leituras sem desconexão, nenhuma inválida). Com o
+  julgamento a cada T_c, tolera duas leituras perdidas seguidas. v_max·T_S = 20 mm, contra ~100 mm de orçamento na
+  garantia de parada (d_stop 0,15 m − frenagem ≈ 40 mm com a_dec de projeto − latência de uma medida ≈ 7 mm).
+  Descartados: 300 ms (60 mm às cegas sem atraso medido que o justifique) e 64 ms (uma leitura perdida e a
+  granularidade do ciclo já estouram; contradiz o racional da ADR 021). Não medido com a micro-ROS ativa no núcleo
+  0: a V-03 confere, porque falha espúria aparece no Estado gravado e reprova.

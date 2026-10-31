@@ -19,7 +19,7 @@ A cada ciclo, a leitura do sensor é classificada em um de três estados:
 
 - **obstáculo:** medida válida abaixo de d_stop, ou alvo abaixo do alcance mínimo;
 - **livre:** medida válida em d_stop ou acima, ou sem alvo no alcance;
-- **falha:** nenhuma leitura classificável há mais de T_S.
+- **falha:** só leituras inválidas há mais de T_S.
 
 A falha é tratada como obstáculo: avanço da referência igual a zero, com giro e ré permitidos. A falha é reportada ao sequenciador. No boot, antes da primeira leitura válida, o estado é falha.
 
@@ -37,4 +37,4 @@ A falha é tratada como obstáculo: avanço da referência igual a zero, com gir
 
 ## Nota
 
-O valor de T_S será fixado por medição.
+T_S = 100 ms (nota 0015).
