@@ -96,3 +96,4 @@ do ensaio.
 | `robot_sequencer/robot_sequencer/geometry.py` | domínio | T2 | RF-04 | V-01, V-04 | ponto, pose e ângulo em odom (ADR 047); teste unitário. Nenhum `check_vNN` usa dado interno do sequenciador (V-01) |
 | `robot_sequencer/robot_sequencer/mission.py` | domínio | T2 | RF-04 | V-01, V-04 | vocabulário das missões: comando, alvos, términos (ε_θ e ε_d da V-01, nota 0014), códigos e reação padrão (ADRs 032, 036, 047); teste unitário |
 | `robot_sequencer/robot_sequencer/sequencer.py` | domínio | T2 | RF-04, RF-05 | V-01, V-07 | motor: passo em execução, término na Odometria, ativação de código no Estado com aborto padrão (ADRs 032, 033, 037, 047); teste unitário |
+| `robot_sequencer/robot_sequencer/missions.py` | domínio | T2 | RF-04, RF-05 | V-01 | missões das verificações como dado, pelo parâmetro `mission` (ADR 032); regra de sequenciamento da V-01 no cabeçalho; teste unitário |
