@@ -22,6 +22,7 @@ Lado esquerdo (J1, roda esquerda):
 | 4 / 5 | DRV8871 esquerdo IN1 / IN2 | dupont de baixo |
 | 10 | Reservado para o buzzer | definido quando ele entrar |
 | 11 | Injeção de laço infinito na tarefa de controle (V-02): nível baixo trava a tarefa | encostado no GND só no ensaio |
+| 12 | Modo de ensaio da V-07 (ADR 049): nível baixo gera os eventos de falha de ensaio | encostado no GND só no ensaio |
 | 14 | Encoder esquerdo (borne) | borne de baixo |
 
 Lado direito (J3, roda direita):
@@ -42,7 +43,7 @@ Lado direito (J3, roda direita):
 
 Fora do mapa: strapping (0, 3, 45, 46), flash e PSRAM octal (26 a 37), USB nativa (19, 20: alimentação e gravação pelo RPi, ADR 044), UART0 do CP2102 (43, 44) e LED RGB da placa (48).
 
-Livres: 6 a 9, 12, 13, 15 a 18 e 47. GND livres: um dupont de baixo à esquerda e um borne de baixo à direita.
+Livres: 6 a 9, 13, 15 a 18 e 47. GND livres: um dupont de baixo à esquerda e um borne de baixo à direita.
 
 Chave dos motores: uma chave gangorra com LED (20 A) no VM dos dois DRV8871, depois do fusível. Ela desliga só os motores; o ESP32 segue alimentado pelo RPi. Na V-02, é ela que corta a alimentação (falha cognizante sem travar a roda). O ESP32 continua aplicando nível alto em IN1/IN2 com o VM cortado, o que o DRV8871 admite: "Safe to provide logic high signals without VM present" (datasheet, No-VM Behavior).
 

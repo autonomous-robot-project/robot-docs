@@ -15,7 +15,7 @@ As verificações precisam de medidas internas do controlador: C_max, R_max e pr
 
 ## Decisão
 
-- A instrumentação existe em todos os builds. Ela mede no `controlador` e publica pelo `enlace`, com valores acumulados desde o boot.
+- A instrumentação existe em todos os builds. Ela mede no `controller` e publica pelo `link`, com valores acumulados desde o boot.
 - A perda de prazo é publicada como código de falha no estado. O código fica ativo por tempo limitado após a última perda. Não há reflexo associado.
 
 ## Alternativa descartada
@@ -36,4 +36,4 @@ As verificações precisam de medidas internas do controlador: C_max, R_max e pr
 
 ## Nota
 
-A duração do código ativo será fixada junto com a escada de recuperação do sequenciador.
+A duração do código ativo é 200 ms após a última perda, reiniciada a cada nova perda: o dobro do mínimo da ADR 037; a escada (ADR 038) a ignora. Conferida por teste de host.

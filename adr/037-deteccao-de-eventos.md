@@ -40,4 +40,4 @@ As reações (ADR 032) são disparadas por bordas de subida nas máscaras do Est
 - Como `HEARTBEAT_LOST` e `BATTERY_LOW` são por nível, uma missão não começa sem heartbeat nem com bateria baixa: a condição ativa na entrada do primeiro passo vira borda.
 - Só bordas de subida são detectadas. "Até a condição acabar" é o término por nível `cleared(code)`.
 - Com essa regra, um passo pode receber condições que não o afetam, como o obstáculo frontal durante um TURN_TO (ADR 021). A reação `ignore()` declara isso na tabela do passo.
-- O código efêmero precisa durar o suficiente para chegar em pelo menos um Estado. Com 100 Hz em best effort, ≥ 100 ms (10 mensagens) é a exigência para a medição da duração dos códigos.
+- O código efêmero precisa durar o suficiente para chegar em pelo menos um Estado. Com 100 Hz em best effort, a exigência é ≥ 100 ms (10 mensagens), conferido por teste de host.
