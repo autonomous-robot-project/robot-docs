@@ -213,12 +213,12 @@ Não há `bt_navigator` nem `controller_server`: seguir caminho é papel do cont
 
 **Launch:** é separado do do sequenciador, com um processo por nó. Desligar o deliberador (RF-05) é não lançá-lo. Um argumento escolhe a configuração:
 
-| Configuração | Mapa do planner | map → odom | SLAM |
-| --- | --- | --- | --- |
-| Operação | Do SLAM | SLAM | Ativo |
-| Ensaio (V-04, V-08 C1) | M, pelo `map_server` | Identidade, estático (ADR 035) | V-04: desligado. V-08 C1: frame e tópico próprios, só como carga |
+| Configuração | Mapa do planner | Costmap global | map → odom | SLAM |
+| --- | --- | --- | --- | --- |
+| Operação | Do SLAM | Estática, obstáculo e inflação (ADR 041) | SLAM | Ativo |
+| Ensaio (V-04, V-08 C1) | M, pelo `map_server` | Estática (M) e inflação, sem `/scan` | Identidade, estático (ADR 035) | V-04: desligado. V-08 C1: frame e tópico próprios, só como carga |
 
-Na V-08 C1, as consultas partem de p₀, informado pela missão de ensaio (ADR 040).
+Na V-08 C1, as consultas partem de p₀, informado pela missão de ensaio (ADR 040). Nos ensaios, o costmap não tem camada de obstáculo: com as rodas suspensas a odometria anda e o robô não, e o `/scan` marcaria a sala real em posições erradas sobre o M.
 
 ## Implantação no RPi 5
 
