@@ -191,7 +191,7 @@ O notebook publica `/heartbeat` (`std_msgs/Empty`, best effort) a 10 Hz com `ros
 4. Diante de obstáculo frontal no GO_TO: espera T_WAIT, depois `replan()` da pose atual, no máximo N_REPLAN vezes por missão, e por fim aborta (ADR 038).
 5. Erro do planner, deliberador ausente, TF ausente, roda travada, bateria baixa ou crítica, heartbeat perdido e enlace perdido abortam a missão.
 
-As missões de ensaio (V-01, V-07, V-08) são escolhidas pelo parâmetro `missao` no launch e começam quando o nó sobe; reiniciar o ensaio é reiniciar o nó. Elas ignoram o `/goal_pose` e o heartbeat. Com `missao` vazio, o nó espera o `/goal_pose`.
+As missões de ensaio (V-01, V-07, V-08) são escolhidas pelo parâmetro `mission` no launch e começam quando o nó sobe; reiniciar o ensaio é reiniciar o nó. Elas ignoram o `/goal_pose` e o heartbeat. Com `mission` vazio, o nó espera o `/goal_pose`.
 
 ## Deliberador (RPi 5)
 
