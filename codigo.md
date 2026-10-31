@@ -41,6 +41,7 @@ do ensaio.
 | `components/controller/src/supervision/watchdog_test_trigger.cpp` | infraestrutura | T2 | RF-02 | V-02 | injeção do laço infinito |
 | `components/controller/src/instrumentation/expiry_meter.cpp` | domínio | T1 | RNF-02 | V-06 | ADR 028 |
 | `components/controller/src/instrumentation/deadline_meter.cpp` | domínio | T1 | RNF-01 | V-05 | ADR 028; teste no host com caso que deve falhar |
+| `components/controller/src/instrumentation/sequencer_response_meter.cpp` | domínio | T1 | RNF-03 | V-07 | ADR 049; teste no host com casos que devem falhar |
 | `components/controller/src/actuation/driver_input.cpp` | infraestrutura | T2 | RF-01 | V-02 | ADR 008, nota 0009 |
 | `components/controller/src/actuation/motor_driver.cpp` | infraestrutura | T2 | RF-01 | V-02 | ADR 008, nota 0009 |
 | `components/controller/src/controller.cpp` | misto | T1 (trechos) | RF-02, RF-03, RNF-01, RNF-02 | V-02, V-03, V-05, V-06 | infraestrutura: `start`, `run`, `now`; domínio: `control_cycle`, `command_in_force`, `active_faults`, `active_reflexes`, `restrict_by_reflexes`; T1: `record_expiry`, `publish_instrumentation`, o instante de liberação em `run` e o início e o fim em `control_cycle` |
