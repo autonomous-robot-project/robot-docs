@@ -5,7 +5,7 @@ camada: "controlador"
 revoga:
 revogada_por:
 affects: []
-evidence: [V-04, V-09]
+evidence: [V-04, V-07, V-09]
 ---
 # 027 – Carimbo de tempo no ESP32 com relógio sincronizado ao agente
 
@@ -31,4 +31,4 @@ A odometria só é publicada depois da primeira sincronização.
 
 ## Nota
 
-O período de ressincronização será fixado pela deriva medida entre os relógios.
+O período de ressincronização será fixado pela deriva medida entre os relógios. A medida usa os carimbos da Odometria gravados na V-07, sem mudar o firmware: entre ressincronizações eles distam 50 ms no relógio do ESP32, e cada ressincronização dá um salto igual à deriva acumulada no período mais a diferença de erro entre duas sincronizações. A deriva é a média dos saltos dividida pelo período; o erro de sincronização, o espalhamento dos saltos.
