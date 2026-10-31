@@ -212,7 +212,7 @@ Não há `bt_navigator` nem `controller_server`: seguir caminho é papel do cont
 - O planner pode atravessar espaço desconhecido.
 - O VL53L0X fica fora do costmap. Um obstáculo visto só por ele leva a escada ao aborto.
 
-**Launch:** é separado do do sequenciador, com um processo por nó, no pacote `robot_bringup`. Desligar o deliberador (RF-05) é não lançá-lo. O `odom_to_tf_ros2` sobe com o deliberador, o único que consome o odom → base_link. Hoje só existe a configuração de ensaio da V-04 (`deliberator_test.launch.py`); a da V-08 C1 entra com o SLAM como carga, e a de operação depois das verificações (F7 D1):
+**Launch:** pacote `robot_bringup`, com um processo por nó. Desligar o deliberador (RF-05) é não lançá-lo. O `odom_to_tf_ros2` sobe com o deliberador, o único que consome o odom → base_link. Nos ensaios, o deliberador sobe pelo launch de ensaio: o `deliberator_test.launch.py` na V-04, e na V-08 C1 o mesmo mais o SLAM como carga. O agente e o sequenciador sobem pelos scripts de verificação (`run_vNN`). O launch de operação (`robot.launch.py`) sobe tudo: o agente, o sequenciador e o deliberador na configuração de operação. Ele não é usado nos ensaios (F7 D1) e é a fonte do `rqt_graph` da V-09:
 
 | Configuração | Mapa do planner | Costmap global | map → odom | SLAM |
 | --- | --- | --- | --- | --- |
@@ -228,7 +228,7 @@ Na V-08 C1, as consultas partem de p₀, informado pela missão de ensaio (ADR 0
 | Agente micro-ROS, sequenciador | SCHED_FIFO 50 (`chrt -f 50`), kernel padrão, sem afinidade (ADR 039) |
 | Deliberador, `odom_to_tf_ros2`, driver do LiDAR | Escalonador comum |
 
-O `chrt` roda sem root: o usuário tem `rtprio 50` num arquivo em `/etc/security/limits.d/`, aplicado pelo `pam_limits` a cada sessão ssh. O `chrt -f 50` é prefixo no launch e no `MicroRosAgent` do `link.py`.
+O `chrt` roda sem root: o usuário tem `rtprio 50` num arquivo em `/etc/security/limits.d/`, aplicado pelo `pam_limits` a cada sessão ssh. O `chrt -f 50` é prefixo nos scripts de verificação (`MicroRosAgent` do `link.py` e sequenciador dos `run_vNN`) e no launch de operação.
 
 Todos os processos ROS do RPi, inclusive o agente e os scripts de verificação, rodam com `FASTDDS_BUILTIN_TRANSPORTS=UDPv4` (ADR 045). Os scripts de bancada rodam com `env -i`, então a variável é passada explicitamente.
 
