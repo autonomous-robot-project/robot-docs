@@ -28,5 +28,7 @@ Surpresas:
   `/etc/security/limits.d/`, lido pelo `pam_limits` do `sshd` (presente). Aplicado no F6 I3.
 - O RPi tem `sudo` sem senha para tudo (`NOPASSWD: ALL`). Os ensaios não dependem disso para o `chrt`.
 
-Pendências:
-- F6 I3: criar o arquivo no `limits.d` e conferir com `ulimit -r` e `ps -o cls,rtprio`.
+Aplicado (F6 I3, 2026-10-31):
+- `/etc/security/limits.d/99-robot-rtprio.conf` no RPi: `lucasfv - rtprio 50`, com comentário citando a ADR 039.
+- Sessão ssh nova: `ulimit -r` = 50, também sob `env -i`; `chrt -f 50 sleep 5` sem sudo → `ps` mostra `FF 50`;
+  `chrt -f 51` falha com "Operation not permitted" (o limite vale). Para desfazer, apagar o arquivo.
