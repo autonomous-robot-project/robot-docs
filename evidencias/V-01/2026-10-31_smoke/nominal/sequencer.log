@@ -1,0 +1,5 @@
+[INFO] [1793484857.656018614] [sequencer]: mission v01: waiting for the first Odometry
+[INFO] [1793484857.676784739] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793484863.176417728] [sequencer]: RUNNING: Command(behavior=<Behavior.TURN_TO: 1>, linear=0.0, angular=0.0, theta=1.5707963267948966, x=0.0, y=0.0)
+[INFO] [1793484864.585990391] [sequencer]: RUNNING: Command(behavior=<Behavior.GO_TO: 2>, linear=0.0, angular=0.0, theta=0.0, x=1.0000672340393066, y=0.5291836615651846)
+[INFO] [1793484868.037056120] [sequencer]: SUCCEEDED: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0)

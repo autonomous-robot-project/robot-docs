@@ -1,0 +1,6 @@
+   0.000 s  códigos faults=0 reflexes=1
+   0.000 s  eco     TWIST(0.00 m/s, 0.00 rad/s)
+   1.990 s  comando TWIST(0.20 m/s, 0.00 rad/s)
+   1.999 s  comando TWIST(0.00 m/s, 0.00 rad/s)
+   2.008 s  eco     TWIST(0.20 m/s, 0.00 rad/s)
+   2.020 s  eco     TWIST(0.00 m/s, 0.00 rad/s)

@@ -1,0 +1,4 @@
+robot-firmware 59beb32 (gravado em 31/10, nota 0017)
+robot-interfaces 774e892
+robot-ros-system 6253054 (robot_sequencer; agente micro-ROS do ~/robot_ws do RPi)
+Figuras e eventos.txt: plot_v01 do robot_verification, robot-ros-system ccd9b91

@@ -1,0 +1,9 @@
+   0.000 s  comando TWIST(0.20 m/s, 0.00 rad/s)
+   0.180 s  códigos faults=0 reflexes=0
+   0.180 s  eco     TWIST(0.20 m/s, 0.00 rad/s)
+   5.501 s  comando TURN_TO(1.571 rad)
+   5.510 s  eco     TURN_TO(1.571 rad)
+   6.909 s  comando GO_TO(1.000, 0.529 m)
+   6.919 s  eco     GO_TO(1.000, 0.529 m)
+  10.362 s  comando TWIST(0.00 m/s, 0.00 rad/s)
+  10.370 s  eco     TWIST(0.00 m/s, 0.00 rad/s)
