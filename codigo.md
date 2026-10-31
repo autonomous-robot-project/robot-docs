@@ -68,7 +68,7 @@ do ensaio.
 | `robot_verification/robot_verification/check_v03.py` | domínio | T1 | RF-03 | V-03 | julga pelas janelas anunciadas, não pelo bit do reflexo (nota 0015, D8); teste com dados sintéticos |
 | `robot_verification/robot_verification/check_v05.py` | domínio | T1 | RNF-01 | V-05 | sobre a gravação da V-07; perdas pela diferença início–fim, máximos desde o boot como limite superior |
 | `robot_verification/robot_verification/check_v06.py` | domínio | T1 | RNF-02 | V-06 | |
-| `robot_verification/robot_verification/recording.py` | infraestrutura | T1 | | todas | leitura do bag, veredito e `ControllerRecording` (comando, Estado, Instrumentação) |
+| `robot_verification/robot_verification/recording.py` | infraestrutura | T1 | | todas | leitura do bag, veredito, `ControllerRecording` (comando, Estado, Instrumentação, Odometria), marcadores dos procedimentos e buracos na gravação |
 | `robot_verification/robot_verification/measure_link_load.py` | infraestrutura | T1 | | | orçamento da ADR 025 (nota 0006) |
 | `robot_verification/robot_verification/measure_closed_loop.py` | domínio | T1 | RF-01, RF-02 | | parada após T_vel, v_min sem ciclo-limite (nota 0011) |
 | `robot_verification/robot_verification/run_v02.py` | infraestrutura | T2 | RF-02 | V-02 | erro invalida a rodada, e o `check_v02` detecta |
