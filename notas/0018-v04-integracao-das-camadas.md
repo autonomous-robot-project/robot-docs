@@ -24,3 +24,21 @@ Surpresas:
 
 Pendências:
 - F7 I3: a cadeia real, com a odometria do controlador no `odom_to_tf_ros2`.
+
+## Sistema completo sem potência (F7 I3, parte 1) - frente C
+
+Montagem:
+- robot-ros-system 495b196. ESP32 pelo UART, chave dos motores desligada.
+- Agente e sequenciador (`mission:=v01`), os dois com `chrt -f 50` e sem launch (F7 I3). `deliberator_test.launch.py`
+  à parte.
+
+Medido:
+- `ps -eLo cls,rtprio`: todas as threads do agente e do sequenciador, inclusive as do DDS, em FF 50. `planner_server`,
+  `map_server`, `odom_to_tf` e `lifecycle_manager` em TS (ADR 039).
+- odom → base_link vindo da Odometria do controlador, a 20,0 Hz. Costmap ativo e `planner_server` `active`.
+- `ComputePathToPose` de (0, 0) a (2, 2) com `use_start`: SUCCEEDED, `error_code` 0.
+- O sequenciador comandou TWIST(0,2, 0) e abortou 1,3 s depois, em TWIST(0, 0). Sem VM, a roda não gira; o motivo
+  provável é a roda travada detectada pelo firmware (não conferido).
+
+Pendências:
+- A missão por plano (F7 I2) e o smoke test (F7 I4).
