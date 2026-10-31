@@ -34,5 +34,5 @@ Como o nó do sequenciador (ADR 031) agenda os callbacks e quando publica o coma
 
 ## Nota
 
-- O predicado de término é avaliado na Odometria (20 Hz), onde a pose muda. O Estado (100 Hz) só gera bordas.
+- Cada predicado de término é avaliado na mensagem que muda a sua entrada: os de pose na Odometria (20 Hz), o fim de um código (`cleared`) no Estado (100 Hz), que também gera as ativações.
 - As pausas do coletor de lixo e a prioridade de tempo real ficam para a decisão de implantação no RPi.
