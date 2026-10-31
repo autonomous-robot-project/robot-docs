@@ -59,6 +59,6 @@ Tabela da missão por plano:
 
 - Os passos de espera herdam o restante da tabela da missão.
 - T_WAIT e N_REPLAN são parâmetros ROS; pontos de partida 5 s e 3.
-- As missões de ensaio têm tabelas próprias: a V-01 aborta em qualquer falha; a V-07 e a V-08 usam `wait_until_clear` com o código de ensaio. A V-08 ignora `LINK_LOST`, porque sob C2 o efeito esperado é o vencimento do comando, e ignora o obstáculo frontal, que o próprio ensaio provoca.
+- As missões de ensaio têm tabelas próprias: a V-01 aborta em qualquer falha; a V-07 e a V-08 usam `wait_until_clear` com o código de ensaio. A V-08 ignora `LINK_LOST` e `COMMAND_NOT_ECHOED`, porque sob C2 o efeito esperado é o vencimento do comando, que também deixa o eco em TWIST(0, 0).
 - O heartbeat é exigido por padrão. A V-01, a V-07 e a V-08 declaram `HEARTBEAT_LOST: ignore()` e rodam sem notebook.
 - As missões de ensaio também abortam com bateria baixa.
