@@ -100,8 +100,12 @@ do ensaio.
 | `robot_bringup/launch/deliberator_test.launch.py` | infraestrutura | T2 | RF-05, RF-06 | V-04, V-09 | deliberador na configuração de ensaio; ADRs 026 e 035 |
 | `robot_bringup/config/deliberator_test.yaml` | infraestrutura | T2 | RF-06 | V-04 | Theta* e costmap sem camada de obstáculo; ADRs 041 e 042, F7 D1 |
 | `robot_bringup/maps/make_map_m.py` | domínio | T2 | RF-06 | V-04 | gera o M da V-04; `m.pgm` e `m.yaml` versionados (nota 0003) |
-| `robot_bringup/launch/deliberator_c1.launch.py` | infraestrutura | T2 | RNF-05 | V-08 | deliberador do C1: o de ensaio da V-04 mais LD19 e SLAM como carga; ADR 040, F8 D1 |
-| `robot_bringup/config/slam_load.yaml` | infraestrutura | T2 | RNF-05 | V-08 | `slam_toolbox` com frame e tópico próprios, sem TF; ADR 040 |
+| `robot_bringup/launch/deliberator_c1.launch.py` | infraestrutura | T2 | RNF-05 | V-08 | deliberador do C1: o de ensaio da V-04 mais o LiDAR e o SLAM como carga; ADR 040, F8 D1 |
+| `robot_bringup/config/slam_load.yaml` | infraestrutura | T2 | RNF-05 | V-08 | `slam_toolbox` do C1 com frame e tópico próprios, sem TF; ADR 040 |
+| `robot_bringup/config/slam.yaml` | infraestrutura | T2 | RNF-05 | V-08 | `slam_toolbox` em toda configuração (base_link, `lifecycle_manager`); ADR 040 |
+| `robot_bringup/launch/lidar.launch.py` | infraestrutura | T2 | RNF-05 | V-08 | driver do LD19 e base_link → laser, fonte única da pose do laser (#25) |
+| `robot_bringup/launch/robot.launch.py` | infraestrutura | T2 | RF-05, RF-06, RF-07 | V-09 | robô inteiro na configuração de operação; fora dos ensaios (F7 D1), fonte do `rqt_graph`; ADRs 039, 040 e 041 |
+| `robot_bringup/config/deliberator_operation.yaml` | infraestrutura | T2 | RF-06 | V-09 | camada de obstáculo sobre o de ensaio; ADRs 040 e 041 |
 | `robot_sequencer/robot_sequencer/geometry.py` | domínio | T2 | RF-04 | V-01, V-04 | ponto, pose e ângulo em odom (ADR 047); teste unitário. Nenhum `check_vNN` usa dado interno do sequenciador (V-01) |
 | `robot_sequencer/robot_sequencer/mission.py` | domínio | T2 | RF-04 | V-01, V-04 | vocabulário das missões: comando, alvos, términos (ε_θ e ε_d da V-01, nota 0014), códigos e reação padrão (ADRs 032, 036, 047); teste unitário |
 | `robot_sequencer/robot_sequencer/sequencer.py` | domínio | T2 | RF-04, RF-05 | V-01, V-07 | motor: passo em execução, término na Odometria, ativação de código no Estado com aborto padrão (ADRs 032, 033, 037, 047); teste unitário |
