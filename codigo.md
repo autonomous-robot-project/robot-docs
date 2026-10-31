@@ -82,8 +82,10 @@ do ensaio.
 | `robot_verification/robot_verification/run_v04.py` | infraestrutura | T2 | RF-06, RF-07 | V-04 | pede o plano por `/goal_pose` (F7 D4); erro invalida ou reprova a rodada, e o `check_v04` detecta |
 | `robot_verification/robot_verification/run_v07.py` | infraestrutura | T2 | RNF-03 | V-07 | só conta os eventos para parar; erro invalida a rodada, e o `check_v07` detecta |
 | `robot_verification/robot_verification/run_closed_loop.py` | infraestrutura | T2 | RF-01, RF-02 | | erro invalida a rodada, e o `measure_closed_loop` detecta |
+| `robot_verification/robot_verification/plot_clock_drift.py` | infraestrutura | T2 | | | figuras da deriva entre os relógios (ADR 027); os números vêm do `measure_clock_drift` |
 | `robot_verification/robot_verification/plot_closed_loop.py` | infraestrutura | T2 | | | figuras da nota 0011; os números vêm do `measure_closed_loop` |
 | `robot_verification/robot_verification/plot_recording.py` | infraestrutura | T2 | | | uma figura por campo gravado dos tópicos do controlador (nota 0013); os números vêm do check |
+| `robot_verification/robot_verification/plot_v01.py` | infraestrutura | T2 | RF-04 | V-01 | figura no tempo (comportamento e eco, v, ω, θ, máscaras) e trajetória de uma execução da V-01, mais a lista de eventos (nota 0016); o veredito vem do `check_v01` |
 | `robot_verification/bench/v05_bench.sh` | infraestrutura | T2 | RNF-01 | V-05 | checagem da cadeia do medidor (nota 0013); erro invalida a rodada, e o `check_v05` detecta |
 | `robot_verification/bench/behaviors_bench.sh` | infraestrutura | T2 | RF-01 | V-01 | primeiro ensaio de TURN_TO e GO_TO (nota 0014); como rodou |
 | `robot_verification/bench/reversal_bench.sh` | infraestrutura | T2 | RF-01 | V-02 | reversão isolada (nota 0014); como rodou |
