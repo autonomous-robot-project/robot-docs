@@ -1,0 +1,5 @@
+Antes do ensaio, chave dos motores desligada, depois de gravar o firmware (2026-10-31):
+check_link: PASS: state after 0.7 s; after the agent restart, after 0.6 s
+measure_link_load (60 s, agente e comando TWIST(0, 0) a 20 Hz):
+RPi -> ESP32: 907 B/s = 1.0% of 92160 B/s (budget 50%)
+ESP32 -> RPi: 19540 B/s = 21.2% of 92160 B/s (budget 50%)

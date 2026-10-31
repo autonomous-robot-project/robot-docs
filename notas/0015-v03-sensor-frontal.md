@@ -103,3 +103,27 @@ mais de T_S. "Inválida" aqui não é o "range status inválido" do ST, que incl
   Descartados: 300 ms (60 mm às cegas sem atraso medido que o justifique) e 64 ms (uma leitura perdida e a
   granularidade do ciclo já estouram; contradiz o racional da ADR 021). Não medido com a micro-ROS ativa no núcleo
   0: a V-03 confere, porque falha espúria aparece no Estado gravado e reprova.
+
+## Ensaio V-03 (I7), 2026-10-31 - robot-firmware 2ed8c1a, robot-ros-system b72b1c1
+
+Ferramentas: robot-ros-system/robot_verification `run_v03` (T2) e `check_v03` (T1), como rodaram. Evidências:
+evidencias/V-03/2026-10-31_0112/ (bag, `check_v03.txt`, `enlace.txt`, `versoes.txt`).
+
+Montagem: rodas suspensas, bateria 3S a 12,21 V, fusível de 2 A, VL53L0X ligado nos GPIO 39 (SDA) e 38 (SCL).
+Firmware gravado com a chave dos motores desligada; `check_link` PASS e `measure_link_load` com 1,0 % (RPi → ESP32)
+e 21,2 % (ESP32 → RPi) do orçamento de 50 %, como na nota 0014 (22,0 %): o `State` novo só acrescenta constantes.
+
+Desvio: anteparo colocado a até 0,10 m, sem medir (d_o ≤ 0,10 m), aceito pelo Lucas. Não afeta o critério: qualquer
+d_o até 0,10 m fica ao menos 50 mm dentro de d_stop, e o alvo a ~1 cm do I3 dá obstáculo.
+
+Resultado: PASS. Três anteparos; a velocidade zerou em todos e voltou a v_r ± E_R depois de cada retirada; nenhum
+Estado com código de falha; eco de TWIST(v_r, 0) do início ao fim. O bit do reflexo (relatado, não julgado) ficou
+ativo em 152, 170 e 188 dos ~200 Estados de cada janela de t_o: o resto é a reação do operador ao "PLACE NOW".
+
+Janelas do `check_v03` (D8, decompostas no I6): T_settle = 1,25 s (reação 0,5 s + sensor 0,043 s + rampa até v_min
+0,26 s + freio 0,05 s + T_vel 0,3 s + enlace e Odometria 0,1 s) e T_resume = 1,94 s (reação + sensor + rampa até
+v_r 0,8 s + acomodação t_s 0,5 s + enlace e Odometria). Banda E_R = 0,03 m/s em toda amostra da Odometria (ruído
+por roda 2σ ≤ 0,015 m/s e sobressinal ≤ 0,029 m/s, nota 0011). Validade: em v_r só antes da primeira colocação,
+porque antes das outras o critério de retomada já julga (exigir antes de cada uma tornava INVALID um robô que não
+retoma); no mínimo 10 amostras da Odometria em cada janela julgada (revisão por subagente, que também pegou o bag
+cortado no fim).

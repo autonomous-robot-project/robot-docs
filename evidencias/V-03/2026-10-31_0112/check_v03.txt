@@ -1,0 +1,12 @@
+V-03: 3 screens (3 expected)
+  zero from 1.25 s after each placement; v_r +- 0.03 m/s from 1.94 s after each removal
+  state from a second before: True
+  state without holes: True
+  echo of TWIST(v_r, 0) throughout: True
+  odometry in every window: True
+  at v_r before the first placement: True
+  screen 1: stopped: True, resumed: True, reflex states: 152
+  screen 2: stopped: True, resumed: True, reflex states: 170
+  screen 3: stopped: True, resumed: True, reflex states: 188
+  states with a fault code: 0
+V-03: PASS
