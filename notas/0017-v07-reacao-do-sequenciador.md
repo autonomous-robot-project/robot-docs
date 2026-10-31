@@ -32,3 +32,21 @@ Aplicado (F6 I3, 2026-10-31):
 - `/etc/security/limits.d/99-robot-rtprio.conf` no RPi: `lucasfv - rtprio 50`, com comentário citando a ADR 039.
 - Sessão ssh nova: `ulimit -r` = 50, também sob `env -i`; `chrt -f 50 sleep 5` sem sudo → `ps` mostra `FF 50`;
   `chrt -f 51` falha com "Operation not permitted" (o limite vale). Para desfazer, apagar o arquivo.
+
+## Firmware do modo de ensaio gravado (F6 I4, ADR 049) - frente A
+
+Versões: robot-firmware 59beb32, robot-interfaces 774e892, robot-ros-system b71b606. Só a app gravada, com a chave
+dos motores desligada; `robot_interfaces` recompilado no `~/robot_ws` do RPi, `robot_verification` em
+`~/spike_build_A`.
+
+Medido:
+
+| Item | Resultado | Referência |
+| --- | --- | --- |
+| `check_link` | PASS: Estado em 0,5 s; após reiniciar o agente, em 0,6 s | — |
+| Enlace, ESP32 → RPi (`measure_link_load`, 60 s, comando TWIST(0, 0) a 20 Hz) | 20425 B/s = 22,2 % | ≤ 50 % (ADR 025); 22,0 % na nota 0014 |
+| Enlace, RPi → ESP32 | 909 B/s = 1,0 % | ≤ 50 % |
+| Instrumentação, uma amostra com o GPIO 12 solto | `test_event_index` = 0, `test_event_response_us` = 0, `deadline_misses` = 0 | modo inerte no boot (ADR 049) |
+| `faults` no Estado, uma amostra | 0: sem `FAULT_TEST` nem `FAULT_DEADLINE_MISSED` | — |
+
+Ajustes: nenhum. Os dois campos novos somam 8 B a 10 Hz, abaixo da resolução da medida (+0,2 pp).
