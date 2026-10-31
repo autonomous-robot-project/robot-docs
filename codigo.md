@@ -97,3 +97,4 @@ do ensaio.
 | `robot_sequencer/robot_sequencer/mission.py` | domínio | T2 | RF-04 | V-01, V-04 | vocabulário das missões: comando, alvos, términos (ε_θ e ε_d da V-01, nota 0014), códigos e reação padrão (ADRs 032, 036, 047); teste unitário |
 | `robot_sequencer/robot_sequencer/sequencer.py` | domínio | T2 | RF-04, RF-05 | V-01, V-07 | motor: passo em execução, término na Odometria, ativação de código no Estado com aborto padrão (ADRs 032, 033, 037, 047); teste unitário |
 | `robot_sequencer/robot_sequencer/missions.py` | domínio | T2 | RF-04, RF-05 | V-01 | missões das verificações como dado, pelo parâmetro `mission` (ADR 032); regra de sequenciamento da V-01 no cabeçalho; teste unitário |
+| `robot_sequencer/robot_sequencer/sequencer_node.py` | infraestrutura | T2 | RF-04, RNF-03 | V-01, V-07 | nó único em uma thread: Estado e Odometria → `Sequencer`, publicação na transição e republicação a f_cmd; bit desconhecido vira `Code.UNKNOWN` (ADRs 025, 031, 033) |
