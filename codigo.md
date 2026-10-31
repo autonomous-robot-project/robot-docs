@@ -70,6 +70,7 @@ do ensaio.
 | `robot_verification/robot_verification/check_v02.py` | domínio | T1 | RF-02 | V-02 | julga pelas janelas anunciadas, não pela velocidade medida |
 | `robot_verification/robot_verification/check_v03.py` | domínio | T1 | RF-03 | V-03 | julga pelas janelas anunciadas, não pelo bit do reflexo (nota 0015, D8); teste com dados sintéticos |
 | `robot_verification/robot_verification/check_v04.py` | domínio | T1 | RF-06, RF-07 | V-04 | regra da ADR 034 reescrita do texto, sem importar o sequenciador (F7 D5); teste com o Path da nota 0003 escrito à mão |
+| `robot_verification/robot_verification/measure_clock_drift.py` | domínio | T1 | — | — | deriva entre os relógios (ADR 027, nota) sobre o bag da V-07; teste com deriva e erro de sincronização conhecidos |
 | `robot_verification/robot_verification/check_v05.py` | domínio | T1 | RNF-01 | V-05 | sobre a gravação da V-07; perdas pela diferença início–fim, máximos desde o boot como limite superior |
 | `robot_verification/robot_verification/check_v07.py` | domínio | T1 | RNF-03 | V-07 | Δ medido pelo controlador (ADR 049), sem cronometrar o sequenciador; teste com casos que devem falhar e inválidos |
 | `robot_verification/robot_verification/check_v06.py` | domínio | T1 | RNF-02 | V-06 | |
