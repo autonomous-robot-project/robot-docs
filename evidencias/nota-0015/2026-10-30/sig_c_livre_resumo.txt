@@ -1,0 +1,4 @@
+rangings: 1941 in 60.0 s; log lines: 0
+intervals: min 30.0 ms, median 30.0 ms, p99 32.0 ms, max 32.0 ms
+status 9: 1 (0.1 %), distance min 8190, median 8190, max 8190 mm; signal per SPAD min 0.0019, median 0.0019, max 0.0019 MCPS; longest gap if only it were unclassifiable 62.0 ms
+status 11: 1940 (99.9 %), distance min 0, median 0, max 0 mm; signal per SPAD min 0.0015, median 0.0019, max 0.0024 MCPS; longest gap if only it were unclassifiable no gap (under 2 rangings)

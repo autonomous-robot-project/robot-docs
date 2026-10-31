@@ -33,6 +33,8 @@ do ensaio.
 | `components/controller/src/sensing/wheel_speed.cpp` | domínio | T1 | RF-02, RF-03 | V-01, V-02, V-03 | instrumento (velocidade da V-03, odometria) e sob teste; sem teste no host próprio |
 | `components/controller/src/sensing/wheel_odometry.cpp` | domínio | T1 | RF-01 | V-01, V-04 | ADR 048; instrumento da pose; teste no host |
 | `components/controller/src/sensing/wheel_encoder.cpp` | infraestrutura | T1 | RF-02, RF-03 | V-01, V-02, V-03 | bordas validadas fisicamente (nota 0010) |
+| `components/controller/src/sensing/vl53l0x.cpp` | infraestrutura | T2 | RF-03 | V-03 | porte enxuto da Pololu (MIT); nota 0015 |
+| `components/controller/src/sensing/front_range_reader.cpp` | infraestrutura | T2 | RF-03 | V-03 | ADR 020; recuperação do I²C na nota 0015 |
 | `components/controller/src/supervision/wheel_tracking_monitor.cpp` | domínio | T2 | RF-02 | V-02 | o corte do VM é o detector independente; teste no host |
 | `components/controller/src/supervision/task_watchdog.cpp` | infraestrutura | T2 | RF-02 | V-02 | ADR 029 |
 | `components/controller/src/supervision/watchdog_test_trigger.cpp` | infraestrutura | T2 | RF-02 | V-02 | injeção do laço infinito |
@@ -53,6 +55,8 @@ do ensaio.
 | `tools/motor_characterization/main/edge_reporter.cpp` | infraestrutura | T1 | | | nota 0010 |
 | `tools/motor_characterization/main/main.cpp` | infraestrutura | T1 | | | nota 0010 |
 | `tools/motor_characterization/characterize.py` | domínio | T1 | | | K e tau citados (nota 0010) |
+| `tools/front_range/main/main.cpp` | infraestrutura | T1 | RF-03 | V-03 | T_S e tabela de status (nota 0015) |
+| `tools/front_range/front_range.py` | domínio | T1 | RF-03 | V-03 | T_S e tabela de status citados (nota 0015) |
 | `tools/driver_inputs/in21.py` | domínio | T1 | | | nota 0009 (#21) |
 
 ## robot-ros-system

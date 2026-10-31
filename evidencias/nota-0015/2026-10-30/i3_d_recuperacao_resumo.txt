@@ -1,0 +1,69 @@
+rangings: 2449 in 90.0 s; log lines: 66
+  E (444092) vl53l0x: read_measurement(207): wait
+  W (444092) front_range: reading failed: ESP_ERR_INVALID_STATE
+  E (444120) vl53l0x: read_measurement(207): wait
+  W (444120) front_range: reading failed: ESP_ERR_INVALID_STATE
+  E (444122) vl53l0x: read_measurement(207): wait
+  W (444122) front_range: reading failed: ESP_ERR_INVALID_STATE
+  E (444126) vl53l0x: read_measurement(207): wait
+  W (444126) front_range: reading failed: ESP_ERR_INVALID_STATE
+  E (444908) vl53l0x: single_reference_calibration(371): wait
+  E (444908) vl53l0x: reference_calibration(357): vhv
+  E (444908) vl53l0x: initialize(237): reference calibration
+  W (444909) front_range: initialization failed: ESP_ERR_INVALID_STATE
+  E (445421) vl53l0x: initialize(232): model id
+  W (445421) front_range: initialization failed: ESP_ERR_INVALID_STATE
+  E (446441) vl53l0x: single_reference_calibration(371): wait
+  E (446441) vl53l0x: reference_calibration(357): vhv
+  E (446441) vl53l0x: initialize(237): reference calibration
+  W (446443) front_range: initialization failed: ESP_ERR_TIMEOUT
+  E (447464) vl53l0x: single_reference_calibration(371): wait
+  E (447464) vl53l0x: reference_calibration(357): vhv
+  E (447464) vl53l0x: initialize(237): reference calibration
+  W (447465) front_range: initialization failed: ESP_ERR_TIMEOUT
+  E (448151) vl53l0x: single_reference_calibration(371): wait
+  E (448151) vl53l0x: reference_calibration(357): vhv
+  E (448151) vl53l0x: initialize(237): reference calibration
+  W (448152) front_range: initialization failed: ESP_ERR_INVALID_STATE
+  E (448664) vl53l0x: initialize(232): model id
+  W (448664) front_range: initialization failed: ESP_ERR_INVALID_STATE
+  E (449175) vl53l0x: initialize(232): model id
+  W (449175) front_range: initialization failed: ESP_ERR_INVALID_STATE
+  E (449686) vl53l0x: initialize(232): model id
+  W (449686) front_range: initialization failed: ESP_ERR_INVALID_STATE
+  E (450197) vl53l0x: initialize(232): model id
+  W (450197) front_range: initialization failed: ESP_ERR_INVALID_STATE
+  E (450708) vl53l0x: initialize(232): model id
+  W (450708) front_range: initialization failed: ESP_ERR_INVALID_STATE
+  E (451219) vl53l0x: initialize(232): model id
+  W (451219) front_range: initialization failed: ESP_ERR_INVALID_STATE
+  E (451730) vl53l0x: initialize(232): model id
+  W (451730) front_range: initialization failed: ESP_ERR_INVALID_STATE
+  E (452241) vl53l0x: initialize(232): model id
+  W (452241) front_range: initialization failed: ESP_ERR_INVALID_STATE
+  E (452752) vl53l0x: initialize(232): model id
+  W (452752) front_range: initialization failed: ESP_ERR_INVALID_STATE
+  E (453264) vl53l0x: initialize(232): model id
+  W (453264) front_range: initialization failed: ESP_ERR_INVALID_STATE
+  E (453776) vl53l0x: initialize(232): model id
+  W (453776) front_range: initialization failed: ESP_ERR_INVALID_STATE
+  E (454287) vl53l0x: initialize(232): model id
+  W (454287) front_range: initialization failed: ESP_ERR_INVALID_STATE
+  E (454798) vl53l0x: initialize(232): model id
+  W (454798) front_range: initialization failed: ESP_ERR_INVALID_STATE
+  E (455310) vl53l0x: initialize(232): model id
+  W (455310) front_range: initialization failed: ESP_ERR_INVALID_STATE
+  E (455822) vl53l0x: initialize(232): model id
+  W (455822) front_range: initialization failed: ESP_ERR_INVALID_STATE
+  E (456333) vl53l0x: initialize(232): model id
+  W (456333) front_range: initialization failed: ESP_ERR_INVALID_STATE
+  E (456844) vl53l0x: initialize(232): model id
+  W (456844) front_range: initialization failed: ESP_ERR_INVALID_STATE
+  E (457355) vl53l0x: initialize(232): model id
+  W (457355) front_range: initialization failed: ESP_ERR_INVALID_STATE
+  E (457866) vl53l0x: initialize(232): model id
+  W (457866) front_range: initialization failed: ESP_ERR_INVALID_STATE
+  E (458376) vl53l0x: initialize(232): model id
+  W (458376) front_range: initialization failed: ESP_ERR_INVALID_STATE
+intervals: min 29.0 ms, median 30.0 ms, p99 32.0 ms, max 14838.9 ms
+status 11: 2449 (100.0 %), distance min 4, median 13, max 77 mm; signal per SPAD min 0.1795, median 18.2521, max 35.1099 MCPS; longest gap if only it were unclassifiable no gap (under 2 rangings)

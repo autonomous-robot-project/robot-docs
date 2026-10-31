@@ -1,0 +1,4 @@
+rangings: 3880 in 120.0 s; log lines: 0
+intervals: min 30.0 ms, median 30.0 ms, p99 32.0 ms, max 32.0 ms
+status 9: 7 (0.2 %), distance min 8190, median 8190, max 8190 mm; longest gap if only it were unclassifiable 62.0 ms
+status 11: 3873 (99.8 %), distance min 0, median 0, max 51 mm; longest gap if only it were unclassifiable 50454.0 ms

@@ -15,7 +15,7 @@ Enlace: micro-ROS sobre UART a 921600 baud, pelos GPIO, com o agente no RPi (ADR
 Toda mudança precisa preservar estas regras:
 
 1. **O controlador só restringe, nunca decide.** Ele converge para o alvo do comportamento ativo, restringe por reflexos e reporta. Término e troca de comportamento são do sequenciador (ADR 024, RNF-04).
-2. **Todo estado do controlador é filtragem ou vence.** O comando vence em T_cmd = 200 ms e vira TWIST(0, 0) (RNF-02).
+2. **Estado do controlador que representa o mundo é filtragem ou expira em tempo limitado.** O comando vence em T_cmd = 200 ms e vira TWIST(0, 0) (RNF-02).
 3. **Condições são publicadas como estado atual, não como eventos.** O controlador publica máscaras; o sequenciador detecta bordas, conta episódios e decide tentativas (ADRs 025 e 037).
 4. **Nada bloqueia o sequenciador.** A consulta ao deliberador é assíncrona, e o planejamento roda em outro processo (ADR 033).
 5. **Todo caminho do deliberador ao controlador passa pelo sequenciador.** O deliberador entrega resultados (plano, map → odom), e o sequenciador os converte em comportamentos (RF-07).
@@ -57,6 +57,8 @@ O firmware tem dois componentes ESP-IDF (ADR 018):
 | micro-ROS | 0 | Baixa | Enlace e sincronização de relógio |
 
 Os contextos trocam dados só por canais de último valor: fila do FreeRTOS de um elemento, último valor, um produtor (ADR 017). São quatro: comando, estado, bordas do encoder e sensor frontal. A tarefa de controle nunca espera por eles, e canal de comando vazio vale como comando vencido.
+
+Recuperação do I²C na tarefa de sensor: cada transação tem timeout T_I2C; depois de N_I2C falhas seguidas, a tarefa bloqueia por T_retry e reinicializa o sensor (recupera um sensor que reiniciou em standby por mau contato). A espera é bloqueante, para não tirar o núcleo 0 da micro-ROS. A segurança não depende da recuperação: sem medida nova, ela envelhece e o controlador entra em falha após T_S (ADRs 020 e 021; nota 0015).
 
 ### Ciclo de controle (a cada T_c, por `vTaskDelayUntil`)
 
@@ -101,7 +103,6 @@ Todo reflexo restringe a referência e é reportado na máscara correspondente.
 | Reflexo | Condição | Efeito |
 | --- | --- | --- |
 | Obstáculo frontal | VL53L0X < d_stop | Zera o avanço; giro e ré continuam permitidos (ADR 021) |
-| Falha do sensor frontal | Sem leitura classificável há mais de T_S, e também no boot | Igual ao obstáculo |
 | Bateria crítica | Tensão filtrada < V_CRIT | Referência a zero; libera sozinho, sem histerese (ADR 022) |
 
 ### Falhas reportadas
@@ -111,8 +112,9 @@ Todo reflexo restringe a referência e é reportado na máscara correspondente.
 | Falha cognizante | Erro de velocidade acima de e_f por T_f, com referência ≥ v_min |
 | Prazo perdido | Detectado em todos os builds (ADR 028) |
 | Reinício por watchdog | Watchdog de tarefas sobre a tarefa de controle, com prazo de poucos T_c (ADR 029) |
+| Falha do sensor frontal | Sem leitura classificável há mais de T_S, e também no boot. Zera o avanço como o obstáculo frontal (ADR 021) |
 
-Os códigos de prazo perdido e de reinício ficam ativos por tempo limitado.
+Os códigos de prazo perdido e de reinício ficam ativos por tempo limitado. A falha do sensor frontal fica em `faults`, não em `reflexes`: a máscara de reflexos reporta condições do ambiente, e o critério da V-03 exige falha inativa (nota 0015).
 
 ### Boot seguro
 
