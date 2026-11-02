@@ -98,3 +98,41 @@ Surpresas:
 Pendências:
 - Decidir o método do `measure_clock_drift` (mínimo da fase por janela) e emendar a nota da ADR 027.
 - Medida no bag da V-07 (5 min: incerteza de ~±1 ppm).
+
+## Missão por plano sem potência e checagem da V-04 - 2026-11-02
+
+Montagem: robot-firmware 03c0f35, robot-interfaces 774e892, robot-ros-system e72729d. `deliberator_test.launch.py`, agente e sequenciador com `chrt -f 50`, heartbeat do notebook a
+10 Hz.
+
+Sem potência (script descartável `check_f7i3b.sh`):
+- Primeira tentativa: `PLAN_FAILED`, error 203 (`START_OUTSIDE_MAP`). A odometria do ESP32 estava em
+  (82,3; 6,3) m, acumulada pelos ensaios anteriores com as rodas suspensas; o costmap de ensaio cobre o M. Reiniciar
+  o ESP32 (chave desligada) zera a pose: é o "pose em p₀" do procedimento da V-04.
+- Depois do reinício: plano de 69 poses com 4 vértices, trechos de 1,697 · 0,292 · 0,150 · 1,337 m, os da nota
+  0003. TURN_TO(1,408 rad) no eco; sem VM, `ABORTED on FAULT_COGNIZANT` 1,29 s depois.
+- FF 50 no agente e no sequenciador, TS no deliberador (ADR 039).
+
+Com potência e rodas suspensas (`run_v04`, `check_v04`; dados em `evidencias/V-04/2026-11-02_1932/`):
+- Eco TWIST → (TURN_TO → GO_TO) × 4 → TWIST, missão `SUCCEEDED` em 24,8 s.
+- Distância final a p_g 0,004 m (ε_g = 0,05 m); map → odom identidade; um plano. V-04: PASS.
+
+## Deriva no bag da V-07 - 2026-11-02
+
+`measure_clock_drift` em `evidencias/V-07/2026-11-02_1933/` (348,6 s, 6823 carimbos):
+
+| Medida | Valor |
+| --- | --- |
+| Deriva | −2,28 ppm (−22,8 µs por período de 10 s) |
+| Saltos achados · esperados | 30 · 34 ± 1: validade reprovada, INVALID |
+| Saltos: média · desvio-padrão · mínimo · máximo | −12,9 · 235,1 · −527,1 · +363,2 µs |
+| Maior resíduo | 526 µs (limite 2500 µs) |
+
+Leituras:
+- Com −2,3 ppm, a deriva acumulada em 10 s (~23 µs) fica no limiar dos degraus (20 µs): parte das ressincronizações
+  não aparece como salto, e o método não resolve a deriva neste bag. A prévia no bag C1 a seco deu −11,4 ppm
+  (~114 µs por 10 s). A deriva fica entre ~2 e ~11 ppm, sem valor medido.
+- O erro de cada ressincronização (desvio-padrão de 235 µs, máximo de 527 µs) domina a deriva acumulada no período
+  em qualquer dos dois valores. Encurtar o período não reduz o erro dominante.
+
+Decisão (Lucas, 2/11): `CLOCK_SYNC_PERIOD` fica em 10 s. Erro entre os relógios de até ~0,53 ms, contra
+T_c = 10 ms e T_seq = 100 ms.

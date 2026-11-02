@@ -119,3 +119,42 @@ Pendências:
 - T_gap = 0,5 s (seção acima) foi calibrado com o pedido a cada resposta; com T_plan = 1 s, todo C1 sai inválido.
   Recalibrado para 1,5 s (seção do T_gap, revisão).
 - Log do código que dispara cada reação: robot-docs#51.
+
+## Launch de operação com a missão por plano - 2026-11-02
+
+`robot.launch.py` sem potência, robot-ros-system e72729d (script descartável `check_f8i2b.sh`): o sequenciador sobe
+em FF 50, sem o `ValueError`, e espera o `/goal_pose`. SLAM e `planner_server` `active`, costmap com as camadas
+estática, de obstáculo e de inflação, map → odom do SLAM, `/scan` a 10,0 Hz. No SIGINT, o sequenciador sai com
+código 1 (traceback do rclpy), os demais com −2.
+
+## V-08 de 10 min por condição - 2026-11-02
+
+Montagem: robot-firmware 03c0f35, robot-interfaces 774e892, robot-ros-system e72729d. Rodas suspensas, chave dos motores ligada, frente do VL53L0X livre, GPIO 7 aterrado durante a
+gravação, heartbeat do notebook desligado. `run_v08 C1` e `run_v08 C2`; dados em
+`evidencias/V-08/2026-11-02_1941_C1/` e `evidencias/V-08/2026-11-02_1951_C2/`. Checagem sobre o HEAD, não a
+rodada final. O C0 é a V-07 (nota 0017).
+
+| Condição | Eventos | Δ mediana · p99 · máximo | Prazos perdidos · R_max | Resultado |
+| --- | --- | --- | --- | --- |
+| C0 (V-07) | 303 | 13,6 · 28,3 · 28,5 ms | 0 · 914 µs | PASS |
+| C1 | 575 | 12,3 · 21,3 · 28,4 ms | 0 · 974 µs | PASS |
+| C2 | 580 | 13,9 · 26,0 · 30,6 ms | 0 · 974 µs | PASS |
+
+Validade do C1 (`check_v08_c1`, T_gap = 1,5 s): 599 planos, primeiro a 1,130 s, maior intervalo 1,008 s,
+último 0,061 s depois do fim da gravação: C1 estabelecido. C2: `vcgencmd get_throttled` = 0x0 antes e depois.
+
+Carga no C1 (robot-docs#26, `pidstat -u -r 5`, médias de 10 min; CPU em % de um núcleo):
+
+| Processo | CPU | RSS |
+| --- | --- | --- |
+| sequencer (com o laço de planejamento) | 17,1 % | 85 MB |
+| async_slam_toolbox | 3,1 % | — |
+| micro_ros_agent | 2,6 % | 26 MB |
+| planner_server | 2,3 % | 48 MB |
+| lifecycle_manager | 2,0 % | — |
+| ldlidar_stl_ros2 | 1,9 % | — |
+| map_server | 1,7 % | 41 MB |
+
+Memória do sistema (`free -m`): 440 MB usados no início e 467 MB no fim, de 7937 MB.
+
+No encerramento do C1, o `slam_toolbox` sai com `RCLError` (código −6), depois do fim da gravação.

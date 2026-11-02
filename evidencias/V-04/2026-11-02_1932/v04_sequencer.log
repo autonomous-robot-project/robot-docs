@@ -1,0 +1,33 @@
+[INFO] [1793658741.899666535] [sequencer]: mission by plan: waiting for /goal_pose
+[INFO] [1793658745.691151700] [sequencer]: goal (2.000, 2.000): planning
+[INFO] [1793658745.692154093] [sequencer]: PLANNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793658745.701831055] [sequencer]: plan of 69 poses, vertices [Point(x=0.2750000115483999, y=1.6750000324100256), Point(x=0.5250000152736902, y=1.8250000346451998), Point(x=0.6750000175088644, y=1.8250000346451998), Point(x=2.0, y=2.0)]
+[INFO] [1793658745.702961819] [sequencer]: RUNNING: Command(behavior=<Behavior.TURN_TO: 1>, linear=0.0, angular=0.0, theta=1.408068948534277, x=0.0, y=0.0)
+[INFO] [1793658747.253783936] [sequencer]: RUNNING: Command(behavior=<Behavior.GO_TO: 2>, linear=0.0, angular=0.0, theta=0.0, x=0.2750000115483999, y=1.6750000324100256)
+[INFO] [1793658756.661800439] [sequencer]: RUNNING: Command(behavior=<Behavior.TURN_TO: 1>, linear=0.0, angular=0.0, theta=0.5300251627538377, x=0.0, y=0.0)
+[INFO] [1793658757.862270142] [sequencer]: RUNNING: Command(behavior=<Behavior.GO_TO: 2>, linear=0.0, angular=0.0, theta=0.0, x=0.5250000152736902, y=1.8250000346451998)
+[INFO] [1793658760.243668202] [sequencer]: RUNNING: Command(behavior=<Behavior.TURN_TO: 1>, linear=0.0, angular=0.0, theta=-0.0015322874309688927, x=0.0, y=0.0)
+[INFO] [1793658761.295185465] [sequencer]: RUNNING: Command(behavior=<Behavior.GO_TO: 2>, linear=0.0, angular=0.0, theta=0.0, x=0.6750000175088644, y=1.8250000346451998)
+[INFO] [1793658762.862370706] [sequencer]: RUNNING: Command(behavior=<Behavior.TURN_TO: 1>, linear=0.0, angular=0.0, theta=0.13496573628655018, x=0.0, y=0.0)
+[INFO] [1793658762.912295133] [sequencer]: RUNNING: Command(behavior=<Behavior.GO_TO: 2>, linear=0.0, angular=0.0, theta=0.0, x=2.0, y=2.0)
+[INFO] [1793658770.474047125] [sequencer]: SUCCEEDED: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0)
+Traceback (most recent call last):
+  File "/home/lucasfv/spike_build_C/install/robot_sequencer/lib/robot_sequencer/sequencer", line 33, in <module>
+    sys.exit(load_entry_point('robot-sequencer==0.1.0', 'console_scripts', 'sequencer')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucasfv/spike_build_C/install/robot_sequencer/lib/python3.12/site-packages/robot_sequencer/sequencer_node.py", line 362, in main
+    rclpy.spin(SequencerNode())
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 757, in _wait_for_ready_callbacks
+    wait_set = _rclpy.WaitSet(
+               ^^^^^^^^^^^^^^^
+rclpy._rclpy_pybind11.RCLError: failed to initialize wait set: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/wait.c:130

@@ -50,3 +50,26 @@ Medido:
 | `faults` no Estado, uma amostra | 0: sem `FAULT_TEST` nem `FAULT_DEADLINE_MISSED` | — |
 
 Ajustes: nenhum. Os dois campos novos somam 8 B a 10 Hz, abaixo da resolução da medida (+0,2 pp).
+
+## Checagem de bancada da V-07 e da V-05 - 2026-11-02
+
+Montagem: robot-firmware 03c0f35, robot-interfaces 774e892, robot-ros-system e72729d. Rodas suspensas, chave dos motores ligada, frente do VL53L0X livre, sem deliberador, GPIO 7
+aterrado durante a gravação (ADR 049). `run_v07`, `check_v07` e `check_v05` no mesmo bag; dados em
+`evidencias/V-07/2026-11-02_1933/`. Checagem sobre o HEAD, não a rodada final.
+
+| Medida | Valor |
+| --- | --- |
+| Eventos com a ativação | 303 de 303, índices contíguos, TWIST(0,2; 0) antes de cada um |
+| Δ: mediana · p99 · máximo | 13,6 · 28,3 · 28,5 ms (T_seq = 100 ms) |
+| Gravação · maior lacuna da Instrumentação | 348,5 s · 0,120 s |
+| Prazos perdidos · C_max · R_max | 0 · 897 µs · 914 µs (folga de 90,9 % de T_c) |
+
+V-07: PASS. V-05: PASS.
+
+Aborto da primeira tentativa (2/11, 18:02): a `v07` abortou 1,2 ms depois de RUNNING. Pelo código, os eventos
+próprios não ativam nesse tempo (T_eco = 0,3 s, T_LINK = 0,2 s), então foi um código do controlador já ativo no
+primeiro Estado do passo; a `v07` aborta por qualquer código além do `FAULT_TEST`. Causa provável, não conferida:
+`REFLEX_FRONT_OBSTACLE` ou `FAULT_FRONT_SENSOR` com a frente do sensor obstruída. Desde robot-docs#51 o log do
+sequenciador registra o código; nesta checagem, com a frente livre, não houve aborto.
+
+Emenda ao passo 1 da V-07, com o ok do Lucas: o `run_v07` roda sem o deliberador; a carga do deliberador é a V-08 C1.

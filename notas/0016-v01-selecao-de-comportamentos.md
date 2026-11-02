@@ -22,3 +22,19 @@ Leituras:
 - **Smoke test no notebook antes da bancada:** nó isolado (`ROS_DOMAIN_ID=77`,
   `ROS_AUTOMATIC_DISCOVERY_RANGE=LOCALHOST`) com Odometria e Estado falsos, para não alcançar o controlador do RPi
   pela rede (ADR 045). Taxa de republicação ociosa: 19,95 a 20,00 Hz.
+
+## Checagem de bancada da V-01 - 2026-11-02
+
+Montagem: robot-firmware 03c0f35, robot-interfaces 774e892, robot-ros-system e72729d. Rodas suspensas, chave dos motores ligada, frente do VL53L0X livre, sem deliberador.
+`run_v01` e `check_v01`; dados em `evidencias/V-01/2026-11-02_1940/`. Checagem sobre o HEAD, não a rodada final:
+a rodada final roda sobre a tag.
+
+| Execução | Sequência | Resultado |
+| --- | --- | --- |
+| nominal | S1 TWIST(0,2; 0) 5,5 s; S2 TURN_TO 1,4 s; S3 GO_TO 3,5 s; S4 TWIST(0, 0) | `SUCCEEDED`, eco 19 a 22 ms depois de cada comando |
+| falha | S1 TWIST(0,2; 0); roda travada à mão; S4 TWIST(0, 0) a 6,3 s | `ABORTED on FAULT_COGNIZANT` no log; S4 é a primeira mudança depois da ativação |
+
+`check_v01`: RF-01, RF-04 e RF-05 aprovados; os nós antes e depois de cada execução são `/controller`,
+`/rosbag2_recorder`, `/run_v01` e `/sequencer`. V-01: PASS.
+
+Leitura: o log do sequenciador passou a dizer o código que dispara cada reação (robot-docs#51).

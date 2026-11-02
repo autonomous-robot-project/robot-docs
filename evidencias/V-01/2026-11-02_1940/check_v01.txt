@@ -1,0 +1,19 @@
+V-01 nominal: 4 changes of the command
+    0.000 s  S1  TWIST(0.20 m/s, 0.00 rad/s)  echo +21 ms  pose (71.045, 10.340 m, 0.136 rad)
+    5.500 s  S2  TURN_TO(1.707 rad)  echo +22 ms  pose (72.040, 10.442 m, 0.136 rad)
+    6.939 s  S3  GO_TO(71.973, 10.938 m)  echo +19 ms  pose (72.085, 10.445 m, 1.770 rad)
+   10.389 s  S4  TWIST(0.00 m/s, 0.00 rad/s)  echo +21 ms  pose (71.969, 10.942 m, 1.770 rad)
+  nodes before: /controller /rosbag2_recorder /run_v01 /sequencer
+  nodes after: /controller /rosbag2_recorder /run_v01 /sequencer
+V-01 falha: 2 changes of the command
+    0.000 s  S1  TWIST(0.20 m/s, 0.00 rad/s)  echo +19 ms  pose (71.969, 10.942 m, 1.770 rad)
+    6.331 s  S4  TWIST(0.00 m/s, 0.00 rad/s)  echo +18 ms  pose (71.660, 11.845 m, 3.676 rad)
+  nodes before: /controller /rosbag2_recorder /run_v01 /sequencer
+  nodes after: /controller /rosbag2_recorder /run_v01 /sequencer
+  falha: activation in S1 -> next change in 0 ms (information)
+  state without holes: True
+  fault activated in falha: True
+  RF-01: True
+  RF-04: True
+  RF-05: True
+V-01: PASS

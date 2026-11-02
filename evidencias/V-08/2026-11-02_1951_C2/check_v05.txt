@@ -1,0 +1,7 @@
+V-05: 5844 Instrumentation samples
+  duration 598.1 s (min 300 s), passed: True
+  longest Instrumentation gap 0.121 s (max 1.0 s), passed: True
+  deadline misses in the recording: 0
+  C_max 952 us, U = C_max / T_c = 9.5% (since boot)
+  R_max 974 us, margin (T_c - R_max) / T_c = 90.3% (since boot; meter validated up to 5000 us), passed: True
+V-05: PASS

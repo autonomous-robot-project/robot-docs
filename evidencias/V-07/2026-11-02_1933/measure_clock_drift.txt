@@ -1,0 +1,9 @@
+clock drift: 6823 Odometry stamps
+  duration 348.6 s
+  largest residual 526.1 us (max 2500 us), passed: True
+  jumps 30 (expected 34 +- 1), passed: False
+  drift -2.28 ppm: -22.8 us per 10 s period
+  window lows within 15.6 us of their plateau (jump threshold 20 us)
+  jumps mean -12.9 us, spread (stdev) 235.1 us, min -527.1 us, max +363.2 us
+clock drift: INVALID
+[ros2run]: Process exited with failure 2
