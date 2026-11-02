@@ -77,3 +77,40 @@ Decisões:
 
 Pendências:
 - Conferir no C1 de 10 min que o maior intervalo fica abaixo de T_gap; se passar perto, rever com o bag.
+
+## Checagem de bancada do C1 e do C2 - frente B
+
+Montagem: rodas suspensas, firmware 03c0f35 (modo de ensaio no GPIO 7), robot-ros-system 7ff7734 no
+`~/spike_build_B`, `run_v08` encerrado por `timeout -s INT` depois de ~2 min de gravação por condição (checagem,
+não o ensaio de 10 min). `stress-ng` 0.17.06 instalado e em hold no RPi; `sysstat` 12.6.1 já estava.
+
+Medido:
+
+| Execução | Δ máx · mediana · p99 | CPU do sequenciador | Planos |
+| --- | --- | --- | --- |
+| C1, pedido a cada resposta | 111,1 · 26,1 · 79,9 ms | 98,5 % de um núcleo | 5472 (~42/s), 0 falhas |
+| C1, T_plan = 1 s | 17,2 · 7,9 · 17,1 ms | 14,7 % | 136, 0 falhas; intervalo 1,000 s (máx 1,006 s) |
+| C2 | 17,2 · 7,8 · 16,8 ms | 11 % | — |
+
+- Pedido a cada resposta: ~23 ms de CPU no sequenciador por plano; a thread única satura e cada evento espera
+  atrás de um callback de plano. O custo não cresce com o tempo (mediana do Δ estável em janelas de 20 s).
+- C2: com os 4 núcleos a 100 %, o Δ fica igual ao do C1 com T_plan: o FIFO 50 (ADR 039) isola o sequenciador.
+- RNF-01 nas três: 0 prazos perdidos, R_max 778 µs.
+
+Decisões:
+- F8 D2 revista: laço por timer, T_plan = 1 s (replanejamento da BT padrão do Nav2 no Jazzy, `RateController`
+  1 Hz), o pedido seguinte só depois da resposta (robot-ros-system 7ff7734).
+- Modo de ensaio do GPIO 12 para o GPIO 7, decisão do Lucas (robot-firmware 03c0f35; ADR 049 sem emenda).
+
+Surpresas:
+- Um `verify_flash` que termina em erro (binário diferente do gravado) sai antes do `hard_reset` e deixa o ESP32
+  no modo de gravação: o enlace não sobe. `esptool chip_id` com `--after hard_reset` devolve à aplicação.
+- Sem VM, a missão aborta por `FAULT_COGNIZANT` (as rodas não seguem o TWIST): o Δ da V-07/V-08 exige a chave
+  ligada.
+- `timeout -s INT` manda o SIGINT ao grupo inteiro: o sequenciador o recebe direto e sai com traceback; o
+  `run_v08` normal o encerra com SIGTERM.
+
+Pendências:
+- T_gap = 0,5 s (seção acima) foi calibrado com o pedido a cada resposta; com T_plan = 1 s, todo C1 sai inválido.
+  Recalibrar (frente A).
+- Log do código que dispara cada reação: robot-docs#51.
