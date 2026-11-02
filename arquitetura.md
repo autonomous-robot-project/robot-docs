@@ -15,7 +15,7 @@ Enlace: micro-ROS sobre UART a 921600 baud, pelos GPIO, com o agente no RPi (ADR
 Toda mudança precisa preservar estas regras:
 
 1. **O controlador só restringe, nunca decide.** Ele converge para o alvo do comportamento ativo, restringe por reflexos e reporta. Término e troca de comportamento são do sequenciador (ADR 024, RNF-04).
-2. **Estado do controlador que representa o mundo é filtragem ou expira em tempo limitado.** O comando vence em T_cmd = 200 ms e vira TWIST(0, 0) (RNF-02).
+2. **Estado do controlador que representa o mundo é filtragem ou expira em tempo limitado.** O comando vence em T_cmd = 200 ms e vira TWIST(0, 0) (RNF-02). A pose odométrica e o sentido travado da roda (ADR 019) são estimação sobre as medidas do encoder, ou seja, filtragem.
 3. **Condições são publicadas como estado atual, não como eventos.** O controlador publica máscaras; o sequenciador detecta bordas, conta episódios e decide tentativas (ADRs 025 e 037).
 4. **Nada bloqueia o sequenciador.** A consulta ao deliberador é assíncrona, e o planejamento roda em outro processo (ADR 033).
 5. **Todo caminho do deliberador ao controlador passa pelo sequenciador.** O deliberador entrega resultados (plano, map → odom), e o sequenciador os converte em comportamentos (RF-07).
