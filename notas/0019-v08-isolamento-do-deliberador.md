@@ -1,13 +1,12 @@
 # V-08, isolamento do deliberador - 2026-10-31 - commits 495b196 e a9fd73d (robot-ros-system)
 
-## LD19 e SLAM como carga do C1 (F8 I1, F8 I2) - frente C
+## LD19 e SLAM como carga do C1 - frente C
 
 Montagem:
 - `ros2 launch robot_bringup deliberator_c1.launch.py`: o launch de ensaio da V-04 mais o driver do LD19, o
   base_link → laser e o `slam_toolbox` 2.8.5, com `/slam_map`, frame `slam_map` e sem TF (ADR 040).
 - O odom → base_link vem de um `static_transform_publisher` lançado à mão.
-- LD19 pelo adaptador CP2102 em `/dev/ttyUSB0`. Pose do laser em base_link: x_l, y_l, z_l e ψ_l a medir (F8 I0,
-  #25); no launch, 0.
+- LD19 pelo adaptador CP2102 em `/dev/ttyUSB0`. Pose do laser em base_link: x_l, y_l, z_l e ψ_l a medir (#25); no launch, 0.
 
 Medido:
 - `/scan`: 9,80 Hz em 100 varreduras; intervalo de 0,100 a 0,200 s, desvio padrão de 0,014 s. De 502 a 503 pontos
@@ -23,14 +22,14 @@ Ajustes:
 - 14 pacotes apt novos (`slam_toolbox` e dependências) em hold.
 
 Pendências:
-- Pose do laser (F8 I0, #25).
+- Pose do laser (#25).
 - O `run_v08` espera ≥ 5 s no encerramento ou usa SIGINT.
 
-## Launch de operação sem potência (F8 I2b) - frente C
+## Launch de operação sem potência - frente C
 
 Montagem:
 - robot-ros-system 8224f8c. `ros2 launch robot_bringup robot.launch.py` com ESP32 pelo UART e LD19; chave dos
-  motores desligada. Sequenciador do HEAD 8224f8c, sem a missão por plano (F7 I2).
+  motores desligada. Sequenciador do HEAD 8224f8c, sem a missão por plano.
 - O C1 foi conferido de novo depois da troca para o `lidar.launch.py` e o `slam.yaml`: os três nós `active`,
   `/slam_map` sem TF, plano de (0, 0) a (2, 2) SUCCEEDED.
 
@@ -40,15 +39,15 @@ Medido:
   `static_layer`, `obstacle_layer` e `inflation_layer`. `/map` do SLAM com 45 × 47 células de 0,05 m; map → odom
   publicado pelo SLAM; `/scan` a 10,0 Hz.
 - Plano de (1,00; 0,54), a pose da odometria, a (0,5; 0): ABORTED, partida ou objetivo em obstáculo. Só
-  informação: com as rodas suspensas a odometria anda e o mapa não (F7 D1).
+  informação: com as rodas suspensas a odometria anda e o mapa não.
 - Encerramento por SIGINT: todos os processos saem em 0,5 s.
 
 Surpresas:
-- O sequenciador morre na partida: o HEAD não aceita `mission` vazio (`ValueError`). A missão por plano entra no
-  F7 I2 (frente B).
+- O sequenciador morre na partida: o HEAD não aceita `mission` vazio (`ValueError`). A missão por plano ainda não
+  estava no sequenciador (frente B).
 - Em shell não interativo, processo lançado com `&` herda o SIGINT ignorado. O `ros2 launch` e o agente não
   respondem ao SIGINT, e os nós rclpy/rclcpp respondem (instalam tratador próprio). Num terminal, o Ctrl-C funciona.
   Script que encerra um launch por SIGINT precisa restaurar o tratamento padrão antes do `exec` ou usar SIGTERM.
 
 Pendências:
-- Conferir o sequenciador no `robot.launch.py` depois do F7 I2.
+- Conferir o sequenciador no `robot.launch.py` depois da missão por plano.

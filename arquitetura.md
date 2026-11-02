@@ -212,7 +212,7 @@ Não há `bt_navigator` nem `controller_server`: seguir caminho é papel do cont
 - O planner pode atravessar espaço desconhecido.
 - O VL53L0X fica fora do costmap. Um obstáculo visto só por ele leva a escada ao aborto.
 
-**Launch:** pacote `robot_bringup`, com um processo por nó. Desligar o deliberador (RF-05) é não lançá-lo. O `odom_to_tf_ros2` sobe com o deliberador, o único que consome o odom → base_link. Nos ensaios, o deliberador sobe pelo launch de ensaio: o `deliberator_test.launch.py` na V-04, e na V-08 C1 o mesmo mais o SLAM como carga. O agente e o sequenciador sobem pelos scripts de verificação (`run_vNN`). O launch de operação (`robot.launch.py`) sobe tudo: o agente, o sequenciador e o deliberador na configuração de operação. Ele não é usado nos ensaios (F7 D1) e é a fonte do `rqt_graph` da V-09:
+**Launch:** pacote `robot_bringup`, com um processo por nó. Desligar o deliberador (RF-05) é não lançá-lo. O `odom_to_tf_ros2` sobe com o deliberador, o único que consome o odom → base_link. Nos ensaios, o deliberador sobe pelo launch de ensaio: o `deliberator_test.launch.py` na V-04, e na V-08 C1 o mesmo mais o SLAM como carga. O agente e o sequenciador sobem pelos scripts de verificação (`run_vNN`). O launch de operação (`robot.launch.py`) sobe tudo: o agente, o sequenciador e o deliberador na configuração de operação. Ele não é usado nos ensaios e é a fonte do `rqt_graph` da V-09:
 
 | Configuração | Mapa do planner | Costmap global | map → odom | SLAM |
 | --- | --- | --- | --- | --- |

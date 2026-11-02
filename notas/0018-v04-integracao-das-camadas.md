@@ -1,6 +1,6 @@
 # V-04, integração das camadas - 2026-10-31 - commits 8a44bb0 (robot-ros-system, branch frente-c)
 
-## Launch do deliberador: o spike 0003 refeito no repositório (F7 I1) - frente C
+## Launch do deliberador: o spike 0003 refeito no repositório - frente C
 
 Montagem:
 - RPi 5, sem ESP32. `ros2 launch robot_bringup deliberator_test.launch.py` (M servido do pacote, Theta*,
@@ -23,13 +23,13 @@ Surpresas:
   estático subir): sem o `odom_to_tf_ros2`, o deliberador não sobe sozinho.
 
 Pendências:
-- F7 I3: a cadeia real, com a odometria do controlador no `odom_to_tf_ros2`.
+- A cadeia real, com a odometria do controlador no `odom_to_tf_ros2`.
 
-## Sistema completo sem potência (F7 I3, parte 1) - frente C
+## Sistema completo sem potência, parte 1 - frente C
 
 Montagem:
 - robot-ros-system 495b196. ESP32 pelo UART, chave dos motores desligada.
-- Agente e sequenciador (`mission:=v01`), os dois com `chrt -f 50` e sem launch (F7 I3). `deliberator_test.launch.py`
+- Agente e sequenciador (`mission:=v01`), os dois com `chrt -f 50` e sem launch (`arquitetura.md`, launch). `deliberator_test.launch.py`
   à parte.
 
 Medido:
@@ -41,7 +41,7 @@ Medido:
   provável é a roda travada detectada pelo firmware (não conferido).
 
 Pendências:
-- A missão por plano (F7 I2) e o smoke test (F7 I4).
+- A missão por plano no sequenciador e o smoke test do plano até o eco do controlador.
 
 ## Regra da ADR 034 no `check_v04` (V-04, ADR 034) - frente A
 

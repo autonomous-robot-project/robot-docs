@@ -102,7 +102,7 @@ do ensaio.
 | `robot_bringup/launch/deliberator_test.launch.py` | infraestrutura | T2 | RF-05, RF-06 | V-04, V-09 | deliberador na configuração de ensaio; ADRs 026 e 035 |
 | `robot_bringup/config/deliberator_test.yaml` | infraestrutura | T2 | RF-06 | V-04 | Theta* e costmap sem camada de obstáculo; ADRs 041 e 042; configuração de ensaio no `arquitetura.md` (launch) |
 | `robot_bringup/maps/make_map_m.py` | domínio | T2 | RF-06 | V-04 | gera o M da V-04; `m.pgm` e `m.yaml` versionados (nota 0003) |
-| `robot_bringup/launch/deliberator_c1.launch.py` | infraestrutura | T2 | RNF-05 | V-08 | deliberador do C1: o de ensaio da V-04 mais o LiDAR e o SLAM como carga; ADR 040, F8 D1 |
+| `robot_bringup/launch/deliberator_c1.launch.py` | infraestrutura | T2 | RNF-05 | V-08 | deliberador do C1: o de ensaio da V-04 mais o LiDAR e o SLAM como carga; ADR 040 |
 | `robot_bringup/config/slam_load.yaml` | infraestrutura | T2 | RNF-05 | V-08 | `slam_toolbox` do C1 com frame e tópico próprios, sem TF; ADR 040 |
 | `robot_bringup/config/slam.yaml` | infraestrutura | T2 | RNF-05 | V-08 | `slam_toolbox` em toda configuração (base_link, `lifecycle_manager`); ADR 040 |
 | `robot_bringup/launch/lidar.launch.py` | infraestrutura | T2 | RNF-05 | V-08 | driver do LD19 e base_link → laser, fonte única da pose do laser (#25) |
