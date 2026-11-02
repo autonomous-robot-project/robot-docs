@@ -51,3 +51,29 @@ Surpresas:
 
 Pendências:
 - Conferir o sequenciador no `robot.launch.py` depois da missão por plano.
+
+## T_gap da validade do C1 - frente A
+
+Montagem:
+- Bag `f8i6_c1_seco` (frente B, 2/11 18:28, 80 s, firmware 6879224), cópia no notebook. `check_v08_c1`
+  (robot-ros-system d7285ec) e script descartável dos intervalos entre planos.
+- No C1, o sequenciador pede um plano novo a cada resposta: o intervalo entre dois `/plan` é a duração de um
+  `ComputePathToPose` sob a carga do SLAM, mais o novo pedido.
+
+Medido:
+
+| Medida (3188 planos) | Valor |
+| --- | --- |
+| Intervalo entre planos: mediana · p99 · p99,9 · máximo | 22,6 · 77,1 · 107,0 · 132,2 ms |
+| Primeiro plano depois do primeiro Instrumentation | 0,423 s |
+| Último Instrumentation depois do último plano | −0,035 s |
+
+Decisões:
+- T_gap = 0,5 s: cobre o primeiro plano a 0,42 s do início da gravação (provavelmente a descoberta do `/plan` pelo
+  gravador, a confirmar) e fica a 3,8 vezes o maior intervalo. Com ele, o `check_v08_c1` dá o C1 estabelecido nesse
+  bag.
+- A calibração vem deste bag a seco, e não do bag da V-04, como previsto: o `run_v04` não grava o instante do
+  pedido (o pedido é interno ao sequenciador), e um só planejamento, sem SLAM, não dá base para o limiar.
+
+Pendências:
+- Conferir no C1 de 10 min que o maior intervalo fica abaixo de T_gap; se passar perto, rever com o bag.
