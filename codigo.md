@@ -84,6 +84,7 @@ do ensaio.
 | `robot_verification/robot_verification/run_v01.py` | infraestrutura | T2 | RF-04, RF-05 | V-01 | conduz as duas execuções, um bag por execução, e salva `ros2 node list` no início e no fim de cada uma (nota 0016) |
 | `robot_verification/robot_verification/run_v04.py` | infraestrutura | T2 | RF-06, RF-07 | V-04 | pede o plano por `/goal_pose`, como na operação; erro invalida ou reprova a rodada, e o `check_v04` detecta |
 | `robot_verification/robot_verification/run_v07.py` | infraestrutura | T2 | RNF-03 | V-07 | só conta os eventos para parar; erro invalida a rodada, e o `check_v07` detecta |
+| `robot_verification/robot_verification/run_v08.py` | infraestrutura | T2 | RNF-05 | V-08 | conduz uma condição da V-08: C1 (launch do deliberador do C1, gravação só depois do primeiro `/plan`) ou C2 (`stress-ng --cpu 4`); agente e sequenciador com `v08`, bag de 10 min, `pidstat`, `free -m` e, no C2, `vcgencmd` ao lado do bag (F8 D2, D4, D5) |
 | `robot_verification/robot_verification/run_closed_loop.py` | infraestrutura | T2 | RF-01, RF-02 | | erro invalida a rodada, e o `measure_closed_loop` detecta |
 | `robot_verification/robot_verification/plot_clock_drift.py` | infraestrutura | T2 | | | figuras da deriva entre os relógios (ADR 027); os números vêm do `measure_clock_drift` |
 | `robot_verification/robot_verification/plot_closed_loop.py` | infraestrutura | T2 | | | figuras da nota 0011; os números vêm do `measure_closed_loop` |
