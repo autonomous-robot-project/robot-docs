@@ -42,3 +42,23 @@ Medido:
 
 Pendências:
 - A missão por plano (F7 I2) e o smoke test (F7 I4).
+
+## Regra da ADR 034 no `check_v04` (V-04, ADR 034) - frente A
+
+Montagem:
+- robot-ros-system fc90a05 e 686d441 (`check_v04`), 70f2980 (`plan.py` do sequenciador). Sem hardware.
+
+Decisões:
+- O `check_v04` (T1) reescreve a regra da ADR 034 a partir do texto e não importa nada do `robot_sequencer` (T2):
+  importando, o instrumento julgaria o sequenciador pelo próprio código dele.
+- "Remove o vértice vizinho dele" lido como: o último vértice antes da célula do objetivo sai se estiver numa
+  célula adjacente a ela, em linha reta (res) ou na diagonal (√2·res). No `check_v04`, o limiar é
+  √2·res + 1e-6 m; a margem cobre o arredondamento em float32 dos centros de célula do planner (~1e-7 m a 2 m).
+- map → odom identidade no `/tf_static` é condição de validade do ensaio, e não parte do critério: o plano está em
+  map e os alvos do eco em odom, e só com a identidade eles se comparam diretamente.
+
+Conferido:
+- O `plan.py` do sequenciador faz a mesma leitura, com limiar 1,5·res. Os dois limiares ficam entre √2·res e
+  2·res, então classificam igual todo vértice no centro de uma célula. A ADR 034 não precisa de emenda.
+- Sobre o `Path` da seção da frente C acima, a regra do `check_v04` dá os mesmos 4 trechos (1,697 · 0,292 · 0,150 ·
+  1,337 m).
