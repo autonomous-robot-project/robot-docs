@@ -75,6 +75,11 @@ Decisões:
 - A calibração vem deste bag a seco, e não do bag da V-04, como previsto: o `run_v04` não grava o instante do
   pedido (o pedido é interno ao sequenciador), e um só planejamento, sem SLAM, não dá base para o limiar.
 
+Revisão (2/11, depois do T_plan = 1 s da seção seguinte):
+- T_gap = T_plan + 0,5 s = 1,5 s. No C1 com T_plan (bag `f8i6_c1_tplan2`, 132 planos), o maior intervalo entre
+  planos foi 1,006 s e o primeiro plano veio 1,151 s depois do primeiro Instrumentation: folgas de 0,49 s e 0,35 s.
+  Contra: uma falha do planner mais curta que 0,5 s passa sem ser vista.
+
 Pendências:
 - Conferir no C1 de 10 min que o maior intervalo fica abaixo de T_gap; se passar perto, rever com o bag.
 
@@ -112,5 +117,5 @@ Surpresas:
 
 Pendências:
 - T_gap = 0,5 s (seção acima) foi calibrado com o pedido a cada resposta; com T_plan = 1 s, todo C1 sai inválido.
-  Recalibrar (frente A).
+  Recalibrado para 1,5 s (seção do T_gap, revisão).
 - Log do código que dispara cada reação: robot-docs#51.

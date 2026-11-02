@@ -232,6 +232,14 @@ O `chrt` roda sem root: o usuário tem `rtprio 50` num arquivo em `/etc/security
 
 Todos os processos ROS do RPi, inclusive o agente e os scripts de verificação, rodam com `FASTDDS_BUILTIN_TRANSPORTS=UDPv4` (ADR 045). Os scripts de bancada rodam com `env -i`, então a variável é passada explicitamente.
 
+## Descrito, não implementado
+
+O código da tag não tem os itens abaixo. Nenhuma verificação os exercita.
+
+- Bateria (ADR 022, issue #45): a leitura da tensão, o reflexo de bateria crítica e o aborto por bateria baixa.
+- Escada da ADR 038: `ladder`, `retry()` e `replan()`, com T_WAIT e N_REPLAN. Sem ela, um obstáculo frontal ou a
+  falha do sensor frontal no GO_TO abortam a missão por plano.
+
 ## Parâmetros em aberto
 
 Têm ponto de partida, mas o valor final depende de medição:
