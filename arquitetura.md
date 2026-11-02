@@ -250,6 +250,6 @@ Têm ponto de partida, mas o valor final depende de medição:
 | Sequenciador | θ_max = 170°, T_WAIT = 5 s, N_REPLAN = 3, T_HB = 0,5 s, T_eco |
 | Deliberador | Margem do plano m = 0,10 m |
 | No chão (issue #27) | d_stop = 0,15 m, v_max |
-| Geometria (issue #25) | Raio do robô, bitola, pose do LiDAR |
+| Geometria (issue #25) | Raio do robô, pose do LiDAR |
 
 As pendências estão nas issues do robot-docs.

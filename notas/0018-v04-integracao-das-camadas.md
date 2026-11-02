@@ -136,3 +136,17 @@ Leituras:
 
 Decisão (Lucas, 2/11): `CLOCK_SYNC_PERIOD` fica em 10 s. Erro entre os relógios de até ~0,53 ms, contra
 T_c = 10 ms e T_seq = 100 ms.
+
+## Bitola - 2026-11-02
+
+Medida com régua pelo Lucas: 164 mm por fora das rodas e 114 mm por dentro. b = (164 + 114) / 2 = 139 mm entre os
+centros das rodas, cada uma com 25 mm de largura; antes, 150 mm de projeto. `TRACK_WIDTH` = 0,139 m no firmware
+(robot-docs#25).
+
+Consequências:
+- Giro por pulso de uma roda: π · 65 mm / 20 / b = 4,2° (antes 3,9°). V-01 emendada com o ok do Lucas.
+- ε_θ = 10° continua cobrindo o pior erro final mais a resolução: 3,6° + 4,2° = 7,8° (nota 0014; a cobertura só
+  falharia com b < 0,09 m).
+- ω_max = 2·v_max / b e α_dec = 2·a_dec / b sobem 8 %; o limite por roda (v_max, a_dec) não muda.
+- Com as rodas suspensas, o b não altera nenhum critério; a rodada final roda sobre o firmware com o b medido.
+
