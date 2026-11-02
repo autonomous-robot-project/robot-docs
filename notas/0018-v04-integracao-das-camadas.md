@@ -62,3 +62,39 @@ Conferido:
   2·res, então classificam igual todo vértice no centro de uma célula. A ADR 034 não precisa de emenda.
 - Sobre o `Path` da seção da frente C acima, a regra do `check_v04` dá os mesmos 4 trechos (1,697 · 0,292 · 0,150 ·
   1,337 m).
+
+## Deriva pelos carimbos da Odometria: prévia em bags de bancada (ADR 027) - frente A
+
+Montagem:
+- `measure_clock_drift` (robot-ros-system 686d441) e scripts descartáveis, no notebook, sobre três bags já gravados:
+  `f8i6_c1_seco` (frente B, 2/11 18:28, firmware 6879224, 80 s), `v07_f6i6` (frente A, 2/11 18:02, firmware
+  6879224, 80 s, com reinícios do ESP32) e `evidencias/V-01/2026-10-31_smoke/nominal` (31 s).
+- Resíduo = intervalo entre carimbos consecutivos menos o múltiplo de T_c mais próximo; fase = carimbo módulo T_c.
+
+Medido, com o `measure_clock_drift` (resíduo acima do limiar = ressincronização):
+
+| Bag | Saltos acima de 10 µs (esperados) | Deriva |
+| --- | --- | --- |
+| `f8i6_c1_seco` | 292 (7 ± 1) | −10,1 ppm, INVALID |
+| `v07_f6i6` | 264 (7 ± 1) | +24,3 ppm, INVALID |
+| V-01 `nominal` | 218 (3 ± 1) | +2,1 ppm, INVALID |
+
+Medido, pelo mínimo da fase em janelas de 1 s:
+- `f8i6_c1_seco`: o mínimo fica plano (±6 µs) entre ressincronizações e salta a cada 10 s: −267 · −93 · +54 · −104
+  · −35 · −21 · −322 µs (desvio padrão ~130 µs). Deriva −11,4 ppm em 69 s.
+- V-01 `nominal`: dois saltos, deriva −19 ppm em 19 s (incerteza de ~±10 ppm com saltos de ±100 µs em 19 s).
+- `v07_f6i6`: saltos de +4368 e −3185 µs nos reinícios; inválido para a deriva.
+
+Surpresas:
+- A premissa da nota da ADR 027 (carimbos a múltiplos exatos de T_c entre ressincronizações) não vale. O carimbo é
+  `rmw_uros_epoch_nanos() − (esp_timer_get_time() − t_k)` (robot-firmware `session.cpp`): o `esp_timer` é lido
+  antes do relógio do micro-ROS, e a demora entre as duas leituras (preempção, interrupções) atrasa o carimbo de
+  dezenas a centenas de µs, sempre para depois. Por isso o mínimo da fase, e não cada resíduo, mostra o offset.
+- O micro-ROS lê `clock_gettime(CLOCK_REALTIME)` (Micro-XRCE-DDS-Client `util/time.c`, ramo POSIX), e o
+  `sdkconfig` usa `CONFIG_NEWLIB_TIME_SYSCALL_USE_RTC_HRT`; que esse relógio venha do mesmo temporizador do
+  `esp_timer` está a confirmar na documentação do ESP-IDF. Os platôs planos são consistentes com isso.
+- O erro de cada ressincronização (~±100 µs) é da ordem da deriva acumulada em 10 s (~110 µs a −11 ppm).
+
+Pendências:
+- Decidir o método do `measure_clock_drift` (mínimo da fase por janela) e emendar a nota da ADR 027.
+- Medida no bag da V-07 (5 min: incerteza de ~±1 ppm).
