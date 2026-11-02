@@ -74,6 +74,7 @@ do ensaio.
 | `robot_verification/robot_verification/measure_clock_drift.py` | domínio | T1 | — | — | deriva entre os relógios (ADR 027, nota) sobre o bag da V-07; teste com deriva e erro de sincronização conhecidos |
 | `robot_verification/robot_verification/check_v05.py` | domínio | T1 | RNF-01 | V-05 | sobre a gravação da V-07; perdas pela diferença início–fim, máximos desde o boot como limite superior |
 | `robot_verification/robot_verification/check_v07.py` | domínio | T1 | RNF-03 | V-07 | Δ medido pelo controlador (ADR 049), sem cronometrar o sequenciador; teste com casos que devem falhar e inválidos |
+| `robot_verification/robot_verification/check_v08_c1.py` | domínio | T1 | RNF-05 | V-08 | só a validade do C1 (plano entregue a cada T_gap, a medir na V-04); o critério é do `check_v05` e do `check_v07` |
 | `robot_verification/robot_verification/check_v06.py` | domínio | T1 | RNF-02 | V-06 | |
 | `robot_verification/robot_verification/recording.py` | infraestrutura | T1 | | todas | leitura do bag, veredito, `ControllerRecording` (comando, Estado, Instrumentação, Odometria), marcadores dos procedimentos e buracos na gravação |
 | `robot_verification/robot_verification/measure_link_load.py` | infraestrutura | T1 | | | orçamento da ADR 025 (nota 0006) |
