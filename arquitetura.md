@@ -113,7 +113,7 @@ Todo reflexo restringe a referência e é reportado na máscara correspondente.
 | Prazo perdido | Detectado em todos os builds; ativo por 200 ms após a última perda (ADR 028) |
 | Reinício por watchdog | Watchdog de tarefas sobre a tarefa de controle, com prazo de poucos T_c (ADR 029) |
 | Falha do sensor frontal | Só leituras inválidas há mais de T_S = 100 ms, e também no boot (nota 0015). Zera o avanço como o obstáculo frontal (ADR 021) |
-| Falha de ensaio | Só no modo de ensaio da V-07, ativado pelo GPIO 12 em nível baixo: ativa a cada T_ev, desativa na chegada do TWIST(0, 0) (ADR 049) |
+| Falha de ensaio | Só no modo de ensaio da V-07, ativado pelo GPIO 7 em nível baixo: ativa a cada T_ev, desativa na chegada do TWIST(0, 0) (ADR 049) |
 
 Os códigos de prazo perdido e de reinício ficam ativos por tempo limitado. A falha do sensor frontal fica em `faults`, não em `reflexes`: a máscara de reflexos reporta condições do ambiente, e o critério da V-03 exige falha inativa (nota 0015).
 
