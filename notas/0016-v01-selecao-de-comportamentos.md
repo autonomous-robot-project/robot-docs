@@ -38,3 +38,23 @@ a rodada final roda sobre a tag.
 `/rosbag2_recorder`, `/run_v01` e `/sequencer`. V-01: PASS.
 
 Leitura: o log do sequenciador passou a dizer o código que dispara cada reação (robot-docs#51).
+
+## Roda disparada na reversão, rodada final - 2026-11-02
+
+Rodada final sobre a v1.0 (firmware 0744c89, robot-ros-system 8ad2968), RPi no cabo, rodas suspensas. Três
+tentativas da V-01 sem dado válido: (1) GPIO 7 esquecido aterrado, a nominal abortou por `FAULT_TEST`; (2) a roda
+não foi travada durante o S1, o `FAULT_COGNIZANT` só ativou no S3 (RF-04 reprovado pelo `check_v01`, como deve);
+(3) a nominal abortou por `FAULT_COGNIZANT` no S2, com as rodas livres.
+
+Na terceira, no TURN_TO de +90° logo depois do S1 a 0,2 m/s, a odometria mediu v = +0,38 m/s e ω = −3 rad/s: roda
+esquerda a +0,59 m/s, com referência de cerca de −0,09 m/s. A roda girou para trás em velocidade máxima, medida como
+para frente: o sentido travado (ADR 019) só segue o duty com a roda dada como parada (T_vel = 0,3 s sem borda), e a
+referência v − ω·b/2 cruzou ±v_min com as duas rampas somadas (0,5 + 0,25 m/s², ~0,19 s), sem parada detectada. Com o
+sentido antigo, o PI empurra mais para trás, a roda nunca para e o sentido nunca atualiza. O `FAULT_COGNIZANT`
+detectou depois de T_f = 1 s e o sequenciador abortou (RF-02 e RF-04 funcionaram).
+
+Reproduzido no teste de host com o modelo de malha fechada (`test_fast_reversal_with_encoder`): sem a correção, a roda
+dispara a −0,624 m/s; com ela, segue −0,090 m/s. Correção (Lucas, 2/11): `WheelSpeed::reference_from_stop` freia a roda
+que ainda gira contra o sinal da referência até ela ser dada como parada; ADR 019 emendada. Na partida em sentido
+contrário, a roda espera até T_vel; parada, reflexo e vencimento não mudam.
+
