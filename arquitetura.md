@@ -152,7 +152,7 @@ Uma missão é `Mission(steps, reactions)`, e um passo é `Step(behavior, until,
 - Explícitos: `distance_traveled(d)` e `cleared(code)`.
 - Giro acima de θ_max é feito em partes. Repouso fora da tolerância gera `NO_PROGRESS` (ADR 036).
 
-Missões de ensaio e a missão por plano usam o mesmo formato e o mesmo motor. Tolerâncias, velocidades e limiares são parâmetros ROS.
+Missões de ensaio e a missão por plano usam o mesmo formato e o mesmo motor. Tolerâncias, velocidades e limiares são constantes nomeadas no código do sequenciador.
 
 A pose do robô vem da Odometria. Do TF, o sequenciador só usa o map → odom.
 
@@ -173,7 +173,7 @@ São eventos do próprio sequenciador, que entram na mesma tabela de reações:
 
 | Evento | Condição |
 | --- | --- |
-| `COMMAND_NOT_ECHOED` | Eco do Estado diferente do comando enviado por mais de T_eco (> T_cmd) |
+| `COMMAND_NOT_ECHOED` | Eco do Estado diferente do comando enviado por mais de T_eco = 0,3 s (T_cmd + 2 períodos de republicação; nota 0006). O comando é comparado ao eco depois de arredondado a float32, o tipo da mensagem |
 | `LINK_LOST` | Sem Estado há mais de T_cmd |
 | `HEARTBEAT_LOST` | Sem `/heartbeat` do notebook há mais de T_HB = 0,5 s. Por nível; a parada remota é dar Ctrl-C no notebook |
 | `BATTERY_LOW` | Tensão abaixo de V_WARN, com histerese H. Por nível |
@@ -247,7 +247,7 @@ Têm ponto de partida, mas o valor final depende de medição:
 | Grupo | Parâmetros |
 | --- | --- |
 | Controlador | a_acel, a_dec, t_s, T_f, S_MIN_VLX = 0,02 MCPS/SPAD e offset do VL53L0X, constante do filtro da bateria, V_WARN, H, prazo do watchdog, deriva entre os relógios |
-| Sequenciador | θ_max = 170°, T_WAIT = 5 s, N_REPLAN = 3, T_HB = 0,5 s, T_eco |
+| Sequenciador | θ_max = 170°, T_HB = 0,5 s, T_eco = 0,3 s |
 | Deliberador | Margem do plano m = 0,10 m |
 | No chão (issue #27) | d_stop = 0,15 m, v_max |
 | Geometria (issue #25) | Raio do robô, pose do LiDAR |
