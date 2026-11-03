@@ -90,6 +90,7 @@ do ensaio.
 | `robot_verification/robot_verification/plot_closed_loop.py` | infraestrutura | T2 | | | figuras da nota 0011; os números vêm do `measure_closed_loop` |
 | `robot_verification/robot_verification/plot_recording.py` | infraestrutura | T2 | | | uma figura por campo gravado dos tópicos do controlador (nota 0013); os números vêm do check |
 | `robot_verification/robot_verification/plot_v01.py` | infraestrutura | T2 | RF-04 | V-01 | figura no tempo (comportamento e eco, v, ω, θ, máscaras) e trajetória de uma execução da V-01, mais a lista de eventos (nota 0016); o veredito vem do `check_v01` |
+| `robot_verification/robot_verification/plot_final_round.py` | infraestrutura | T2 | RF-01 a RF-07, RNF-01 a RNF-05 | V-01 a V-08 | figuras da rodada final para a monografia (nota 0020), lidas pelas classes dos checks; os números e os veredictos vêm dos checks |
 | `robot_verification/bench/v05_bench.sh` | infraestrutura | T2 | RNF-01 | V-05 | checagem da cadeia do medidor (nota 0013); erro invalida a rodada, e o `check_v05` detecta |
 | `robot_verification/bench/behaviors_bench.sh` | infraestrutura | T2 | RF-01 | V-01 | primeiro ensaio de TURN_TO e GO_TO (nota 0014); como rodou |
 | `robot_verification/bench/reversal_bench.sh` | infraestrutura | T2 | RF-01 | V-02 | reversão isolada (nota 0014); como rodou |

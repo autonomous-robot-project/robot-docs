@@ -41,3 +41,21 @@ action `compute_path_to_pose` (RF-07). Divergência aceita (Lucas, 2/11): o gati
 num laço sem limite só com o pino aterrado à mão (ADR 029). Os scripts de ensaio do `robot_verification` também
 publicam o comando, fora do `robot.launch.py`. V-09: PASS.
 
+## Figuras para a monografia - 2026-11-03
+
+`plot_final_round` (robot_verification) lê os bags da rodada final pelas mesmas classes dos checks e grava PDF
+(vetorial) e PNG na pasta de cada verificação:
+
+| Figura | Verificação | O que mostra |
+| --- | --- | --- |
+| `V-01/2026-11-02_final/fig_v01_selecao` | V-01 | Passos S1–S4 da missão em cada execução e o `FAULT_COGNIZANT`: na falha, o S4 começa na ativação, ainda no S1 |
+| `V-02/2026-11-02_final/fig_v02_falha_cognizante` | V-02 | Velocidade das rodas, cortes da chave, `FAULT_COGNIZANT` em cada corte e `FAULT_WATCHDOG_RESTART` depois do GPIO 11 |
+| `V-03/2026-11-02_final/fig_v03_reflexo` | V-03 | Velocidade, janelas do anteparo e `REFLEX_FRONT_OBSTACLE`: parada e retomada em cada janela |
+| `V-04/2026-11-02_final/fig_v04_plano` | V-04 | M, zona proibida (r + m + res), plano do Theta*, vértices e trajetória da odometria |
+| `V-06/2026-11-02_final/fig_v06_vencimento` | V-06 | Atraso do vencimento nas 30 interrupções, entre T_cmd e T_cmd + T_c |
+| `V-07/2026-11-02_final/fig_v07_v08_resposta` | V-07, V-08 | Distribuição acumulada de Δ em C0, C1 e C2 contra T_seq |
+
+A V-05 não tem figura (um valor por condição: R_max contra T_c, na tabela acima). Na V-02, os picos de velocidade ao
+religar a chave (até 0,55 m/s) não entram no critério; causa provável, não conferida: durante o corte o PI satura em
+DUTY_MAX, com a integral no limite da integração condicional (ADR 023), e a roda acelera até o PI sair da saturação.
+
