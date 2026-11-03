@@ -150,3 +150,20 @@ Consequências:
 - ω_max = 2·v_max / b e α_dec = 2·a_dec / b sobem 8 %; o limite por roda (v_max, a_dec) não muda.
 - Com as rodas suspensas, o b não altera nenhum critério; a rodada final roda sobre o firmware com o b medido.
 
+## NO_PROGRESS falso na aceleração - 2026-11-02
+
+Rodada final sobre a v1.0 (firmware 0744c89, b = 0,139 m), RPi no cabo da rede de casa, rodas suspensas, bateria em
+12,09 V. Duas tentativas da V-04 sem dado válido antes desta análise: a primeira abortou por `REFLEX_FRONT_OBSTACLE`
+no 1º GO_TO (frente do sensor livre logo depois; causa não identificada, ver robot-docs#48); a segunda percorreu os
+quatro pares e abortou por `NO_PROGRESS` no último GO_TO, a 1,31 m de p_g. Antes, com o RPi no Wi-Fi da casa (35 % de
+perda, -62 dBm), duas tentativas abortaram por `HEARTBEAT_LOST`.
+
+No bag da segunda: sem lacuna de enlace (Comando 52 ms, Odometria 68 ms no máximo), `faults` e `reflexes` em 0. No
+início do GO_TO, uma roda deu uma ou duas bordas (v = 0,10 m/s e ω = 1,47 rad/s, uma borda em 50 ms) e parou; depois
+de T_vel = 0,3 s o firmware publicou zero exato. A regra da ADR 036 (repouso logo depois de uma leitura em movimento)
+deu `NO_PROGRESS` com a rampa ainda atravessando a zona morta dos motores (~2 V, observação do Lucas): de 0 a v_min a
+rampa leva 0,07 / 0,25 = 0,28 s, e o integrador ainda precisa vencer a zona morta.
+
+Decisão (Lucas, 2/11): `NO_PROGRESS` só depois de T_stall = 1 s em repouso fora da tolerância (20 leituras da
+Odometria), ADR 036 emendada. A tag v1.0 do robot-ros-system vai para o commit com a correção.
+

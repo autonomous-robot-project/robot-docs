@@ -150,7 +150,7 @@ Uma missão é `Mission(steps, reactions)`, e um passo é `Step(behavior, until,
 - TURN_TO: |e_θ| ≤ ε_θ em repouso.
 - GO_TO: d ≤ ε_d em repouso.
 - Explícitos: `distance_traveled(d)` e `cleared(code)`.
-- Giro acima de θ_max é feito em partes. Repouso fora da tolerância gera `NO_PROGRESS` (ADR 036).
+- Giro acima de θ_max é feito em partes. Repouso fora da tolerância por T_stall gera `NO_PROGRESS` (ADR 036).
 
 Missões de ensaio e a missão por plano usam o mesmo formato e o mesmo motor. Tolerâncias, velocidades e limiares são constantes nomeadas no código do sequenciador.
 
@@ -177,7 +177,7 @@ São eventos do próprio sequenciador, que entram na mesma tabela de reações:
 | `LINK_LOST` | Sem Estado há mais de T_cmd |
 | `HEARTBEAT_LOST` | Sem `/heartbeat` do notebook há mais de T_HB = 0,5 s. Por nível; a parada remota é dar Ctrl-C no notebook |
 | `BATTERY_LOW` | Tensão abaixo de V_WARN, com histerese H. Por nível |
-| `NO_PROGRESS` | Repouso fora da tolerância, depois de ter havido movimento no passo (ADR 036) |
+| `NO_PROGRESS` | Repouso fora da tolerância por T_stall = 1 s, depois de ter havido movimento no passo (ADR 036) |
 
 A máscara anterior desconhecida vale 0 ao subir o nó, quando o enlace volta e na entrada de cada passo. Assim, toda condição já ativa nesses instantes gera borda. Esses eventos não fazem parte do `robot-interfaces`.
 

@@ -16,7 +16,7 @@ Os términos padrão (TURN_TO: |e_θ| ≤ ε_θ em repouso; GO_TO: d ≤ ε_d em
 ## Decisão
 
 - **Giro grande:** com |Δθ| > θ_max, o TURN_TO comanda θ_atual ± θ_max. Ao parar nesse alvo parcial, reentra no passo, e o `heading_to` recalculado já fica abaixo de θ_max.
-- **Sem progresso:** repouso fora da tolerância, depois de ter havido movimento no passo, gera o evento `NO_PROGRESS`, do próprio sequenciador. Ele é tratado na tabela de reações (ADR 032), com o aborto como padrão.
+- **Sem progresso:** repouso fora da tolerância por T_stall = 1 s, depois de ter havido movimento no passo, gera o evento `NO_PROGRESS`, do próprio sequenciador. Ele é tratado na tabela de reações (ADR 032), com o aborto como padrão.
 
 ## Alternativa descartada
 
@@ -29,10 +29,11 @@ Os términos padrão (TURN_TO: |e_θ| ≤ ε_θ em repouso; GO_TO: d ≤ ε_d em
 
 - ADR 024: nenhum comando de giro chega a 180°, e a divisão usa a reentrada que já existe (ADR 032).
 - RF-04: parar antes do alvo é um resultado do passo e precisa levar a uma escolha. Na tabela, a missão escolhe abortar ou tentar de novo.
-- A condição "depois de ter havido movimento" evita o falso evento na entrada, quando o robô já está em repouso, sem constante nova.
+- A condição "depois de ter havido movimento" evita o falso evento na entrada, quando o robô já está em repouso.
+- O repouso sustentado por T_stall evita o falso evento na aceleração: a rampa leva 0,28 s de 0 a v_min, e na zona morta dos motores uma borda seguida de T_vel = 0,3 s em repouso parecia parada (nota 0018, V-04 de 2/11). T_stall = 1 s é o mesmo T_f da V-02.
 
 ## Nota
 
 - O TURN_TO é emitido mesmo com o robô alinhado: termina na primeira Odometria, e a V-04 continua contando pares TURN_TO → GO_TO.
-- θ_max é parâmetro, com margem sobre a resolução da odometria (≈ 4,5° por pulso); ponto de partida 170°.
+- θ_max é parâmetro, com margem sobre a resolução da odometria (≈ 4,2° por pulso, nota 0018); ponto de partida 170°.
 - O robô que nunca se mexe, sem falha nem reflexo, fica para os monitores do eco e do enlace.
