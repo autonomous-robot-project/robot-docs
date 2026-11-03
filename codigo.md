@@ -30,7 +30,7 @@ do ensaio.
 | `components/controller/src/control/turn_to.cpp` | domínio | T2 | RF-01 | V-01 | ADRs 024 e 030; teste no host |
 | `components/controller/src/control/go_to.cpp` | domínio | T2 | RF-01 | V-01 | ADRs 024 e 030; teste no host |
 | `components/controller/src/control/wheel_pi.cpp` | domínio | T2 | RF-01 | V-02 | teste no host |
-| `components/controller/src/sensing/wheel_speed.cpp` | domínio | T1 | RF-02, RF-03 | V-01, V-02, V-03 | instrumento (velocidade da V-03, odometria) e sob teste; sem teste no host próprio |
+| `components/controller/src/sensing/wheel_speed.cpp` | domínio | T1 | RF-02, RF-03 | V-01, V-02, V-03 | instrumento (velocidade da V-03, odometria) e sob teste; reversão só a partir da parada coberta pelo `test_wheel_pi` (modelo de malha fechada, ADR 019) |
 | `components/controller/src/sensing/wheel_odometry.cpp` | domínio | T1 | RF-01 | V-01, V-04 | ADR 048; instrumento da pose; teste no host |
 | `components/controller/src/sensing/wheel_encoder.cpp` | infraestrutura | T1 | RF-02, RF-03 | V-01, V-02, V-03 | bordas validadas fisicamente (nota 0010) |
 | `components/controller/src/sensing/vl53l0x.cpp` | infraestrutura | T2 | RF-03 | V-03 | porte enxuto da Pololu (MIT); nota 0015 |
