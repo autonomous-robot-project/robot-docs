@@ -34,3 +34,4 @@ Após um reinício por watchdog, o controlador publica o código de falha "rein�
 ## Nota
 
 O prazo e a duração do código ativo serão fixados em bancada.
+- O gatilho por pino trava o ciclo num laço sem limite só com o pino aterrado à mão. A V-09 o registra como divergência aceita: em operação não executa, e o watchdog o detecta (Lucas, 2026-11-02; `evidencias/V-09/2026-11-02_final/inspecao.md`).

@@ -1,0 +1,12 @@
+# ros2 node list com o robot.launch.py no RPi, tag v1.0, 2026-11-02 23:59
+/base_link_to_laser
+/controller
+/global_costmap/global_costmap
+/ld19
+/lifecycle_manager
+/odom_to_tf
+/planner_server
+/sequencer
+/slam_toolbox
+/transform_listener_impl_aaaae44e8100
+/transform_listener_impl_aaaaf6d557e0

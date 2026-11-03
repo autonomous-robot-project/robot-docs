@@ -31,4 +31,13 @@ Cada correção moveu a tag v1.0, e as verificações já feitas foram refeitas 
 Pendências:
 - O `v06_run.sh` (V-06) é um script de bancada fora do repositório, copiado em `evidencias/V-06/2026-11-02_final/`;
   a regra de evidência pede o código em `tools/` ou no `robot_verification`.
-- `rqt_graph` e `inspecao.md` da V-09.
+
+## V-09, inspeção de código - 2026-11-02
+
+`inspecao.md` (21 itens do critério com arquivo:linha na tag, 5 parâmetros conformes) e `rqt_graph.png` do
+`robot.launch.py` com o sistema completo no RPi, em `evidencias/V-09/2026-11-02_final/`. No grafo, o
+`/controller/command` tem só o `/sequencer` como publicador, e o `/planner_server` só se liga ao `/sequencer`, pela
+action `compute_path_to_pose` (RF-07). Divergência aceita (Lucas, 2/11): o gatilho do watchdog da V-02 trava o ciclo
+num laço sem limite só com o pino aterrado à mão (ADR 029). Os scripts de ensaio do `robot_verification` também
+publicam o comando, fora do `robot.launch.py`. V-09: PASS.
+
