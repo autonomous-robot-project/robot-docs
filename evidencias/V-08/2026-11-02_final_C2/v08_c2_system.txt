@@ -1,0 +1,12 @@
+--- start: free -m
+               total        used        free      shared  buff/cache   available
+Mem:            7937         445        6917           3         747        7491
+Swap:              0           0           0
+--- start: vcgencmd get_throttled
+throttled=0x0
+--- end: free -m
+               total        used        free      shared  buff/cache   available
+Mem:            7937         440        6902           3         767        7496
+Swap:              0           0           0
+--- end: vcgencmd get_throttled
+throttled=0x0

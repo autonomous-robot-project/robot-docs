@@ -1,0 +1,8 @@
+V-07: 567 test events, 566 with their activation
+  events with activation >= 300, passed: True
+  contiguous indices, passed: True
+  TWIST(0.2, 0) before each activation, passed: True
+  longest Instrumentation gap 0.123 s (max 1.0 s), passed: True
+  Δ max 24.2 ms (T_seq 100 ms), passed: True
+  Δ median 8.3 ms, p99 19.2 ms
+V-07: PASS

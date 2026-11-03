@@ -1,0 +1,5 @@
+V-08 C1: 598 plans (T_gap 1.500 s)
+  first plan after 1.283 s, passed: True
+  longest gap between plans 1.006 s, passed: True
+  end of the run 0.005 s after the last plan, passed: True
+V-08 C1: established

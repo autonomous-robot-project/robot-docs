@@ -1,0 +1,32 @@
+[INFO] [1793672103.232438317] [sequencer]: mission v01: waiting for the first Odometry
+[INFO] [1793672103.301397799] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672108.779858772] [sequencer]: RUNNING: Command(behavior=<Behavior.TURN_TO: 1>, linear=0.0, angular=0.0, theta=-1.1865708708723606, x=0.0, y=0.0)
+[INFO] [1793672110.170671998] [sequencer]: RUNNING: Command(behavior=<Behavior.GO_TO: 2>, linear=0.0, angular=0.0, theta=0.0, x=1.3870611014313354, y=2.664571848373715)
+[INFO] [1793672113.551039100] [sequencer]: SUCCEEDED: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0)
+Traceback (most recent call last):
+  File "/home/lucasfv/final_v1.0/install/robot_sequencer/lib/robot_sequencer/sequencer", line 33, in <module>
+    sys.exit(load_entry_point('robot-sequencer==0.1.0', 'console_scripts', 'sequencer')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucasfv/final_v1.0/install/robot_sequencer/lib/python3.12/site-packages/robot_sequencer/sequencer_node.py", line 385, in main
+    rclpy.spin(SequencerNode())
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 918, in _spin_once_impl
+    raise handler.exception()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/task.py", line 286, in _execute_coroutine_step
+    result = coro.send(None)
+             ^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 592, in handler
+    await call_coroutine()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 454, in _execute
+    await await_or_execute(tmr.callback)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 115, in await_or_execute
+    return callback(*args)
+           ^^^^^^^^^^^^^^^
+  File "/home/lucasfv/final_v1.0/install/robot_sequencer/lib/python3.12/site-packages/robot_sequencer/sequencer_node.py", line 359, in _on_timer
+    self._commands.publish(build_command_message(self._sequencer.command))
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/publisher.py", line 70, in publish
+    self.__publisher.publish(msg)
+rclpy._rclpy_pybind11.RCLError: Failed to publish: publisher's context is invalid, at ./src/rcl/publisher.c:423

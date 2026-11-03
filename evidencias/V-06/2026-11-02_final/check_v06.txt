@@ -1,0 +1,32 @@
+V-06: 30 command gaps (30 expected), 0 publisher pauses not evaluated
+  gap 1: 1 expiries (1 expected), expiry delay 201.955 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 2: 1 expiries (1 expected), expiry delay 209.047 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 3: 1 expiries (1 expected), expiry delay 203.932 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 4: 1 expiries (1 expected), expiry delay 201.158 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 5: 1 expiries (1 expected), expiry delay 208.892 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 6: 1 expiries (1 expected), expiry delay 201.411 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 7: 1 expiries (1 expected), expiry delay 207.029 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 8: 1 expiries (1 expected), expiry delay 206.644 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 9: 1 expiries (1 expected), expiry delay 205.348 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 10: 1 expiries (1 expected), expiry delay 206.837 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 11: 1 expiries (1 expected), expiry delay 202.208 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 12: 1 expiries (1 expected), expiry delay 209.087 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 13: 1 expiries (1 expected), expiry delay 205.816 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 14: 1 expiries (1 expected), expiry delay 202.689 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 15: 1 expiries (1 expected), expiry delay 200.104 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 16: 1 expiries (1 expected), expiry delay 201.403 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 17: 1 expiries (1 expected), expiry delay 208.109 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 18: 1 expiries (1 expected), expiry delay 201.729 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 19: 1 expiries (1 expected), expiry delay 201.005 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 20: 1 expiries (1 expected), expiry delay 208.900 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 21: 1 expiries (1 expected), expiry delay 208.916 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 22: 1 expiries (1 expected), expiry delay 201.761 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 23: 1 expiries (1 expected), expiry delay 205.709 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 24: 1 expiries (1 expected), expiry delay 201.860 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 25: 1 expiries (1 expected), expiry delay 202.732 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 26: 1 expiries (1 expected), expiry delay 207.657 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 27: 1 expiries (1 expected), expiry delay 203.767 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 28: 1 expiries (1 expected), expiry delay 203.685 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 29: 1 expiries (1 expected), expiry delay 203.669 ms (max 210 ms), stop persisted: True, command echoed before: True
+  gap 30: 1 expiries (1 expected), expiry delay 201.731 ms (max 210 ms), stop persisted: True, command echoed before: True
+V-06: PASS

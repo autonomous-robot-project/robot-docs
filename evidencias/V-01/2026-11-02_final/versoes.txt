@@ -1,0 +1,3 @@
+robot-firmware 16ce5dd (v1.0)
+robot-interfaces 774e892
+robot-ros-system 8ad2968 (v1.0)

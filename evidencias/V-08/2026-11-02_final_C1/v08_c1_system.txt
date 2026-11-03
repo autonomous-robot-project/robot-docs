@@ -1,0 +1,8 @@
+--- start: free -m
+               total        used        free      shared  buff/cache   available
+Mem:            7937         437        6957           3         715        7499
+Swap:              0           0           0
+--- end: free -m
+               total        used        free      shared  buff/cache   available
+Mem:            7937         454        6908           3         747        7482
+Swap:              0           0           0

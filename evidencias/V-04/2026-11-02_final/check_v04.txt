@@ -1,0 +1,12 @@
+V-04: 1 plans, 4 segments expected
+  vertices (0.275, 1.675) (0.525, 1.825) (0.675, 1.825) (2.000, 2.000)
+  echo TWIST -> TURN_TO -> GO_TO -> TURN_TO -> GO_TO -> TURN_TO -> GO_TO -> TURN_TO -> GO_TO -> TWIST
+  RF-06 plan delivered, passed: True
+  RF-07 pairs TURN_TO -> GO_TO in order, passed: True
+  final distance to p_g 0.005 m (max 0.05 m), passed: True
+  one plan, passed: True
+  map -> odom identity, passed: True
+  at least 2 segments, passed: True
+  segments longer than 2·ε_g, passed: True
+  odometry after the final stop, passed: True
+V-04: PASS

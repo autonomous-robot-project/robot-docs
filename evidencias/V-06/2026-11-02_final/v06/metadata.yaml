@@ -1,0 +1,88 @@
+rosbag2_bagfile_information:
+  version: 9
+  storage_identifier: mcap
+  duration:
+    nanoseconds: 249480297325
+  starting_time:
+    nanoseconds_since_epoch: 1793673786976492372
+  message_count: 29029
+  topics_with_message_count:
+    - topic_metadata:
+        name: /controller/command
+        type: robot_interfaces/msg/Command
+        serialization_format: cdr
+        offered_qos_profiles:
+          - history: unknown
+            depth: 0
+            reliability: best_effort
+            durability: volatile
+            deadline:
+              sec: 9223372036
+              nsec: 854775807
+            lifespan:
+              sec: 9223372036
+              nsec: 854775807
+            liveliness: automatic
+            liveliness_lease_duration:
+              sec: 9223372036
+              nsec: 854775807
+            avoid_ros_namespace_conventions: false
+        type_description_hash: RIHS01_25f018cc8cc2a944eb52a217881990c9ac0b056170187354714d502a2e0ce2ab
+      message_count: 1692
+    - topic_metadata:
+        name: /controller/instrumentation
+        type: robot_interfaces/msg/Instrumentation
+        serialization_format: cdr
+        offered_qos_profiles:
+          - history: unknown
+            depth: 0
+            reliability: best_effort
+            durability: volatile
+            deadline:
+              sec: 9223372036
+              nsec: 854775807
+            lifespan:
+              sec: 9223372036
+              nsec: 854775807
+            liveliness: automatic
+            liveliness_lease_duration:
+              sec: 9223372036
+              nsec: 854775807
+            avoid_ros_namespace_conventions: false
+        type_description_hash: ""
+      message_count: 2388
+    - topic_metadata:
+        name: /controller/state
+        type: robot_interfaces/msg/State
+        serialization_format: cdr
+        offered_qos_profiles:
+          - history: unknown
+            depth: 0
+            reliability: best_effort
+            durability: volatile
+            deadline:
+              sec: 9223372036
+              nsec: 854775807
+            lifespan:
+              sec: 9223372036
+              nsec: 854775807
+            liveliness: automatic
+            liveliness_lease_duration:
+              sec: 9223372036
+              nsec: 854775807
+            avoid_ros_namespace_conventions: false
+        type_description_hash: ""
+      message_count: 24949
+  compression_format: ""
+  compression_mode: ""
+  relative_file_paths:
+    - v06_0.mcap
+  files:
+    - path: v06_0.mcap
+      starting_time:
+        nanoseconds_since_epoch: 1793673786976492372
+      duration:
+        nanoseconds: 249480297325
+      message_count: 29029
+  custom_data: ~
+  ros_distro: jazzy

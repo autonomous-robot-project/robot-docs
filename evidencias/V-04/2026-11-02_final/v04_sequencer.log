@@ -1,0 +1,13 @@
+[INFO] [1793671950.799833020] [sequencer]: mission by plan: waiting for /goal_pose
+[INFO] [1793671954.531647148] [sequencer]: goal (2.000, 2.000): planning
+[INFO] [1793671954.532639263] [sequencer]: PLANNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793671954.541346647] [sequencer]: plan of 69 poses, vertices [Point(x=0.2750000115483999, y=1.6750000324100256), Point(x=0.5250000152736902, y=1.8250000346451998), Point(x=0.6750000175088644, y=1.8250000346451998), Point(x=2.0, y=2.0)]
+[INFO] [1793671954.542514744] [sequencer]: RUNNING: Command(behavior=<Behavior.TURN_TO: 1>, linear=0.0, angular=0.0, theta=1.408068948534277, x=0.0, y=0.0)
+[INFO] [1793671956.024780770] [sequencer]: RUNNING: Command(behavior=<Behavior.GO_TO: 2>, linear=0.0, angular=0.0, theta=0.0, x=0.2750000115483999, y=1.6750000324100256)
+[INFO] [1793671965.424161665] [sequencer]: RUNNING: Command(behavior=<Behavior.TURN_TO: 1>, linear=0.0, angular=0.0, theta=0.5252496618503395, x=0.0, y=0.0)
+[INFO] [1793671966.672343729] [sequencer]: RUNNING: Command(behavior=<Behavior.GO_TO: 2>, linear=0.0, angular=0.0, theta=0.0, x=0.5250000152736902, y=1.8250000346451998)
+[INFO] [1793671969.023508425] [sequencer]: RUNNING: Command(behavior=<Behavior.TURN_TO: 1>, linear=0.0, angular=0.0, theta=0.030400238053720496, x=0.0, y=0.0)
+[INFO] [1793671970.053145737] [sequencer]: RUNNING: Command(behavior=<Behavior.GO_TO: 2>, linear=0.0, angular=0.0, theta=0.0, x=0.6750000175088644, y=1.8250000346451998)
+[INFO] [1793671971.724649111] [sequencer]: RUNNING: Command(behavior=<Behavior.TURN_TO: 1>, linear=0.0, angular=0.0, theta=0.1341043522706542, x=0.0, y=0.0)
+[INFO] [1793671971.773421325] [sequencer]: RUNNING: Command(behavior=<Behavior.GO_TO: 2>, linear=0.0, angular=0.0, theta=0.0, x=2.0, y=2.0)
+[INFO] [1793671979.323845695] [sequencer]: SUCCEEDED: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0)

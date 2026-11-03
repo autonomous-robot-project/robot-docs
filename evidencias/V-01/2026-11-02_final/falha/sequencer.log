@@ -1,0 +1,3 @@
+[INFO] [1793672123.133177212] [sequencer]: mission v01: waiting for the first Odometry
+[INFO] [1793672123.170860462] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672125.480328491] [sequencer]: ABORTED: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_COGNIZANT

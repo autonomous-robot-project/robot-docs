@@ -1,0 +1,1195 @@
+[INFO] [1793672506.040112183] [sequencer]: mission v08: waiting for the first Odometry
+[INFO] [1793672506.051860879] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672506.058976619] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672506.068862848] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672507.016661097] [sequencer]: planning load: 1 plans, 0 failures 
+[INFO] [1793672518.015689005] [sequencer]: planning load: 12 plans, 0 failures 
+[INFO] [1793672524.508357909] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672524.519223029] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672525.808186835] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672525.819110640] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672527.019910724] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672527.038362530] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672527.638154069] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672527.649389209] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672528.016250813] [sequencer]: planning load: 22 plans, 0 failures 
+[INFO] [1793672528.348343811] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672528.368049731] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672529.789214178] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672529.799008091] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672530.949370525] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672530.958092880] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672531.669168047] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672531.678117125] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672532.478687516] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672532.488814930] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672533.758428288] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672533.779356748] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672535.168223939] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672535.179369578] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672535.690011797] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672535.699050931] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672537.168123782] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672537.179326069] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672538.357720712] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672538.367784922] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672539.016295409] [sequencer]: planning load: 33 plans, 0 failures 
+[INFO] [1793672539.479423952] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672539.498517685] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672540.878204733] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672540.889287539] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672541.429634958] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672541.438195480] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672542.208222378] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672542.229131893] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672542.848377694] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672542.858470070] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672543.929913921] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672543.938155775] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672544.579296295] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672544.588856653] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672545.578370927] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672545.599095720] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672546.588091196] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672546.598340258] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672547.688221262] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672547.699034622] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672549.128190392] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672549.138179528] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672550.015848835] [sequencer]: planning load: 44 plans, 0 failures 
+[INFO] [1793672550.579528233] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672550.588009273] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672551.339098006] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672551.349344364] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672552.538972146] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672552.558278620] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672553.449204531] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672553.468066411] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672554.758096717] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672554.768129186] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672555.888808294] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672555.898331465] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672556.739592602] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672556.759000391] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672557.978298425] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672557.989759138] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672559.269527653] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672559.278411601] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672560.015971442] [sequencer]: planning load: 54 plans, 0 failures 
+[INFO] [1793672560.348272559] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672560.359324642] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672561.348160658] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672561.358968536] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672562.258850869] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672562.267975280] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672563.758212975] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672563.778070654] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672564.758118755] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672564.767968391] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672565.268018364] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672565.279029780] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672565.899422402] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672565.909063759] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672567.198188138] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672567.209617037] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672567.758955371] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672567.777969770] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672569.128182278] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672569.137849154] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672570.379237430] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672570.389051584] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672571.015956922] [sequencer]: planning load: 65 plans, 0 failures 
+[INFO] [1793672571.547445451] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672571.558223755] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672572.079107017] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672572.088792615] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672573.049652032] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672573.060928800] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672574.478232781] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672574.489102234] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672575.609061964] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672575.628144270] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672576.249215776] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672576.258028816] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672577.629168013] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672577.648210689] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672578.218195068] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672578.229035298] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672579.379104302] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672579.388875252] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672580.699794630] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672580.709149486] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672581.017034574] [sequencer]: planning load: 75 plans, 0 failures 
+[INFO] [1793672582.199018597] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672582.209032177] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672582.838117883] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672582.849082132] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672584.238902939] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672584.259361434] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672585.519755089] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672585.528149036] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672586.899002645] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672586.909073596] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672588.038605651] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672588.048035637] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672588.958440692] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672588.969546683] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672590.388034996] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672590.398956448] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672591.178013404] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672591.188971245] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672592.016024336] [sequencer]: planning load: 86 plans, 0 failures 
+[INFO] [1793672592.689139792] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672592.699049019] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672593.899059073] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672593.908950597] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672595.239047725] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672595.248960231] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672596.599050110] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672596.609103819] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672597.428278794] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672597.437861280] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672598.798733960] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672598.809160930] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672600.248855262] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672600.268556458] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672601.467963631] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672601.488702089] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672602.277961672] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672602.288005678] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672603.015683445] [sequencer]: planning load: 97 plans, 0 failures 
+[INFO] [1793672603.337978856] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672603.348945216] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672604.158168013] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672604.168843391] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672605.328197258] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672605.338857969] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672605.898236270] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672605.908109683] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672606.718982778] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672606.729061247] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672607.467704444] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672607.478047062] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672608.758019459] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672608.769182375] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672609.447955000] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672609.458105228] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672610.368913359] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672610.387962868] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672611.828179649] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672611.837827320] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672613.249063270] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672613.257921421] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672613.879764942] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672613.887828666] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672614.015859975] [sequencer]: planning load: 108 plans, 0 failures 
+[INFO] [1793672615.159031626] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672615.170086764] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672616.388912263] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672616.398747564] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672617.087955451] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672617.107935147] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672618.218234493] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672618.228656852] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672618.837860062] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672618.856945330] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672619.767307785] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672619.778905572] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672620.779579281] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672620.787831116] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672621.448113300] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672621.458591047] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672622.887917657] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672622.899098110] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672624.017177080] [sequencer]: planning load: 118 plans, 0 failures 
+[INFO] [1793672624.227533050] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672624.237878112] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672625.039198374] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672625.048053339] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672626.498053531] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672626.509319466] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672627.049125875] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672627.057835748] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672628.148057999] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672628.167866454] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672629.478768493] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672629.488064848] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672630.507794094] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672630.517869248] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672631.797923414] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672631.807997790] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672632.708773007] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672632.717978918] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672633.587950635] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672633.607910868] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672634.529071540] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672634.538752341] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672635.015946356] [sequencer]: planning load: 129 plans, 0 failures 
+[INFO] [1793672635.338913778] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672635.358064898] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672636.327888574] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672636.338481470] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672637.058080990] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672637.068810812] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672637.958888981] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672637.968683338] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672638.918883595] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672638.928947637] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672639.998031233] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672640.007906034] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672640.769351430] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672640.777661413] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672642.217844135] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672642.228923458] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672642.887939478] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672642.898823671] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672644.258195012] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672644.268578722] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672644.858981799] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672644.868664007] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672645.015983303] [sequencer]: planning load: 139 plans, 0 failures 
+[INFO] [1793672646.327946881] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672646.339321482] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672647.808205340] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672647.817889715] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672648.747952415] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672648.758620144] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672649.477755748] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672649.487979828] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672650.227968999] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672650.237620763] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672651.717774068] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672651.727842537] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672652.858839638] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672652.869295200] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672654.117749358] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672654.138456222] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672655.040084628] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672655.047810109] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672655.897785465] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672655.908795750] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672656.015973283] [sequencer]: planning load: 150 plans, 0 failures 
+[INFO] [1793672656.606571984] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672656.617773066] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672657.527891841] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672657.538337607] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672658.258726653] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672658.278623793] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672659.498947230] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672659.507718769] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672660.307851799] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672660.318742436] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672661.159058821] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672661.177761402] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672661.808919919] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672661.837809932] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672662.478643546] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672662.488111624] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672663.368443065] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672663.377706716] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672664.188849474] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672664.198812998] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672665.557750257] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672665.567704484] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672666.327885823] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672666.339180591] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672667.015954861] [sequencer]: planning load: 161 plans, 0 failures 
+[INFO] [1793672667.657842697] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672667.678539264] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672669.137662442] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672669.147753244] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672670.457864493] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672670.468617963] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672671.737702428] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672671.749172511] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672672.478849033] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672672.488899094] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672673.938900041] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672673.947749228] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672675.227848050] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672675.238535408] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672675.969027523] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672675.977691969] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672676.517748318] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672676.528679641] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672677.016944812] [sequencer]: planning load: 171 plans, 0 failures 
+[INFO] [1793672677.078159142] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672677.087743535] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672677.708834075] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672677.717615133] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672678.387839067] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672678.399536224] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672679.228699588] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672679.238279666] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672680.168538119] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672680.177805530] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672681.587731651] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672681.608725330] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672682.497793685] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672682.508382524] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672683.499317341] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672683.508291473] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672684.668458242] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672684.677912839] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672685.538239735] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672685.547896443] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672686.718635476] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672686.727962387] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672687.628789265] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672687.647779032] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672688.015909583] [sequencer]: planning load: 182 plans, 0 failures 
+[INFO] [1793672688.269004901] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672688.277607532] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672689.458878106] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672689.468616832] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672690.587068313] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672690.597711912] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672691.408089594] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672691.418592989] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672692.647966377] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672692.669156926] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672694.138427468] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672694.148542066] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672695.359085036] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672695.367713501] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672696.098752901] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672696.108437979] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672696.698294178] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672696.708811165] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672697.827919215] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672697.837737368] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672698.798710675] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672698.807620974] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672699.015388850] [sequencer]: planning load: 193 plans, 0 failures 
+[INFO] [1793672699.358694339] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672699.368622566] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672700.778719425] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672700.797667173] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672702.129491347] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672702.148585539] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672703.467645885] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672703.478587855] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672704.197663927] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672704.207649394] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672705.678822390] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672705.687599966] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672706.727743268] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672706.737636439] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672707.878684420] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672707.897537483] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672708.847805795] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672708.858595524] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672709.015641724] [sequencer]: planning load: 203 plans, 0 failures 
+[INFO] [1793672709.728789686] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672709.738608394] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672710.978641159] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672710.988676515] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672712.027387161] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672712.038405891] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672713.107704348] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672713.119075263] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672713.938584415] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672713.948760476] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672715.147739863] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672715.159126019] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672716.439067946] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672716.447834744] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672717.047580475] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672717.057649165] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672717.897651862] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672717.918080354] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672718.447628068] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672718.458682260] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672719.667413389] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672719.678513618] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672720.015642736] [sequencer]: planning load: 214 plans, 0 failures 
+[INFO] [1793672720.369243003] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672720.388413585] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672721.538555038] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672721.548683321] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672722.789278076] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672722.797624354] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672723.438098232] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672723.447657217] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672724.348655052] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672724.359148002] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672725.497720684] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672725.508104504] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672726.108674232] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672726.127614369] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672727.127633432] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672727.138309030] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672728.547456745] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672728.558366882] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672729.869316071] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672729.878150314] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672730.015947948] [sequencer]: planning load: 224 plans, 0 failures 
+[INFO] [1793672730.997625799] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672731.008545565] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672732.067422760] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672732.078275137] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672733.339036170] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672733.347618653] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672733.877417398] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672733.888545850] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672735.367404404] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672735.378445152] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672736.368315518] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672736.378368374] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672737.849309297] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672737.858291392] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672738.897579833] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672738.908587136] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672739.638362564] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672739.657430423] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672740.016183197] [sequencer]: planning load: 234 plans, 0 failures 
+[INFO] [1793672740.747631110] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672740.758520857] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672741.767381096] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672741.777607953] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672743.237442936] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672743.248422721] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672743.857968443] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672743.867411576] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672744.738483365] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672744.748461777] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672745.269248442] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672745.277399368] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672745.837540124] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672745.857743578] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672746.717661932] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672746.727697807] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672747.687561410] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672747.709318664] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672748.367403459] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672748.377258427] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672749.788471143] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672749.798479240] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672750.837306912] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672750.847564306] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672751.015961323] [sequencer]: planning load: 245 plans, 0 failures 
+[INFO] [1793672751.868240342] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672751.877487641] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672752.827501847] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672752.837394389] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672753.467541302] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672753.478354920] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672754.698572821] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672754.708393547] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672755.758836372] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672755.768201023] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672756.277321416] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672756.287518810] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672756.817459880] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672756.828605814] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672757.578535242] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672757.597607915] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672759.097539604] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672759.108395240] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672760.197550002] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672760.208319823] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672761.007573659] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672761.027420815] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672761.578605729] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672761.588341363] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672762.016513142] [sequencer]: planning load: 256 plans, 0 failures 
+[INFO] [1793672763.069110929] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672763.077288873] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672763.937572644] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672763.948946818] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672765.447403515] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672765.457350520] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672766.837779092] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672766.847560615] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672767.697537378] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672767.709945832] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672768.808225831] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672768.817722464] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672770.068276329] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672770.078534222] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672771.238370193] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672771.257351163] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672771.878425955] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672771.888153273] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672773.016396152] [sequencer]: planning load: 267 plans, 0 failures 
+[INFO] [1793672773.199340089] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672773.208144869] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672773.947787691] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672773.958309604] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672774.588564415] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672774.598415234] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672775.908598230] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672775.917539492] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672776.587344893] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672776.598440030] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672777.818950579] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672777.838255900] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672778.366691460] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672778.377578114] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672779.717862546] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672779.728137773] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672780.518359856] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672780.538102530] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672782.028126543] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672782.037531472] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672782.747437999] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672782.766270246] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672784.015963819] [sequencer]: planning load: 278 plans, 0 failures 
+[INFO] [1793672784.167300183] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672784.177916670] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672784.848037642] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672784.858127647] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672785.927548807] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672785.938202054] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672787.257360005] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672787.278762091] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672788.618178198] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672788.628244665] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672790.008393290] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672790.017665125] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672790.768658668] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672790.777052095] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672791.617297193] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672791.628460718] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672792.687325776] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672792.698206615] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672793.717879379] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672793.727300382] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672794.348028812] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672794.357226296] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672795.015962590] [sequencer]: planning load: 289 plans, 0 failures 
+[INFO] [1793672795.368179095] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672795.386781915] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672796.668167920] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672796.677333774] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672797.887314838] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672797.897220749] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672799.387252337] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672799.398245936] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672800.728353678] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672800.738169460] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672801.597284539] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672801.608003730] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672802.858408437] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672802.878065834] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672803.808230203] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672803.827865729] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672804.547299730] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672804.557161512] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672805.397451676] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672805.408107941] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672806.015929486] [sequencer]: planning load: 300 plans, 0 failures 
+[INFO] [1793672806.358744855] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672806.367281948] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672806.947366874] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672806.958320695] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672807.937653729] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672807.948140956] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672809.298003643] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672809.307330386] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672809.827335138] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672809.838044606] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672810.648934553] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672810.657250553] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672812.107488520] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672812.118069711] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672813.588443111] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672813.608189248] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672814.737161801] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672814.748356826] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672816.015984414] [sequencer]: planning load: 310 plans, 0 failures 
+[INFO] [1793672816.237101154] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672816.247880049] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672817.176852981] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672817.187290986] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672817.848411128] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672817.857150944] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672819.297476975] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672819.308787482] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672820.067076508] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672820.077221254] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672821.187168629] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672821.197201670] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672822.138687961] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672822.147330036] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672823.468253349] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672823.487932357] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672824.368139656] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672824.377185732] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672825.438137106] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672825.448337184] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672826.608263372] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672826.618135895] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672827.015861309] [sequencer]: planning load: 321 plans, 0 failures 
+[INFO] [1793672827.907084965] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672827.917715323] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672829.166963340] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672829.177785846] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672829.717132782] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672829.728674734] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672830.918152134] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672830.937981364] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672832.217172483] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672832.238004660] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672833.328222649] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672833.337929875] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672834.157138310] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672834.168029908] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672835.008218279] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672835.017157503] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672835.987303850] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672835.998800487] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672836.807087229] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672836.817593271] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672837.016062884] [sequencer]: planning load: 331 plans, 0 failures 
+[INFO] [1793672837.708149513] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672837.717142459] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672838.487183745] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672838.497734676] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672839.997384210] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672840.008208549] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672840.907565216] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672840.917140534] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672841.577291923] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672841.587972743] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672843.037023106] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672843.048268038] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672843.947802760] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672843.957934042] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672845.308223403] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672845.327839521] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672846.387104284] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672846.398899366] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672847.808311784] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672847.818138491] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672848.015225840] [sequencer]: planning load: 342 plans, 0 failures 
+[INFO] [1793672848.898199800] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672848.907886710] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672849.958818342] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672849.966946304] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672851.097150057] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672851.108831935] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672852.338023353] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672852.358074823] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672853.578206016] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672853.588084131] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672854.936980241] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672854.947065226] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672856.348310952] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672856.367728680] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672857.268069822] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672857.287107032] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672858.016172420] [sequencer]: planning load: 352 plans, 0 failures 
+[INFO] [1793672858.709532080] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672858.716945541] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672860.137018991] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672860.148057719] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672860.658177618] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672860.666836193] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672861.869025914] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672861.877874193] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672862.396983777] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672862.407710283] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672863.158044235] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672863.168000054] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672864.597145853] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672864.607861840] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672865.567950982] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672865.577814004] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672866.478072863] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672866.488248719] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672867.958113625] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672867.976984612] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672868.016217403] [sequencer]: planning load: 362 plans, 0 failures 
+[INFO] [1793672869.237067401] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672869.248104370] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672870.648172248] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672870.667153124] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672871.367884554] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672871.376817037] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672872.427107209] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672872.437660899] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672873.315813447] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672873.327992307] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672873.947193148] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672873.966701117] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672874.787963426] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672874.797826374] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672876.297189432] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672876.308116678] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672877.648125658] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672877.657595234] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672878.907060975] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672878.916850589] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672879.016072902] [sequencer]: planning load: 373 plans, 0 failures 
+[INFO] [1793672879.697144768] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672879.717257072] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672881.108151977] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672881.116980367] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672882.008099161] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672882.017843516] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672883.387254130] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672883.397895784] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672884.716903971] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672884.728464181] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672885.476940861] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672885.487980200] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672886.868211707] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672886.878048932] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672888.167859645] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672888.186915502] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672889.168700419] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672889.176882493] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672890.015797112] [sequencer]: planning load: 384 plans, 0 failures 
+[INFO] [1793672890.227402044] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672890.237483862] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672891.407995845] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672891.427125295] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672892.816808781] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672892.827165470] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672894.056989545] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672894.068236496] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672895.537863065] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672895.548005939] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672896.606974042] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672896.617823603] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672897.687063320] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672897.696887009] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672898.436823886] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672898.446977390] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672899.467625518] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672899.476915020] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672900.038155057] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672900.046990854] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672901.015706237] [sequencer]: planning load: 395 plans, 0 failures 
+[INFO] [1793672901.347455729] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672901.356811009] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672901.966853542] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672901.978352272] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672903.217518287] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672903.227161512] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672904.267769996] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672904.276870202] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672905.427772373] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672905.437746710] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672906.827869334] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672906.836744706] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672907.877753577] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672907.886961172] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672908.537531422] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672908.557951263] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672909.597127037] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672909.606807799] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672910.777326103] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672910.787307718] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672911.015848889] [sequencer]: planning load: 405 plans, 0 failures 
+[INFO] [1793672912.266877591] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672912.277213059] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672913.767607566] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672913.777599014] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672914.968167137] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672914.976692989] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672916.066600223] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672916.076767579] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672917.397102227] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672917.407803695] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672918.156189787] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672918.167736072] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672919.326944901] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672919.337692351] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672920.517694299] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672920.536878490] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672921.688003781] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672921.706871804] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672922.016065169] [sequencer]: planning load: 416 plans, 0 failures 
+[INFO] [1793672922.887886994] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672922.896975773] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672924.106875211] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672924.117462864] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672924.627242225] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672924.637840360] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672925.366800925] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672925.377690856] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672926.387909150] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672926.406716543] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672927.827809628] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672927.847728783] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672928.787966959] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672928.797933963] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672929.786816467] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672929.796914452] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672930.437729396] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672930.447871085] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672931.117746148] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672931.136605504] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672931.997271337] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672932.007825287] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672933.015936258] [sequencer]: planning load: 427 plans, 0 failures 
+[INFO] [1793672933.017425353] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672933.027528672] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672933.587822512] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672933.596800532] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672934.586949981] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672934.598463062] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672935.467648857] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672935.476580562] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672936.046904738] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672936.056662222] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672937.197903650] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672937.208142598] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672937.888144255] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672937.896821478] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672939.237810453] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672939.248089438] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672940.698765246] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672940.706655744] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672941.317222007] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672941.326695195] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672942.266033733] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672942.277857574] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672943.016187856] [sequencer]: planning load: 437 plans, 0 failures 
+[INFO] [1793672943.256736568] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672943.267456980] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672944.456676324] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672944.467483625] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672945.347820792] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672945.358302944] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672946.836702567] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672946.848219796] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672947.966581556] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672947.987384046] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672949.126788833] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672949.137277967] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672950.087595137] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672950.097525177] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672951.057346867] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672951.066675776] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672951.727875758] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672951.737584761] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672952.607068178] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672952.617515609] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672953.927914155] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672953.947819421] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672954.015682995] [sequencer]: planning load: 448 plans, 0 failures 
+[INFO] [1793672955.078639705] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672955.087432391] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672956.417585220] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672956.428082206] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672957.826776795] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672957.837404299] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672958.507598261] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672958.526758896] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672959.277651978] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672959.286888405] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672960.566577622] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672960.586836425] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672961.847396062] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672961.856735990] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672962.917292524] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672962.926835285] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672964.016012751] [sequencer]: planning load: 458 plans, 0 failures 
+[INFO] [1793672964.087819111] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672964.106517689] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672964.917578308] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672964.928580220] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672966.018284149] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672966.027299428] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672966.836657876] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672966.847780863] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672967.626824485] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672967.638133769] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672968.327836789] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672968.337660792] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672969.066386396] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672969.076687326] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672970.117663850] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672970.127751206] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672970.707733430] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672970.716610672] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672971.977623026] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672971.987755178] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672972.706732575] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672972.727625731] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672973.756644543] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672973.767546992] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672974.867344513] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672974.876490959] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672975.016209577] [sequencer]: planning load: 469 plans, 0 failures 
+[INFO] [1793672975.476516929] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672975.487668639] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672976.306113936] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672976.316526662] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672976.836780478] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672976.847624520] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672977.408386071] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672977.427442594] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672978.817194761] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672978.826911116] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672980.047301025] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672980.057241139] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672981.106895529] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672981.117560626] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672982.006603778] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672982.017289079] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672982.777931915] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672982.786509693] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672983.546620397] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672983.557827792] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672984.767286471] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672984.786683032] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672985.938348030] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672985.957908646] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672986.015963717] [sequencer]: planning load: 480 plans, 0 failures 
+[INFO] [1793672986.927733082] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672986.947689329] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672987.937620253] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672987.947661145] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672988.457376028] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672988.466749678] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672989.267214061] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672989.276437988] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672990.567278155] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672990.586617067] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672992.026282593] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672992.037164672] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672993.447631245] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672993.457300636] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672994.566611094] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672994.577333654] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672995.486583233] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672995.497606831] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672996.016245398] [sequencer]: planning load: 490 plans, 0 failures 
+[INFO] [1793672996.546633064] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672996.556566159] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672997.727576934] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672997.737273510] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793672998.727614911] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793672998.737405359] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673000.206539591] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673000.217342855] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673001.346584593] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673001.357461209] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673002.217294345] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673002.227390774] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673002.737357080] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673002.746606322] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673004.247687306] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673004.257707680] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673005.258040822] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673005.266360007] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673006.466336080] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673006.476342175] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673007.016236249] [sequencer]: planning load: 501 plans, 0 failures 
+[INFO] [1793673007.368106008] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673007.376360600] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673008.446535355] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673008.456451506] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673009.337269574] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673009.346723372] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673010.807867543] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673010.816457747] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673011.686881643] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673011.696690442] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673012.658024367] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673012.667220943] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673014.027289802] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673014.037654731] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673015.237447651] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673015.247648173] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673016.667154696] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673016.676356215] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673017.676464204] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673017.687412672] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673018.015325545] [sequencer]: planning load: 512 plans, 0 failures 
+[INFO] [1793673018.407425149] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673018.426553283] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673019.586565226] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673019.597431379] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673020.417730164] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673020.427512426] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673021.297554743] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673021.307388746] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673022.796611193] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673022.807025456] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673023.346687228] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673023.356399342] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673024.136297076] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673024.146510524] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673025.257336562] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673025.267264879] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673025.998167118] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673026.006263173] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673027.406451277] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673027.417265337] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673028.016045088] [sequencer]: planning load: 522 plans, 0 failures 
+[INFO] [1793673028.217488817] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673028.237026229] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673029.117710456] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673029.126506253] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673030.346602727] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673030.357014990] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673031.247556052] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673031.258063001] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673032.357489085] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673032.376216070] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673033.437262108] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673033.458443080] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673033.967548470] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673033.987933902] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673034.536410358] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673034.546582694] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673035.776414520] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673035.787952341] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673037.096508947] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673037.107398192] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673038.016129069] [sequencer]: planning load: 532 plans, 0 failures 
+[INFO] [1793673038.457245663] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673038.466210034] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673039.706586307] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673039.716143124] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673041.156270250] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673041.166327234] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673041.897384191] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673041.916409102] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673042.816420847] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673042.827421926] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673043.707287072] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673043.718301466] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673044.876355522] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673044.887296842] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673045.616663090] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673045.626384592] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673046.486472454] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673046.497344051] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673047.526839571] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673047.536262073] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673048.016132546] [sequencer]: planning load: 542 plans, 0 failures 
+[INFO] [1793673048.696432521] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673048.707216044] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673049.397383781] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673049.416392804] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673050.347596242] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673050.356353539] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673051.167059181] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673051.176680517] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673051.998568591] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673052.006313145] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673052.817413269] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673052.827475291] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673054.157185821] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673054.166156415] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673055.117464616] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673055.126464784] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673055.817122909] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673055.827157394] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673056.827564681] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673056.846270647] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673058.276318409] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673058.297035768] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673058.817376732] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673058.836414569] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673059.015788971] [sequencer]: planning load: 553 plans, 0 failures 
+[INFO] [1793673059.707342042] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673059.716918970] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673060.367219248] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673060.377784030] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673061.507416240] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673061.516678742] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673062.156361219] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673062.167626503] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673063.576204734] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673063.586410515] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673064.897333722] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673064.916506022] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673065.496369204] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673065.507249117] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673066.617199597] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673066.627116822] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673067.797388709] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673067.807238674] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673068.766405351] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673068.776733947] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673069.016017346] [sequencer]: planning load: 563 plans, 0 failures 
+[INFO] [1793673069.836598690] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673069.846503711] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673070.646676510] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673070.657153273] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673072.037152624] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673072.047370738] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673073.067032042] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673073.076691248] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673073.796320153] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673073.807876640] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673074.448047357] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673074.456274911] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673075.437094520] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673075.447515191] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673075.997318862] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673076.006112937] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673077.257216102] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673077.266800808] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673078.266924198] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673078.276005625] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673079.016166683] [sequencer]: planning load: 573 plans, 0 failures 
+[INFO] [1793673079.517371509] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673079.536312957] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673080.646805044] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673080.657208326] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673081.566294594] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673081.576314912] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673082.266813271] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673082.276307384] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673083.767142686] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673083.786292209] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673084.507201465] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673084.517238171] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673085.956324733] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673085.967037330] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673087.056094350] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673087.065918815] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673088.207219354] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673088.226133505] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673089.586256138] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673089.597390921] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673090.016186533] [sequencer]: planning load: 584 plans, 0 failures 
+[INFO] [1793673090.317207803] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673090.327904992] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673091.456154242] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673091.466996820] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673092.876435297] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673092.887297783] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673093.926620306] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673093.936756679] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673094.686356271] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673094.697126424] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673095.596797686] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673095.607162468] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673096.607185443] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673096.626354262] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673097.646222557] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673097.657164635] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673098.447072405] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673098.457229260] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673099.636253540] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673099.647859305] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673100.016255013] [sequencer]: planning load: 594 plans, 0 failures 
+[INFO] [1793673100.186304429] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673100.206061305] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673101.387355200] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673101.397310258] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673102.587743765] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673102.596372894] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673103.927292588] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673103.937139590] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673105.377395699] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673105.386538793] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673106.096156631] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673106.106160744] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673107.086115859] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673107.096175695] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673108.377152095] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673108.387127264] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673108.987691926] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673108.996164295] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
+[INFO] [1793673110.266198245] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.0, angular=0.0, theta=0.0, x=0.0, y=0.0) on FAULT_TEST
+[INFO] [1793673110.277089991] [sequencer]: RUNNING: Command(behavior=<Behavior.TWIST: 0>, linear=0.2, angular=0.0, theta=0.0, x=0.0, y=0.0)
