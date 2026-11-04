@@ -12,7 +12,7 @@ do heartbeat de 0,105 s (T_HB = 0,5 s). Heartbeat do notebook ligado na V-04 e d
 | V-NN | Resultado | Números principais | Script |
 | --- | --- | --- | --- |
 | V-01 | PASS | nominal até S4 (`SUCCEEDED`); falha: ativação no S1 e S4 em seguida | `run_v01`, `check_v01` |
-| V-02 | PASS | 3 cortes detectados (ativo em até 2,16 s, inativo em até 1,55 s); reinício pelo watchdog reportado | `run_v02`, `check_v02` |
+| V-02 | PASS | 3 cortes detectados, dentro das tolerâncias de 2,16 s (ativo) e 1,55 s (inativo); reinício pelo watchdog reportado | `run_v02`, `check_v02` |
 | V-03 | PASS | 3 anteparos: zero a partir de 1,25 s, retomada em v_r ± 0,03 m/s; nenhuma falta | `run_v03`, `check_v03` |
 | V-04 | PASS | 4 pares TURN_TO → GO_TO; distância final a p_g 0,005 m (ε_g = 0,05 m) | `run_v04`, `check_v04` |
 | V-05 | PASS | 318,7 s, 0 prazos perdidos; C_max 953 µs, R_max 974 µs (folga de 90,3 % de T_c) | bag da V-07, `check_v05` |

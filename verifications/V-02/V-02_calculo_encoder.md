@@ -8,7 +8,8 @@
 | N | Pulsos por volta (bordas de subida, canal único) | 20 |
 | v_r | Velocidade comandada no ensaio | 0,2 m/s |
 | e_f | Limiar de erro relativo para falha | 50 % |
-| T_f | Persistência do erro para detectar falha | 1 s (2 × t_s de projeto, t_s = 0,5 s) |
+| T_f | Persistência do erro para detectar falha | 1 s (2 · t_s) |
+| t_s | Tempo de acomodação da velocidade da roda, de projeto | 0,5 s |
 | T_c | Período do laço de controle | 10 ms |
 
 ## Passo 1 - Deslocamento por pulso
@@ -75,15 +76,15 @@ Exige-se que a espera do Passo 6 não exceda a persistência, t* ≤ T_f:
 
 $$\frac{s}{(1 - e_f)\, v} \le T_f \quad\Rightarrow\quad v \ge \frac{s}{(1 - e_f)\, T_f}$$
 
-$$v_{min} = \frac{s}{(1 - e_f)\, T_f} = \frac{0{,}0102}{0{,}5 \cdot 1} \approx 0{,}020\ \text{m/s}$$
+$$v_{min,det} = \frac{s}{(1 - e_f)\, T_f} = \frac{0{,}0102}{0{,}5 \cdot 1} \approx 0{,}020\ \text{m/s}$$
 
 Com e_f = 50 %, a expressão se reduz a 2s/T_f. A forma geral continua válida se e_f mudar.
 
-Abaixo de v_min a medida já não é válida, então a velocidade é declarada zero após um intervalo sem bordas de:
+Abaixo de v_min,det a medida já não é válida, então a velocidade é declarada zero após um intervalo sem bordas de:
 
-$$T_{vel} = \frac{s}{v_{min}} = (1 - e_f)\, T_f = 0{,}5 \cdot 1 = 0{,}5\ \text{s}$$
+$$T_{vel} = \frac{s}{v_{min,det}} = (1 - e_f)\, T_f = 0{,}5 \cdot 1 = 0{,}5\ \text{s}$$
 
-Abaixo de ~0,07 m/s as bordas ficam tão esparsas que a malha de velocidade entra em ciclo limite (teste no notebook com o modelo do encoder; provisório, a confirmar com o motor). O v_min usado é o maior dos dois limites, ≈ 0,07 m/s. O T_vel continua vindo da detecção, 0,5 s: com o limite de controle ele seria igual ao intervalo entre bordas em v_min, e a estimativa zeraria entre duas bordas.
+Abaixo de v_min,ctl = 0,07 m/s as bordas ficam tão esparsas que a malha de velocidade entra em ciclo limite (teste no notebook com o modelo do encoder, confirmado no motor na nota 0011). O v_min usado é o maior dos dois limites, max(v_min,det, v_min,ctl) = 0,07 m/s. O T_vel continua vindo da detecção, 0,5 s: com o limite de controle ele seria igual ao intervalo entre bordas em v_min, e a estimativa zeraria entre duas bordas.
 
 T_vel foi reduzido para 0,3 s pela reversão (ADR 019, nota 0014). A detecção da V-02 só fica mais rápida, porque a velocidade lê zero abaixo de s/T_vel = 0,034 m/s, ainda abaixo de v_min.
 
@@ -97,15 +98,9 @@ No ensaio a falha é o corte da alimentação do motor, e a roda não para na ho
 
 ## Passo 9 - Filtro de bordas espúrias
 
-Módulos com comparador sem histerese (ex.: LM393) podem gerar bordas múltiplas na transição. Nenhuma borda real chega antes do intervalo correspondente à velocidade máxima:
+O comparador do módulo do encoder oscila nas duas transições de cada fenda (nota 0010). A ISR guarda o instante da última borda de subida. Um amostrador periódico só aceita o novo nível depois que ele se mantém estável por 4 amostras de 500 µs, isto é, 2 ms, e só então conta a fenda, com o instante guardado pela ISR. Esse tempo é maior que a oscilação do comparador e menor que meia fenda a 0,5 m/s, com folga sobre v_max = 0,2 m/s:
 
-$$\Delta t_{min} = \frac{s}{v_{max}}$$
-
-A ISR descarta bordas mais próximas que Δt_min, com margem. Exemplo: com v_max = 0,5 m/s, Δt_min ≈ 20 ms.
-
-## Atualização após medição
-
-Os Passos 1 a 6 dependem apenas da roda e do encoder. Quando o tempo de acomodação for medido e T_f fixado (T_f = 2 × tempo de acomodação), refazem-se apenas os Passos 7 e 8 (incluindo T_vel).
+$$\frac{s}{2 \cdot 0{,}5\ \text{m/s}} = \frac{0{,}0102}{1{,}0} \approx 10\ \text{ms}$$
 
 ## Limitações
 

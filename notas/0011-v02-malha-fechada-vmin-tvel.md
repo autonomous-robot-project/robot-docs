@@ -49,11 +49,11 @@ Surpresas:
     0,07 m/s. Nenhuma sintonia do PI tira isso; só uma compensação de atrito, que depende do atrito no chão (#27).
   - Com a roda girando, atraso da rampa: o sobressinal é ~0,012 a 0,016 m/s absolutos nos degraus de 0,03 e de
     0,05 m/s. Se viesse da sintonia, cresceria com o degrau; constante, é o atraso acumulado da malha com integrador
-    seguindo a rampa de A_ACCEL. Fica em ~2σ do ruído e assenta em 0,2 a 0,7 s (projeto: 0,5 s), dentro do T_f.
+    seguindo a rampa de A_ACEL. Fica em ~2σ do ruído e assenta em 0,2 a 0,7 s (projeto: 0,5 s), dentro do T_f.
   - Decisão: a sintonia fica. Nenhum requisito limita o transitório, e na V-02 (0,2 m/s) a acomodação cabe no T_f.
   - Risco: partindo do repouso em baixa velocidade, a roda oscila por ~3 s, e a falha cognizante dispara com erro
     acima de 50 % por T_f = 1 s seguido. Aqui não disparou; no chão, com mais carga, pode disparar.
-- Na partida a 0,2 m/s, a primeira leitura vem ~0,5 s depois do comando: a rampa (A_ACCEL = 0,25 m/s²) cruza v_min
+- Na partida a 0,2 m/s, a primeira leitura vem ~0,5 s depois do comando: a rampa (A_ACEL = 0,25 m/s²) cruza v_min
   em 0,28 s, e a primeira velocidade precisa de duas bordas.
 
 Pendências:
