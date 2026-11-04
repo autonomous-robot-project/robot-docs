@@ -5,7 +5,7 @@ nos dois), robot-interfaces 774e892. RPi compilado da tag por `git archive` em `
 lado de cada bag. Dados em `evidencias/V-NN/2026-11-02_final/` (V-08: `_final_C1` e `_final_C2`).
 
 Montagem: rodas suspensas, chave dos motores ligada (gravação com a chave ligada autorizada pelo Lucas, nota 0009),
-bateria 3S em 12,09 V, b = 0,139 m (nota 0018). RPi pelo cabo na rede de casa: no Wi-Fi da casa, depois da queda de
+bateria 3S em 12,09 V, L_rodas = 0,139 m (nota 0018). RPi pelo cabo na rede de casa: no Wi-Fi da casa, depois da queda de
 energia, a perda chegou a 35 % e o heartbeat da V-04 caiu (nota 0018); pelo cabo, 0 % de perda e intervalo máximo
 do heartbeat de 0,105 s (T_HB = 0,5 s). Heartbeat do notebook ligado na V-04 e desligado na V-08.
 

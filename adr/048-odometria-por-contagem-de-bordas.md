@@ -15,7 +15,7 @@ A odometria precisa do deslocamento de cada roda em cada ciclo. A velocidade med
 
 ## Decisão
 
-Em cada ciclo, o deslocamento de cada roda é a diferença da contagem de bordas desde o ciclo anterior, vezes s, com o sentido travado da ADR 019. A pose integra Δs = (Δl + Δr)/2 e Δθ = (Δr − Δl)/b no ponto médio. A velocidade publicada sai das velocidades medidas.
+Em cada ciclo, o deslocamento de cada roda é a diferença da contagem de bordas desde o ciclo anterior, vezes s, com o sentido travado da ADR 019. A pose integra Δs = (Δl + Δr)/2 e Δθ = (Δr − Δl)/L_rodas no ponto médio. A velocidade publicada sai das velocidades medidas.
 
 ## Alternativa descartada
 

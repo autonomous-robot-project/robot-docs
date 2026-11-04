@@ -17,7 +17,7 @@ Abaixo de v_min, o encoder lê velocidade zero. Com a referência em zero, o res
 
 - **Zona morta:** referência de uma roda abaixo de v_min leva a d = 0 (freio total) e zera o integrador dessa roda.
 - **GO_TO:** v = min(v_max, √(2·a_dec·e_d)) · max(0, cos e_θ) e ω = K_ω · sin e_θ · min(1, e_d/d₀), limitado a ω_max. Aqui e_d é a distância ao alvo e e_θ é o erro de ângulo até a direção dele.
-- **TURN_TO:** ω = sinal(e_θ) · min(ω_max, √(2·α_dec·|e_θ|)), com α_dec = 2·a_dec / b, onde b é a bitola, e e_θ = θ comandado − rumo atual, normalizado em (−π, π].
+- **TURN_TO:** ω = sinal(e_θ) · min(ω_max, √(2·α_dec·|e_θ|)), com α_dec = 2·a_dec / L_rodas, onde L_rodas é a distância entre os centros das rodas, e e_θ = θ comandado − rumo atual, normalizado em (−π, π].
 
 ## Erro final
 
@@ -26,7 +26,7 @@ O robô para quando a referência das rodas cruza v_min:
 - GO_TO: e_d final ≈ v_min² / (2·a_dec)
 - TURN_TO: e_θ final ≈ v_min² / (b·a_dec)
 
-Exemplo ilustrativo, com v_min = 0,068 m/s, a_dec = 0,5 m/s² e b = 0,15 m: e_d final ≈ 5 mm e e_θ final ≈ 3,5°. O erro cai com a_dec maior e com bitola maior.
+Exemplo ilustrativo, com v_min = 0,068 m/s, a_dec = 0,5 m/s² e L_rodas = 0,15 m: e_d final ≈ 5 mm e e_θ final ≈ 3,5°. O erro cai com a_dec maior e com L_rodas maior.
 
 Esse erro se soma ao erro da odometria. A tolerância de término no sequenciador deve ser maior que ele.
 

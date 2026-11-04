@@ -139,20 +139,20 @@ T_c = 10 ms e T_seq = 100 ms.
 
 ## Bitola - 2026-11-02
 
-Medida com régua pelo Lucas: 164 mm por fora das rodas e 114 mm por dentro. b = (164 + 114) / 2 = 139 mm entre os
+Medida com régua pelo Lucas: 164 mm por fora das rodas e 114 mm por dentro. L_rodas = (164 + 114) / 2 = 139 mm entre os
 centros das rodas, cada uma com 25 mm de largura; antes, 150 mm de projeto. `TRACK_WIDTH` = 0,139 m no firmware
 (robot-docs#25).
 
 Consequências:
-- Giro por pulso de uma roda: π · 65 mm / 20 / b = 4,2° (antes 3,9°). V-01 emendada com o ok do Lucas.
+- Giro por pulso de uma roda: π · 65 mm / 20 / L_rodas = 4,2° (antes 3,9°). V-01 emendada com o ok do Lucas.
 - ε_θ = 10° continua cobrindo o pior erro final mais a resolução: 3,6° + 4,2° = 7,8° (nota 0014; a cobertura só
-  falharia com b < 0,09 m).
-- ω_max = 2·v_max / b e α_dec = 2·a_dec / b sobem 8 %; o limite por roda (v_max, a_dec) não muda.
-- Com as rodas suspensas, o b não altera nenhum critério; a rodada final roda sobre o firmware com o b medido.
+  falharia com L_rodas < 0,09 m).
+- ω_max = 2·v_max / L_rodas e α_dec = 2·a_dec / L_rodas sobem 8 %; o limite por roda (v_max, a_dec) não muda.
+- Com as rodas suspensas, L_rodas não altera nenhum critério; a rodada final roda sobre o firmware com o L_rodas medido.
 
 ## NO_PROGRESS falso na aceleração - 2026-11-02
 
-Rodada final sobre a v1.0 (firmware 0744c89, b = 0,139 m), RPi no cabo da rede de casa, rodas suspensas, bateria em
+Rodada final sobre a v1.0 (firmware 0744c89, L_rodas = 0,139 m), RPi no cabo da rede de casa, rodas suspensas, bateria em
 12,09 V. Duas tentativas da V-04 sem dado válido antes desta análise: a primeira abortou por `REFLEX_FRONT_OBSTACLE`
 no 1º GO_TO (frente do sensor livre logo depois; causa não identificada, ver robot-docs#48); a segunda percorreu os
 quatro pares e abortou por `NO_PROGRESS` no último GO_TO, a 1,31 m de p_g. Antes, com o RPi no Wi-Fi da casa (35 % de

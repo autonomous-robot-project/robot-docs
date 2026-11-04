@@ -38,5 +38,5 @@ Variações bruscas de referência causam picos de corrente na bateria. O integr
 
 ## Nota
 
-- a_dec entra na garantia de parada: d_parada ≈ v_max² / (2 · a_dec) + latências. a_acel e a_dec serão fixados por medição.
+- a_dec entra na garantia de parada: d_parada ≈ v_max² / (2 · a_dec) + latências. Na bancada, a_acel e a_dec são valores adotados; a medição acompanha a garantia de parada no chão (#27, trabalho futuro).
 - O freio total gera estresse mecânico e térmico considerável no conjunto motor e redutor. Todo ensaio com freio total a partir de velocidade, como a caracterização do motor, começa em velocidade baixa.

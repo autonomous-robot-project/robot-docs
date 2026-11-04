@@ -38,7 +38,7 @@ Série, antes e depois de T_vel = 0,3 s:
 Leituras:
 
 - O erro final do TURN_TO fica no previsto pela ADR 030 (~3,7° com v_min = 0,07 m/s); a resolução da Odometria em
-  giro é de 3,9° por borda de uma roda (s/b). O GO_TO para a ≤ 6 mm do alvo (previsto ~5 mm) e corrige 17° de
+  giro é de 3,9° por borda de uma roda (s/L_rodas). O GO_TO para a ≤ 6 mm do alvo (previsto ~5 mm) e corrige 17° de
   rumo inicial pelo sin e_θ.
 - O ciclo-limite do primeiro ensaio veio do disparo, não da resolução: com o sentido certo, os sete giros pararam
   sem caçar.
