@@ -1,6 +1,6 @@
-# Rodada final das verificações - 2026-11-02 - tag v1.0 (robot-firmware 16ce5dd, robot-ros-system 8ad2968)
+# Rodada final das verificações - 2026-11-02 - tag v1.0.0 (robot-firmware 16ce5dd, robot-ros-system 8ad2968)
 
-Todas as verificações de bancada sobre o mesmo código: robot-firmware 16ce5dd e robot-ros-system 8ad2968 (tag v1.0
+Todas as verificações de bancada sobre o mesmo código: robot-firmware 16ce5dd e robot-ros-system 8ad2968 (tag v1.0.0
 nos dois), robot-interfaces 774e892. RPi compilado da tag por `git archive` em `~/final_v1.0`; `versoes.txt` ao
 lado de cada bag. Dados em `evidencias/V-NN/2026-11-02_final/` (V-08: `_final_C1` e `_final_C2`).
 
@@ -26,7 +26,7 @@ Tentativas sem dado válido, antes das versões finais da tag (detalhes nas nota
   `NO_PROGRESS` falso na aceleração, corrigido com T_stall (ADR 036, nota 0018).
 - V-01: uma com o GPIO 7 esquecido aterrado (`FAULT_TEST`); duas sem a roda travada no S1; uma com a roda disparada
   na reversão, corrigida no firmware (ADR 019, nota 0016).
-Cada correção moveu a tag v1.0, e as verificações já feitas foram refeitas sobre a versão final.
+Cada correção moveu a tag v1.0.0, e as verificações já feitas foram refeitas sobre a versão final.
 
 Pendências:
 - O `v06_run.sh` (V-06) é um script de bancada fora do repositório, copiado em `evidencias/V-06/2026-11-02_final/`;

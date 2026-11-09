@@ -1,6 +1,6 @@
-# V-09 — Inspeção de código na tag v1.0 (2026-11-02)
+# V-09 — Inspeção de código na tag v1.0.0 (2026-11-02)
 
-robot-firmware `16ce5dd` (v1.0) · robot-ros-system `8ad2968` (v1.0). `git describe --tags` = `v1.0` nos dois; árvores em HEAD == tag. Caminhos relativos à raiz do robot-master.
+robot-firmware `16ce5dd` (v1.0.0) · robot-ros-system `8ad2968` (v1.0.0). `git describe --tags` = `v1.0` nos dois (tag renomeada para v1.0.0 em 2026-11-09); árvores em HEAD == tag. Caminhos relativos à raiz do robot-master.
 
 Abreviações: `FW` = `robot-firmware/components/controller`; `LK` = `robot-firmware/components/link`; `SEQ` = `robot-ros-system/robot_sequencer/robot_sequencer`.
 

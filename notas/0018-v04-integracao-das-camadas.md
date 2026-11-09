@@ -152,7 +152,7 @@ Consequências:
 
 ## NO_PROGRESS falso na aceleração - 2026-11-02
 
-Rodada final sobre a v1.0 (firmware 0744c89, L_rodas = 0,139 m), RPi no cabo da rede de casa, rodas suspensas, bateria em
+Rodada final sobre a v1.0.0 (firmware 0744c89, L_rodas = 0,139 m), RPi no cabo da rede de casa, rodas suspensas, bateria em
 12,09 V. Duas tentativas da V-04 sem dado válido antes desta análise: a primeira abortou por `REFLEX_FRONT_OBSTACLE`
 no 1º GO_TO (frente do sensor livre logo depois; causa não identificada, ver robot-docs#48); a segunda percorreu os
 quatro pares e abortou por `NO_PROGRESS` no último GO_TO, a 1,31 m de p_g. Antes, com o RPi no Wi-Fi da casa (35 % de
@@ -165,5 +165,5 @@ deu `NO_PROGRESS` com a rampa ainda atravessando a zona morta dos motores (~2 V,
 rampa leva 0,07 / 0,25 = 0,28 s, e o integrador ainda precisa vencer a zona morta.
 
 Decisão (Lucas, 2/11): `NO_PROGRESS` só depois de T_stall = 1 s em repouso fora da tolerância (20 leituras da
-Odometria), ADR 036 emendada. A tag v1.0 do robot-ros-system vai para o commit com a correção.
+Odometria), ADR 036 emendada. A tag v1.0.0 do robot-ros-system vai para o commit com a correção.
 

@@ -41,7 +41,7 @@ Leitura: o log do sequenciador passou a dizer o código que dispara cada reaçã
 
 ## Roda disparada na reversão, rodada final - 2026-11-02
 
-Rodada final sobre a v1.0 (firmware 0744c89, robot-ros-system 8ad2968), RPi no cabo, rodas suspensas. Três
+Rodada final sobre a v1.0.0 (firmware 0744c89, robot-ros-system 8ad2968), RPi no cabo, rodas suspensas. Três
 tentativas da V-01 sem dado válido: (1) GPIO 7 esquecido aterrado, a nominal abortou por `FAULT_TEST`; (2) a roda
 não foi travada durante o S1, o `FAULT_COGNIZANT` só ativou no S3 (RF-04 reprovado pelo `check_v01`, como deve);
 (3) a nominal abortou por `FAULT_COGNIZANT` no S2, com as rodas livres.
