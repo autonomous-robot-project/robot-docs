@@ -16,7 +16,7 @@ do heartbeat de 0,105 s (T_HB = 0,5 s). Heartbeat do notebook ligado na V-04 e d
 | V-03 | PASS | 3 anteparos: zero a partir de 1,25 s, retomada em v_r ± 0,03 m/s; nenhuma falta | `run_v03`, `check_v03` |
 | V-04 | PASS | 4 pares TURN_TO → GO_TO; distância final a p_g 0,005 m (ε_g = 0,05 m) | `run_v04`, `check_v04` |
 | V-05 | PASS | 318,7 s, 0 prazos perdidos; C_max 953 µs, R_max 974 µs (folga de 90,3 % de T_c) | bag da V-07, `check_v05` |
-| V-06 | PASS | 30 interrupções, 1 vencimento cada; atraso no ESP32 de 201,7 a 207,7 ms (máx. 210 ms) | `v06_run.sh`, `check_v06` |
+| V-06 | PASS | 30 interrupções, 1 vencimento cada; atraso no ESP32 de 200,1 a 209,1 ms (máx. 210 ms) | `v06_run.sh`, `check_v06` |
 | V-07 | PASS | 302 eventos; Δ mediana 9,9 ms, p99 18,3 ms, máx. 19,4 ms (T_seq = 100 ms) | `run_v07`, `check_v07` |
 | V-08 C1 | PASS | 566 eventos, Δ máx. 24,2 ms, p99 19,2 ms; 0 prazos perdidos; 598 planos, maior intervalo 1,006 s (T_gap 1,5 s) | `run_v08 C1`, `check_v07`, `check_v05`, `check_v08_c1` |
 | V-08 C2 | PASS | Δ máx. 18,3 ms, p99 17,4 ms; 0 prazos perdidos; `throttled=0x0` antes e depois | `run_v08 C2`, `check_v07`, `check_v05` |
