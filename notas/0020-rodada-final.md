@@ -53,9 +53,33 @@ publicam o comando, fora do `robot.launch.py`. V-09: PASS.
 | `V-03/2026-11-02_final/fig_v03_reflexo` | V-03 | Velocidade, janelas do anteparo e `REFLEX_FRONT_OBSTACLE`: parada e retomada em cada janela |
 | `V-04/2026-11-02_final/fig_v04_plano` | V-04 | M, zona proibida (r + m + res), plano do Theta*, vértices e trajetória da odometria |
 | `V-06/2026-11-02_final/fig_v06_vencimento` | V-06 | Atraso do vencimento nas 30 interrupções, entre T_cmd e T_cmd + T_c |
+| `V-07/2026-11-02_final/fig_v07_resposta` | V-07 | Distribuição acumulada de Δ da V-07 (C0) contra T_seq |
 | `V-07/2026-11-02_final/fig_v07_v08_resposta` | V-07, V-08 | Distribuição acumulada de Δ em C0, C1 e C2 contra T_seq |
 
 A V-05 não tem figura (um valor por condição: R_max contra T_c, na tabela acima). Na V-02, os picos de velocidade ao
 religar a chave (até 0,55 m/s) não entram no critério; causa provável, não conferida: durante o corte o PI satura em
 DUTY_MAX, com a integral no limite da integração condicional (ADR 023), e a roda acelera até o PI sair da saturação.
 
+
+## V-07, dois grupos de Δ - 2026-11-14
+
+Análise do bag `V-07/2026-11-02_final/v07` com o `ResponseRun` do `check_v07` e com os tempos de recepção do bag no
+RPi. Não altera o resultado (Δ máx. 19,4 ms contra T_seq = 100 ms) e não entra na monografia.
+
+- Δ forma dois grupos: 226 eventos (75 %) entre 8,1 e 11,5 ms, mediana de 9,4 ms, e 76 eventos entre 15,4 e 19,4 ms,
+  mediana de 17,1 ms (limite entre os grupos em 13 ms).
+- Reação do sequenciador no RPi, da recepção do State com `FAULT_TEST` à publicação do `TWIST(0, 0)` (tempos do bag):
+  mediana de 0,42 ms nos dois grupos. Sem ela, Δ tem mediana de 9,0 e 16,7 ms: a diferença de cerca de 7,7 ms está no
+  enlace e no ESP32.
+- Fase: em 68 dos 76 eventos lentos, o State com o código chegou ao RPi de 30 a 60 ms após a Odometry anterior (logo antes da
+  seguinte). Nos rápidos, de 0 a 50 ms, espalhado.
+- Sem padrão no tempo: P(lento | anterior lento) = 0,26, igual a P(lento) = 0,25; sequências lentas de 1 a 4
+  eventos. Fração de lentos por quarto da gravação: 36, 20, 17 e 28 %.
+
+Hipótese, não testada isolando a causa: a tarefa do enlace (`components/link/src/link.cpp`) recebe comandos até a
+hora do State (STATE_PERIOD = 10 ms), publica o State e, quando vencem, a Instrumentation (100 ms) e a Odometry
+(50 ms). A UART não tem buffer de saída (`uart_transport.cpp`), e a escrita bloqueia. A Odometry tem 724 bytes
+serializados (`serialize_message` de um `nav_msgs/Odometry` com `odom`/`base_link`), cerca de 7,9 ms a 921600 baud.
+Quando o State com o código sai na mesma volta que uma Odometry, o `TWIST(0, 0)` chega durante essa escrita e espera
+cerca de 7,9 ms, próximo dos 7,7 ms medidos. A Odometry sai em 1 de cada 5 publicações do State (20 %); os 25 %
+observados não foram explicados.
