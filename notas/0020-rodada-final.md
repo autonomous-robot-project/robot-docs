@@ -83,3 +83,39 @@ serializados (`serialize_message` de um `nav_msgs/Odometry` com `odom`/`base_lin
 Quando o State com o código sai na mesma volta que uma Odometry, o `TWIST(0, 0)` chega durante essa escrita e espera
 cerca de 7,9 ms, próximo dos 7,7 ms medidos. A Odometry sai em 1 de cada 5 publicações do State (20 %); os 25 %
 observados não foram explicados.
+
+## V-07 e V-08, mediana de Δ menor sob carga - 2026-11-14
+
+Análise dos bags `V-07/2026-11-02_final/v07` (C0), `V-08/2026-11-02_final_C1/v08_c1` e `V-08/2026-11-02_final_C2/v08_c2`
+com o `ResponseRun` do `check_v07` e os tempos de recepção do bag no RPi. Não altera os resultados. Na monografia
+(Teste 8), uma frase: mediana menor em C1 e C2 que no C0, causa não conferida.
+
+| | C0 | C1 | C2 |
+| --- | --- | --- | --- |
+| Δ mediana (`check_v07`) | 9,9 ms | 8,3 ms | 7,9 ms |
+| Grupo inferior: mínimo · mediana | 8,1 · 9,4 ms | 6,4 · 8,1 ms | 5,5 · 7,4 ms |
+| Grupo superior: fração · mediana | 25 % · 17,1 ms | 17 % · 15,3 ms | 17 % · 15,2 ms |
+| Diferença entre as medianas dos grupos | 7,8 ms | 7,1 ms | 7,8 ms |
+| Reação do sequenciador no RPi (bag): mediana · p99 · máximo | 0,42 · 2,39 · 2,58 ms | 0,57 · 3,01 · 3,89 ms | 0,47 · 2,77 · 3,17 ms |
+
+Limite entre os grupos em 13 ms (C0), 12 ms (C1) e 11 ms (C2), no vão da distribuição de cada condição.
+
+- A mediana cai por dois efeitos: o grupo inferior inteiro desce (mínimo de 8,1 para 6,4 e 5,5 ms) e menos eventos caem
+  no grupo superior (25 % para 17 %). A diferença entre os grupos fica entre 7,1 e 7,8 ms, como na seção anterior.
+- A reação do sequenciador, da recepção do State com `FAULT_TEST` à publicação do `TWIST(0, 0)`, fica entre 0,42 e
+  0,57 ms de mediana nas três condições: a descida de cerca de 2 ms do grupo inferior está no caminho do agente
+  micro-ROS, da UART e do ESP32, não no sequenciador.
+- Com 17 %, C1 e C2 ficam mais perto dos 20 % que a hipótese da Odometry (seção anterior) prevê do que o C0.
+
+Hipóteses, não testadas:
+- H1, frequência da CPU do RPi: governor `ondemand` (nota 0007). Sem carga, os núcleos ficam em frequência baixa e o
+  agente e o driver da UART respondem mais devagar; a carga sobe a frequência. Coerente com a ordem C0 > C1 > C2 do
+  grupo inferior. Teste: C0 de 5 min com o governor `performance`, ou leitura de `scaling_cur_freq` durante o ensaio.
+- H2, latência de saída do repouso dos núcleos: provavelmente da ordem de microssegundos (a confirmar), pequena para
+  explicar cerca de 2 ms.
+- H3, fração do grupo superior: 76 eventos em 302 no C0, contra cerca de 51 com 17 %, longe do acaso. Sem explicação;
+  pela hipótese da seção anterior, o grupo superior vem do ESP32, que a carga do RPi não alcança.
+- H4, ordem dos ensaios ou temperatura: descartada; aquecimento tornaria o sistema mais lento, e o C2 teve
+  `throttled=0x0` antes e depois.
+
+Pendência: robot-docs#60.
