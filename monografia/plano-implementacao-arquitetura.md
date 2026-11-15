@@ -210,7 +210,8 @@ repeti-los, então a Escolha do Hardware precisa apresentá-los:
 3. **Raspberry Pi 5,** com o número de núcleos, que o Teste 8 usa no `stress-ng`.
 4. **Tempos dos sensores.**
    - VL53L0X: medida a cada 20 a 33 ms, por I²C.
-   - LD19: 10 Hz, que é a origem do T_seq.
+   - LD19: 10 Hz, entrada do SLAM. A justificativa do T_seq é Bonasso et al. (1996), nos Requisitos, e não o LD19
+     (Lucas, 15/11; as verificações do robot-docs estão desatualizadas nesse ponto).
 5. **Encoder de canal único,** com 10,2 mm por pulso e sem sentido de rotação.
 6. **Caracterização (D2).**
    - Ganho K e constante de tempo τ dos motores.
@@ -220,7 +221,8 @@ repeti-los, então a Escolha do Hardware precisa apresentá-los:
 
 Forma da seção (Lucas, 15/11): curta e direta. A figura é uma foto do protótipo de bancada, com as rodas suspensas e
 os componentes indicados por rótulos em TikZ, no lugar do diagrama de blocos do esboço. O cabeamento só entra no
-fato 7. As fotos do protótipo ficam nesta seção, não no Cap. 4.
+fato 7. As vistas de cima (montado e por andar) ficam nesta seção; a vista em três quartos da bancada ficou no Cap. 4
+(Lucas, 15/11).
 
 Se a escrita do Hardware mudar algum desses fatos, a Implementação é revista no ponto afetado.
 
@@ -262,6 +264,17 @@ As figuras são TikZ dentro do .tex, como no resto da monografia.
   - A Fundamentação os define por completo. O esboço do Cap. 2 tem o item do estado, em laranja.
 - **Pendente.** A frase da bateria e da escada nos Trabalhos Futuros (D4). O contrato com a Escolha do Hardware
   continua valendo.
+- **Escolha do Hardware feita, com a revisão (15/11).** robot-thesis `e4b55c6`, mais `1cca208` sem laranja.
+  - Abertura com a alocação e a Tabela 4 (componentes); Figura 5 com três vistas de cima e rótulos em TikZ.
+  - Subseções: Processadores; Chassi e Acionamento, com a Figura 6 (kit 2WD e base); Sensores; Caracterização dos
+    Motores, com a Figura 7 (degrau de 0,48 da roda esquerda em ré contra o modelo adotado, gerada pelo
+    `analyze_encoder_ao.py`, robot-firmware `47354ec`).
+  - Cap. 4: a vista em três quartos da bancada virou a Figura 17, sem rótulos.
+  - A primeira frase da abertura da Implementação saiu (repetia o fim dos Requisitos).
+  - Referências em vermelho, fora do ref.bib: Espressif (2026), Raspberry Pi Ltd (2026), STMicroelectronics (2016,
+    UM2039), LDROBOT (2022, LD19 Development Manual V2.3), Texas Instruments (2016, SLVSCY9B), Adafruit (2018),
+    Casa da Robótica (2026), Autocore Robótica (2026), Pololu (2026).
+  - Pendente: robot-docs#61 (sobressinal do PI e atraso da medida por intervalo entre fendas).
 - **Texto da sessão 1 como referência.** Ler o texto já escrito como referência de estilo e de termos antes de
   escrever. Ele já define vários conceitos, que a sessão 2 retoma sem redefinir:
   - canal de último valor;
