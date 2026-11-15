@@ -231,4 +231,65 @@ Divididas por repositório, para que cada sessão carregue o contexto de uma bas
 3. **Revisão.** Uma rodada, que pode ser no fim da sessão 2 se o contexto permitir. Depois tirar o laranja, commitar,
    e fazer push para overleaf e github.
 
-As figuras são TikZ ou SVG, a definir na sessão 1.
+As figuras são TikZ dentro do .tex, como no resto da monografia.
+
+## Estado (15/11)
+
+- **Sessão 1 feita.** robot-thesis `dedc620`, mais `c4eb38d` sem laranja, já no Overleaf e no GitHub.
+  - Abertura com a Figura 4 (implantação), a Tabela 6 (tecnologias) e a Tabela 7 (repositórios).
+  - Controlador em cinco subsubseções:
+    - Tarefas e Troca de Dados, com a Figura 5;
+    - Ciclo de Controle, com a Figura 6;
+    - Comportamentos e Controle das Rodas, com as Tabelas 8 e 9 e as Equações 11 e 12;
+    - Reflexo e Falhas, com a Tabela 10;
+    - Estado Efêmero.
+  - Interface entre o Controlador e o Sequenciador, com a Tabela 11.
+- **Sessão 2.**
+  - O esboço já foi apagado. O texto novo entra depois da subseção Interface, antes de "Planejamento de Testes".
+  - A tabela de recursos e equivalentes do esboço antigo está no commit `7ff6037` do robot-thesis
+    (`git show 7ff6037:capitulos/3-materiais-e-metodos.tex`, label `tab:recursos_plataforma`).
+- **Texto da sessão 1 como referência.** Ler o texto já escrito como referência de estilo e de termos antes de
+  escrever. Ele já define vários conceitos, que a sessão 2 retoma sem redefinir:
+  - canal de último valor;
+  - eco do comando;
+  - códigos de falha e de reflexo publicados como estado;
+  - vencimento em 200 ms, republicação a 20 Hz;
+  - "falha da roda";
+  - a parada pelas falhas vem do sequenciador.
+
+## Decisões de redação da sessão 1
+
+- **Links.** Endereços (URLs) só em tabela, nunca no texto.
+- **Falhas.** "Falha da roda" para o erro de velocidade da roda, o termo da Folha B.9. "Falha cognizante" é o nome do
+  RF-02 e vale para todas as falhas reportadas. O código e o arquitetura.md mantêm o nome antigo, mas a monografia
+  não cita nomes do código.
+- **Resultados de bancada.** O sobressinal do PI (nota 0011) e outros resultados pertencem aos testes, não à
+  Implementação, que descreve o projeto.
+- **Continuidade.** O RNF-04 trata da saída de cada comportamento em função do seu estado interno, não da transição
+  entre comportamentos. A rampa limita a aceleração (corrente na partida) e a desaceleração (escorregamento e frenagem
+  sem tensão reversa), e nenhum teste a verifica.
+- **Argumentos.** Nenhum argumento que o protótipo de bancada não testou. Exemplo: o sequenciador manobrar para se
+  afastar de um obstáculo.
+- **Restrição e reação.** No controlador, só o sensor frontal restringe o comando, por obstáculo ou falha do sensor.
+  As outras falhas são só reportadas, e a parada vem da reação padrão do sequenciador, que é abortar. A Tabela 10 usa a
+  coluna "Restrição no controlador". A sessão 2 descreve as reações, incluindo as exceções: a missão por plano ignora o
+  prazo perdido, e a falha de ensaio do Teste 7 tem reação própria.
+- **Estrutura.** Subsubseções para dar pausa na leitura. Equações com uma tabela de símbolos, e o texto explica o que
+  cada parcela faz.
+- **Passos.** Uma figura para os passos de um processo (como o ciclo), com o texto resumido.
+
+## Lições técnicas da sessão 1
+
+- **Edição.** O Lucas edita o .tex à mão entre as rodadas.
+  - Só trocas pontuais, conferindo antes que o trecho a trocar existe (`assert` da contagem).
+  - Nunca reescrever um bloco inteiro.
+  - Antes de remover o laranja ou de commitar, conferir o `git diff` para não perder as edições dele.
+- **TikZ.**
+  - O preâmbulo carrega `positioning`, `arrows.meta` e `fit`. Bibliotecas novas podem ser acrescentadas.
+  - Não usar `step` como nome de estilo, porque é chave do TikZ (usar `cstep`).
+  - Conferir cada figura renderizada (`pdftoppm`) antes de mostrar.
+- **Identificador longo** em `\texttt` que passa da margem: `sloppypar` no parágrafo, ou `\allowbreak` depois de uma
+  barra.
+- **Compilação.** Se o latexmk sair com código 12 e erro em `\BKM@entry`, os `.aux` corromperam. Apagar
+  `output/*.aux`, `output/capitulos/*.aux` e `output/main.fdb_latexmk` e rodar `pdflatex` uma vez antes do latexmk.
+- **Git.** Os remotos do robot-thesis se chamam `overleaf` e `github`.
