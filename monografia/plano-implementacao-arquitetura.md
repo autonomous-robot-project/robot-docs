@@ -36,7 +36,8 @@ forem para apêndice (decisão do Lucas com a orientadora).
   - Texto corrido, sem símbolos e com os valores numéricos.
   - Símbolo só em equação ou figura, definido na primeira menção, com a grafia dos Testes (T_sens, não T_S).
 - **Nomes.** Sem nomes de variáveis, classes ou arquivos. Ficam só `vTaskDelayUntil`, `xTaskCreatePinnedToCore`
-  e os tópicos que os Testes já usam (Command, State, Odometry, Instrumentation).
+  e os nomes que os Testes já usam: os tópicos (Command, State, Odometry, Instrumentation), `planner_server`,
+  `compute_path_to_pose` e `odom_to_tf`.
 - **Floats.** Todo float tem antes um parágrafo que resume o conteúdo dele.
   - Especificador [htb], legenda acima e `\fonte{Autoria própria (\imprimirano).}`.
 - **Remissões.** Sem "Seção X" e sem "a coluna".
@@ -173,8 +174,8 @@ forem para apêndice (decisão do Lucas com a orientadora).
 
 - O agente e o sequenciador rodam em SCHED_FIFO 50 (explicar), e o deliberador no escalonador comum, com kernel
   padrão (ADR 039).
-- O Fast DDS usa só UDP, pela pausa de cerca de 330 ms do transporte padrão: 7 de 60 contra 0 de 60, a conferir na
-  fonte (ADR 045).
+- Fast DDS só com UDP (ADR 045): é contorno de um defeito de biblioteca e nenhum Teste o cita. No máximo uma oração,
+  sem estatística.
 - O controlador está isolado por estar em outro processador.
 
 ### Generalização e fechamento
@@ -272,11 +273,30 @@ As figuras são TikZ dentro do .tex, como no resto da monografia.
   afastar de um obstáculo.
 - **Restrição e reação.** No controlador, só o sensor frontal restringe o comando, por obstáculo ou falha do sensor.
   As outras falhas são só reportadas, e a parada vem da reação padrão do sequenciador, que é abortar. A Tabela 10 usa a
-  coluna "Restrição no controlador". A sessão 2 descreve as reações, incluindo as exceções: a missão por plano ignora o
-  prazo perdido, e a falha de ensaio do Teste 7 tem reação própria.
+  coluna "Restrição no controlador". O Sequenciador traz só o modelo de reações: abortar (o padrão), ignorar e
+  recuperar. As exceções de cada missão já estão nas Folhas, e o texto as remete à Folha de cada teste, sem tabela de
+  missões e sem justificar exceção que nenhum teste usa.
 - **Estrutura.** Subsubseções para dar pausa na leitura. Equações com uma tabela de símbolos, e o texto explica o que
   cada parcela faz.
 - **Passos.** Uma figura para os passos de um processo (como o ciclo), com o texto resumido.
+
+## Ajustes da sessão 2 (15/11)
+
+A sessão 2 desceu abaixo do nível C no primeiro plano. Ficou decidido:
+
+- **Estrutura.**
+  - Sequenciador com três subsubseções: Nó e Execução; Missões e Reações (Figura 7, ciclo de vida do passo); Eventos e
+    Vigilância (tabela de eventos e a vigilância em cadeia num parágrafo).
+  - Deliberador sem subsubseções, com a tabela operação × ensaio e a Figura 8.
+  - Isolamento no Computador Embarcado em um parágrafo.
+  - Generalização e Síntese com a tabela de recursos e a Figura 9.
+- **Alternativa ao Python.** Uma frase, sem o número "2 a 3 vezes mais código", com a migração condicionada ao Teste 7.
+- **Tabela de recursos.** As cinco linhas do esboço mais canal de último valor, micro-ROS sobre UART, tópicos e
+  action, e Nav2 com o SLAM.
+- **Gat.** Só na consulta assíncrona ("several Behavior transitions can occur between the time a deliberative
+  algorithm is invoked and the time it produces a result").
+- **Sem issues nem emendas novas.** O arquitetura.md já marca escada e bateria em "Descrito, não implementado". As
+  divergências ADR 045 × nota 0007 e ADR 034 × código ficam fora do texto, conforme a triagem.
 
 ## Lições técnicas da sessão 1
 
