@@ -245,10 +245,19 @@ As figuras são TikZ dentro do .tex, como no resto da monografia.
     - Reflexo e Falhas, com a Tabela 10;
     - Estado Efêmero.
   - Interface entre o Controlador e o Sequenciador, com a Tabela 11.
-- **Sessão 2.**
-  - O esboço já foi apagado. O texto novo entra depois da subseção Interface, antes de "Planejamento de Testes".
-  - A tabela de recursos e equivalentes do esboço antigo está no commit `7ff6037` do robot-thesis
-    (`git show 7ff6037:capitulos/3-materiais-e-metodos.tex`, label `tab:recursos_plataforma`).
+- **Sessão 2 feita, com a revisão.** robot-thesis `3127ee6`, mais `d9f06d4` sem laranja, já no Overleaf e no GitHub.
+  - Sequenciador em três subsubseções: Nó e Execução; Missões e Reações, com a Figura 7; Eventos e Vigilância, com
+    a Tabela 12.
+  - Deliberador em três subsubseções: Planejamento por Consulta; Mapa de Custos, com a Tabela 13; Integração com o
+    Sequenciador, com a Figura 8.
+  - Isolamento no Computador Embarcado. Generalização e Síntese, com a Tabela 14 e a Figura 9.
+  - `\FloatBarrier` (pacote `placeins`) antes de "Planejamento de Testes".
+- **Critérios de Gat (opção B, decisão do Lucas).** Velocidade e estado interno são guias, não os únicos critérios.
+  - A abertura dos Requisitos os cita de forma breve.
+  - O fechamento da Implementação os aplica sem citar Gat de novo.
+  - A Fundamentação os define por completo. O esboço do Cap. 2 tem o item do estado, em laranja.
+- **Pendente.** A frase da bateria e da escada nos Trabalhos Futuros (D4). O contrato com a Escolha do Hardware
+  continua valendo.
 - **Texto da sessão 1 como referência.** Ler o texto já escrito como referência de estilo e de termos antes de
   escrever. Ele já define vários conceitos, que a sessão 2 retoma sem redefinir:
   - canal de último valor;
