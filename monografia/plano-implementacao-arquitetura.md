@@ -218,6 +218,10 @@ repeti-los, então a Escolha do Hardware precisa apresentá-los:
    - Valores adotados: K = 1,3 e τ = 0,04 s.
 7. **Enlace físico.** UART direta pelos GPIO, alimentação do ESP32 pela USB do RPi.
 
+Forma da seção (Lucas, 15/11): curta e direta. A figura é uma foto do protótipo de bancada, com as rodas suspensas e
+os componentes indicados por rótulos em TikZ, no lugar do diagrama de blocos do esboço. O cabeamento só entra no
+fato 7. As fotos do protótipo ficam nesta seção, não no Cap. 4.
+
 Se a escrita do Hardware mudar algum desses fatos, a Implementação é revista no ponto afetado.
 
 ## Sessões de escrita
