@@ -41,7 +41,7 @@ do ensaio.
 | `components/controller/src/supervision/deadline_miss_fault.cpp` | domínio | T2 | RNF-01 | V-05 | ADR 028; teste no host |
 | `components/controller/src/supervision/watchdog_test_trigger.cpp` | infraestrutura | T2 | RF-02 | V-02 | injeção do laço infinito |
 | `components/controller/src/supervision/response_test_trigger.cpp` | infraestrutura | T2 | RNF-03 | V-07 | ADR 049; pino do modo de ensaio |
-| `components/controller/src/instrumentation/expiry_meter.cpp` | domínio | T1 | RNF-02 | V-06 | ADR 028 |
+| `components/controller/src/instrumentation/expiry_meter.cpp` | domínio | T1 | RNF-02 | V-06 | ADR 028; lido linha a linha pelo autor em 15/11, sem teste no host; a contagem é cruzada com o eco de TWIST(0, 0) no bag |
 | `components/controller/src/instrumentation/deadline_meter.cpp` | domínio | T1 | RNF-01 | V-05 | ADR 028; teste no host com caso que deve falhar |
 | `components/controller/src/instrumentation/sequencer_response_meter.cpp` | domínio | T1 | RNF-03 | V-07 | ADR 049; teste no host com casos que devem falhar |
 | `components/controller/src/actuation/driver_input.cpp` | infraestrutura | T2 | RF-01 | V-02 | ADR 008, nota 0009 |
