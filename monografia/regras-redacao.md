@@ -82,13 +82,17 @@ Definido no piloto da robot-docs#62 (Cap. 3, Interface entre o Controlador e o S
 passou na terceira versão: as duas primeiras tinham as métricas limpas, mas erravam no conteúdo e em fatos. Por isso,
 o processo vale mais que os critérios da seção seguinte.
 
-1. **Mapa antes do texto.** Para cada parágrafo, uma linha com a ideia, o leitor que precisa dela (RF, RNF, Teste ou
-   outra seção) e o que sai para o repositório. O Lucas aprova o mapa antes da redação.
-2. **Redação** pelo registro dos pedidos da orientadora, com as correções dela em roxo como gabarito de estilo.
-3. **Autorrevisão antes de mostrar**, em duas passadas:
-   - leitor: cada termo foi apresentado antes do uso, e cada frase decorre da anterior;
-   - fato: cada afirmação técnica conferida no código ou na nota, frase a frase, com a fonte anotada.
-4. **`medir_redacao.py` só como alarme.** Número limpo não aprova o texto; o critério é a leitura clara.
+Revisto pelo Lucas em 16/11/2026, na reescrita do Cap. 3: o mapa prévio e a passada de fato frase a frase atrasavam
+sem melhorar o texto, e o erro recorrente era enxugar o texto antigo preservando todo fato, em frases densas.
+
+1. **Redação direta, pela clareza, e não pela completude.** Escrever a partir da ideia, e não enxugando o texto antigo:
+   primeiro o problema e o porquê, em palavras técnicas claras, uma coisa por frase. Número e detalhe só se o leitor os
+   usa naquele ponto; o resto vai para o Teste, a Folha ou o repositório. Na dúvida, a versão mais curta.
+2. **Registro** dos pedidos da orientadora, com as correções dela em roxo como gabarito de estilo.
+3. **Autorrevisão de leitor:** cada termo apresentado antes do uso, cada frase decorre da anterior e nomeia de que fala
+   ("que reação? que caminho?").
+4. **Figuras e quadros** ficam só se mostram uma relação que o texto corrido não mostra.
+5. **`medir_redacao.py` só como alarme.** Número limpo não aprova o texto; o critério é a leitura clara.
 
 ## Conteúdo do parágrafo [Lucas]
 
@@ -211,7 +215,8 @@ os tópicos. Versão aprovada:
     filete;
   - caminho longo em `\texttt` leva `\allowbreak` depois da barra para não atravessar o filete;
   - float mais alto que o espaço abaixo da chamada usa `[htbp]`, e não `[H]`: com `[H]`, ele salta para a página
-    seguinte e deixa o branco que [O] 72 proíbe.
+    seguinte e deixa o branco que [O] 72 proíbe. Os quadros saem em fila: um quadro que não cabe trava todos os
+    quadros seguintes até o próximo `\FloatBarrier` ou `\clearpage` (robot-thesis 0a72bfb).
 - **Equação:**
   - é chamada no texto antes de aparecer ("Equação 1"), e um "onde ..." define os símbolos depois [O] 67;
   - o número vai entre parênteses, à direita;
