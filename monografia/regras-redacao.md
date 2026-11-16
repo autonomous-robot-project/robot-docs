@@ -76,13 +76,60 @@ ler: o termo técnico dá a clareza, e não a frase complexa nem a palavra do di
 4. **Toda tabela tem linha preta entre todas as linhas**, com `\hline` (sugestão dela). Sem as linhas, ela
    considerou a tabela ilegível.
 
+## Processo de reescrita por seção [Lucas]
+
+Definido no piloto da robot-docs#62 (Cap. 3, Interface entre o Controlador e o Sequenciador, 15/11/2026), que só
+passou na terceira versão: as duas primeiras tinham as métricas limpas, mas erravam no conteúdo e em fatos. Por isso,
+o processo vale mais que os critérios da seção seguinte.
+
+1. **Mapa antes do texto.** Para cada parágrafo, uma linha com a ideia, o leitor que precisa dela (RF, RNF, Teste ou
+   outra seção) e o que sai para o repositório. O Lucas aprova o mapa antes da redação.
+2. **Redação** pelo registro dos pedidos da orientadora, com as correções dela em roxo como gabarito de estilo.
+3. **Autorrevisão antes de mostrar**, em duas passadas:
+   - leitor: cada termo foi apresentado antes do uso, e cada frase decorre da anterior;
+   - fato: cada afirmação técnica conferida no código ou na nota, frase a frase, com a fonte anotada.
+4. **`medir_redacao.py` só como alarme.** Número limpo não aprova o texto; o critério é a leitura clara.
+
+## Conteúdo do parágrafo [Lucas]
+
+- **Clareza antes de completude.** O texto explica primeiro o papel de cada elemento: o que é, quem produz, quem usa
+  e para quê, por extenso, e não inferido da tabela. A tabela traz o dado; o texto, o papel.
+- **Dois níveis de abstração.** As seções anteriores aos Testes descrevem a implementação em nível alto, na medida do
+  necessário para entender o mecanismo. O detalhe de implementação que um Teste usa entra na seção do Teste. O resto
+  fica no repositório.
+- **Uma ideia por parágrafo**, numa cadeia em que cada frase decorre da anterior. O conectivo só aparece onde a relação
+  existe.
+- **Cada afirmação é verdadeira no sentido exato.** O termo técnico afirma mais que a palavra comum e, por isso, exige
+  conferência.
+- **Sem premissa nova não demonstrada** e sem generalizar a partir de um caso.
+- **Sem contraste com alternativa que o leitor não viu.**
+- Repetir um assunto em mais de uma seção é normal no texto acadêmico; corta-se só quando a leitura melhora.
+
+Exemplo (piloto, parágrafo do estado). Primeira versão, reprovada:
+
+> A mensagem de estado (State) representa as condições ativas como estado, e não como eventos: cada código ocupa um bit
+> de uma máscara de falhas ou de reflexos [...]. Compete ao sequenciador detectar o início e o término de cada
+> condição [...].
+
+O leitor não sabe de onde vem a mensagem nem para que serve; a máscara de bits e o contraste "estado, e não eventos"
+são detalhe de código. Segunda versão, reprovada: três ideias num parágrafo, "a falha reaparece" (ela se repete),
+"*best effort* descarta a mensagem" (só não a reenvia) e "cada mensagem substitui a anterior" generalizado para todos
+os tópicos. Versão aprovada:
+
+> O controlador publica o estado a cada ciclo de controle, de 10 ms, e cada publicação repete todas as falhas e
+> reflexos ativos. Assim, se uma mensagem se perde no enlace, a publicação seguinte informa ao sequenciador as mesmas
+> condições 10 ms depois. Como o comando e a odometria também são republicados periodicamente, nenhum tópico exige
+> retransmissão, e todos utilizam a entrega sem confirmação do ROS 2 (*best effort*), na qual a mensagem perdida não é
+> reenviada.
+
 ## Linguagem
 
 - Argumentativa, impessoal, concisa, clara e objetiva, coerente e coesa [O] 42.
 - Voz impessoal, 3ª pessoa do singular [P] 251. "Desenvolveu-se", "verificou-se", "optou-se"; nunca "desenvolvemos" [O] 57.
 - O autor faz, e não o trabalho. "Apresenta-se neste trabalho o desenvolvimento", e não "este trabalho desenvolve" ou
   "este trabalho tem por objetivo" [C] 12.
-- Os pronomes ele, ela, dele, dela, nele e nela são proibidos. Seu e sua saem do texto ou viram artigo [O] 56.
+- Os pronomes ele, ela, dele, dela, nele e nela são proibidos. Seu e sua saem do texto ou viram artigo [O] 56. Vale
+  para os dois grupos, mesmo onde a orientadora usou o possessivo (decisão do Lucas, 15/11/2026, robot-docs#62 C).
 - Tempos verbais [P] 251:
   - modo indicativo;
   - presente na Introdução e na Conclusão;
@@ -107,7 +154,8 @@ ler: o termo técnico dá a clareza, e não a frase complexa nem a palavra do di
   dados [O] 24.
 - Tamanho [O] 22, 24:
   - frases de até 40 palavras;
-  - parágrafos de até 100 palavras, de 6 a 8 linhas, com duas frases.
+  - parágrafos de até 100 palavras, de 6 a 8 linhas, com duas frases. O limite é alarme, e não regra rígida: o critério
+    é uma ideia por parágrafo, com teto de cerca de 130 palavras (robot-docs#62 B).
 - No meio da frase, o conectivo vai entre vírgulas (", portanto,", ", contudo,") [O] 80. A orientadora abre parágrafos
   com "Além disso," e "Ademais," [Or].
 - "Esse" retoma o que já foi dito; "este" indica o presente ou o que vem a seguir. Exemplos: "dessa forma",
@@ -153,7 +201,8 @@ ler: o termo técnico dá a clareza, e não a frase complexa nem a palavra do di
   - toda tabela tem unidade de medida no cabeçalho ou na coluna indicadora [P] 209;
   - se passar de uma página, cada página leva "continua", "continuação" ou "conclusão" e repete o cabeçalho [P] 210.
 - **Quadro:** conteúdo textual, sem elaboração matemática ou estatística. Tem as laterais fechadas e todas as linhas
-  internas [O] 70; [P] 214.
+  internas [O] 70; [P] 214. Na sessão das tabelas, cada float textual vira quadro, e o numérico segue como tabela
+  (robot-docs#62 A).
 - **Equação:**
   - é chamada no texto antes de aparecer ("Equação 1"), e um "onde ..." define os símbolos depois [O] 67;
   - o número vai entre parênteses, à direita;
@@ -197,7 +246,8 @@ Esqueleto para os capítulos ainda não escritos. Cada item é um parágrafo, ou
 5. método;
 6. resultado.
 
-O Resumo tem um parágrafo só e começa sem "Este trabalho". As palavras-chave são de 3 a 5, em minúsculas e separadas
+O Resumo tem um parágrafo só, de 180 a 250 palavras [C] 8 (faixa que também cabe na NBR 6028:2021, a confirmar na
+norma; robot-docs#62 F), e começa sem "Este trabalho". As palavras-chave são de 3 a 5, em minúsculas e separadas
 por ponto e vírgula [C] 9; [I] 54.
 
 **Introdução** [C] 16–18, complementada por [P] 252:
