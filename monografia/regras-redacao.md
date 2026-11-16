@@ -30,8 +30,10 @@ Normas usadas no TCC [I] 13: NBR 14724:2024 (trabalhos acadêmicos), 6024:2012 (
 ## Pedidos da orientadora
 
 [Or] marca o pedido da orientadora. Fonte: revisão do Cap. 3 em 15/11/2026, robot-thesis e0d8a9b. As correções dela
-estão em roxo (`\tx{}`), com o texto antigo em `\sout{}`, e ficam no .tex até o Lucas mandar remover. Ela apontou o
-registro coloquial como o principal erro do trabalho.
+estão em roxo (`\tx{}`), com o texto antigo em `\sout{}`, e ficam no .tex até o Lucas mandar remover. O veredito
+dela sobre o texto atual: as seções estão enormes, e o texto está prolixo, complexo, ruim de ler e em português
+coloquial. O registro coloquial é o principal erro do trabalho. O alvo é o texto técnico e acadêmico, mas simples de
+ler: o termo técnico dá a clareza, e não a frase complexa nem a palavra do dia a dia.
 
 1. **Registro técnico e acadêmico, nunca coloquial.** A frase é técnica, mas não precisa ser complexa: o termo
    técnico exato dá clareza, e a palavra do dia a dia, não. Exemplos da revisão:
@@ -68,7 +70,8 @@ registro coloquial como o principal erro do trabalho.
 
    Na forma da orientadora, a mesma enumeração vira uma frase só: "Este trabalho adota três desses métodos: o
    ensaio, que...; a inspeção, que...; e a análise, que...".
-3. **Concisão.** As seções estão longas e o texto, prolixo. Cada parágrafo tem uma ideia. Ao corrigir, a orientadora
+3. **Concisão e leitura fácil.** As seções estão enormes e o texto, prolixo e complexo. Cada seção é encurtada,
+   cada parágrafo tem uma ideia e cada frase diz uma coisa com o termo técnico exato, sem rodeio. Ao corrigir, a orientadora
    dividiu parágrafos com duas ideias (o limite do *encoder* e o sentido de giro) e cortou o que repetia outra seção.
 4. **Toda tabela tem linha preta entre todas as linhas**, com `\hline` (sugestão dela). Sem as linhas, ela
    considerou a tabela ilegível.
