@@ -134,11 +134,9 @@ os tópicos. Versão aprovada:
   "este trabalho tem por objetivo" [C] 12.
 - Os pronomes ele, ela, dele, dela, nele e nela são proibidos. Seu e sua saem do texto ou viram artigo [O] 56. Vale
   para os dois grupos, mesmo onde a orientadora usou o possessivo (decisão do Lucas, 15/11/2026, robot-docs#62 C).
-- Tempos verbais [P] 251:
-  - modo indicativo;
-  - presente na Introdução e na Conclusão;
-  - pretérito perfeito nos resultados;
-  - pretérito imperfeito nos comentários.
+- Tempos verbais: todos os verbos no presente ou no infinitivo, inclusive nos resultados (decisão do Lucas,
+  16/11/2026). Substitui o [P] 251, que pede pretérito perfeito nos resultados e imperfeito nos comentários. O
+  condicional fica só no que é hipotético ("exporia", "seria retirado").
 - Registro culto: "demonstra", e não "mostra"; "afirma", e não "diz" [C] 4.
 - Clareza é exatidão: sem palavra ambígua, rebuscada ou abstrata [O] 60. Exemplos a evitar: "condições extremas",
   "grande carga", "variações significativas", "novas tecnologias" [O] 61–62.
