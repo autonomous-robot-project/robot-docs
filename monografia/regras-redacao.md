@@ -134,9 +134,9 @@ os tópicos. Versão aprovada:
   "este trabalho tem por objetivo" [C] 12.
 - Os pronomes ele, ela, dele, dela, nele e nela são proibidos. Seu e sua saem do texto ou viram artigo [O] 56. Vale
   para os dois grupos, mesmo onde a orientadora usou o possessivo (decisão do Lucas, 15/11/2026, robot-docs#62 C).
-- Tempos verbais: todos os verbos no presente ou no infinitivo, inclusive nos resultados (decisão do Lucas,
-  16/11/2026). Substitui o [P] 251, que pede pretérito perfeito nos resultados e imperfeito nos comentários. O
-  condicional fica só no que é hipotético ("exporia", "seria retirado").
+- Tempos verbais (decisão do Lucas, 16/11/2026): presente ou infinitivo em toda a monografia, inclusive no texto
+  da orientadora, exceto nos resultados (Cap. 4), que ficam no pretérito perfeito [P] 251. O condicional fica só no
+  que é hipotético ("exporia", "seria retirado").
 - Registro culto: "demonstra", e não "mostra"; "afirma", e não "diz" [C] 4.
 - Clareza é exatidão: sem palavra ambígua, rebuscada ou abstrata [O] 60. Exemplos a evitar: "condições extremas",
   "grande carga", "variações significativas", "novas tecnologias" [O] 61–62.
