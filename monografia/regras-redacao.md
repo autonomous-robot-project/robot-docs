@@ -201,8 +201,17 @@ os tópicos. Versão aprovada:
   - toda tabela tem unidade de medida no cabeçalho ou na coluna indicadora [P] 209;
   - se passar de uma página, cada página leva "continua", "continuação" ou "conclusão" e repete o cabeçalho [P] 210.
 - **Quadro:** conteúdo textual, sem elaboração matemática ou estatística. Tem as laterais fechadas e todas as linhas
-  internas [O] 70; [P] 214. Na sessão das tabelas, cada float textual vira quadro, e o numérico segue como tabela
-  (robot-docs#62 A).
+  internas [O] 70; [P] 214. Float textual é quadro, e o numérico segue como tabela (robot-docs#62 A). Texto com
+  números embutidos (limites, parâmetros, resultados por requisito) é quadro: o número fica na frase, sem coluna com
+  unidade no cabeçalho [P] 209.
+- **Convenções de LaTeX** (robot-thesis 4fba562):
+  - quadro com o ambiente `quadro` e colunas com `|`, como no `template.tex`; tabela com `\hline` e sem `|`;
+  - rótulo `qua:` no quadro e `tab:` na tabela;
+  - `\setlength{\extrarowheight}{1pt}` em todo float, logo após o `\label`: é o mínimo para o texto não encostar no
+    filete;
+  - caminho longo em `\texttt` leva `\allowbreak` depois da barra para não atravessar o filete;
+  - float mais alto que o espaço abaixo da chamada usa `[htbp]`, e não `[H]`: com `[H]`, ele salta para a página
+    seguinte e deixa o branco que [O] 72 proíbe.
 - **Equação:**
   - é chamada no texto antes de aparecer ("Equação 1"), e um "onde ..." define os símbolos depois [O] 67;
   - o número vai entre parênteses, à direita;
