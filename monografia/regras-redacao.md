@@ -108,6 +108,12 @@ sem melhorar o texto, e o erro recorrente era enxugar o texto antigo preservando
 - **Sem premissa nova não demonstrada** e sem generalizar a partir de um caso.
 - **Sem contraste com alternativa que o leitor não viu.**
 - Repetir um assunto em mais de uma seção é normal no texto acadêmico; corta-se só quando a leitura melhora.
+- **O corpo se lê sem as Folhas.** A monografia é lida como se as Folhas de teste do apêndice não existissem. Estar na
+  Folha nunca justifica cortar algo do corpo nem deixar um número sem explicação: o critério é só se o leitor do corpo
+  precisa daquilo naquele ponto (Lucas, 16/11/2026).
+- **Conceito e exemplos na Implementação.** Uma subseção da Implementação explica o que é cada elemento, a diferença
+  entre elementos próximos e alguns exemplos (ex.: Reflexo e Falhas, Estado Efêmero). A lista completa, com limiares
+  e tempos, é detalhe de implementação; o valor que um Teste verifica entra na seção do Teste (Lucas, 17/11/2026).
 
 Exemplo (piloto, parágrafo do estado). Primeira versão, reprovada:
 
