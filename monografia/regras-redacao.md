@@ -149,6 +149,9 @@ os tópicos. Versão aprovada:
 - Advérbio de quantidade ou qualidade (grande, pequeno, muito, pouco, bastante, mais, menos, maior, menor, melhor,
   pior) só em comparação explícita com outro item [O] 82.
 - Adjetivos a evitar: sempre, nunca, rápido, lento, bom, ótimo, excelente, alto nível [O] 76.
+- Rápido, lento, longo, demorado e similares não aparecem nem como advérbio nem em "longo prazo": são tradução
+  direta do inglês [Or] (relato do Lucas, 17/11/2026). A exceção é a citação de Gat (1998), que classifica os
+  algoritmos assim. A troca é por termo técnico ("consome tempo", "tempo de execução", prazo) ou por número.
 - Redundâncias a evitar: "de grande importância", "mais eficiente", "completamente eficiente", "maior eficácia",
   "grande maioria", "conclui-se finalmente", "síntese final" [O] 75.
 - Vícios a evitar [O] 74:
@@ -191,8 +194,13 @@ os tópicos. Versão aprovada:
 - Ideia de outra fonte se cita desde a Introdução [C] 28.
 - Na Fundamentação Teórica:
   - todo parágrafo tem citação direta ou indireta [O] 32;
-  - cada subtítulo tem ao menos 3 autores [O] 24.
+  - cada subtítulo tem ao menos 3 autores [O] 24, mas sem forçar: um trabalho citado só para completar a conta,
+    solto numa seção de conceito, fere a clareza, e a clareza prevalece (decisão do Lucas, 17/11/2026). Trabalho
+    de terceiros que usa uma ferramenta fica em Trabalhos Relacionados.
 - Em livro técnico, quando o autor reproduz a ideia de outro, cita-se o autor original [C] 50.
+- Característica de ferramenta ou conceito se cita pela fonte primária: a documentação oficial ou os criadores
+  (micro-ROS pela documentação do micro-ROS, FreeRTOS pela documentação e pelo livro de Barry), nunca por um
+  trabalho que a usou (decisão do Lucas, 17/11/2026, revisão do Cap. 2).
 
 ## Ilustrações, tabelas, quadros e equações
 
