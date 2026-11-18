@@ -3,6 +3,10 @@
 Documentação viva do TCC: plataforma robótica móvel com arquitetura em três camadas (Gat, 1998),
 com o controlador num ESP32-S3 e o sequenciador e o deliberador num RPi 5 (ROS 2).
 
+> **Relação com a monografia.** Este repositório é o diário do desenvolvimento: decisões, verificações e notas de
+> bancada na ordem em que aconteceram. A versão final dos requisitos, da arquitetura e dos testes é a monografia. Em
+> caso de divergência, vale a monografia. A sincronização deste repositório com ela está pendente na issue #56.
+
 ## Mapa
 
 | Caminho | Responde |
